@@ -4,13 +4,115 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Features — AcuityMaster</title>
-  <meta name="description" content="Every chart, every optotype, every display mode AcuityMaster supports — built by clinicians for ophthalmology and optometry exam lanes." />
+  <meta name="description" content="AcuityMaster features: units of measure, calibration, chart types, optotypes, display modes, pediatric options, color vision, and more — built for ophthalmology and optometry." />
   <meta name="theme-color" content="#0c2340" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <style>
+    /* ── Feature Tabs ─────────────────────────────────────────── */
+    .features-intro {
+      max-width: 72ch;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+    }
+    .features-intro p { color: var(--muted); font-size: 1.05rem; }
+
+    .feat-tabs { margin-top: 1rem; }
+
+    .feat-tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+      border-bottom: 2px solid var(--line);
+    }
+    .feat-tab-nav li {
+      cursor: pointer;
+      padding: .65rem 1.1rem;
+      font-size: .88rem;
+      font-weight: 500;
+      font-family: "Inter", sans-serif;
+      color: var(--muted);
+      border: 1px solid transparent;
+      border-bottom: none;
+      border-radius: var(--radius) var(--radius) 0 0;
+      margin-bottom: -2px;
+      transition: color .15s, background .15s, border-color .15s;
+      white-space: nowrap;
+      letter-spacing: .01em;
+    }
+    .feat-tab-nav li:hover { color: var(--navy); background: var(--paper-2); border-color: var(--line); }
+    .feat-tab-nav li.active {
+      color: var(--navy);
+      background: var(--paper);
+      border-color: var(--line);
+      border-bottom-color: var(--paper);
+    }
+
+    .feat-tab-panel { display: none; }
+    .feat-tab-panel.active { display: block; animation: tabFade .25s ease; }
+    @keyframes tabFade { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+    /* panel inner layout: text + image grid */
+    .feat-panel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .feat-panel-grid.full { grid-template-columns: 1fr; max-width: 780px; }
+    .feat-panel-grid h2 { margin-top: 0; font-size: 1.6rem; }
+    .feat-panel-grid p { color: var(--muted); }
+    .feat-panel-grid ul { padding-left: 1.25rem; }
+    .feat-panel-grid li { margin-bottom: .4rem; color: var(--muted); }
+
+    /* Sub-image gallery inside a tab */
+    .feat-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .feat-gallery figure {
+      margin: 0;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .feat-gallery figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .feat-gallery figcaption {
+      padding: .5rem .75rem;
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--navy);
+      text-align: center;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .feat-hero-img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 760px) {
+      .feat-panel-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .feat-tab-nav li { padding: .5rem .75rem; font-size: .82rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -19,12 +121,12 @@
     <a class="brand" href="/"><img src="/assets/img/logo.png" alt="" class="brand-logo" aria-hidden="true"> AcuityMaster</a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">☰</button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="/" >Home</a></li>
+      <li><a href="/">Home</a></li>
       <li><a href="/features.html" class="active">Features</a></li>
-      <li><a href="/requirements.html" >Requirements</a></li>
-      <li><a href="/accessories.html" >Accessories</a></li>
-      <li><a href="/faq.html" >FAQ</a></li>
-      <li><a href="/contact.html" >Contact</a></li>
+      <li><a href="/requirements.html">Requirements</a></li>
+      <li><a href="/accessories.html">Accessories</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="/contact.html">Contact</a></li>
       <li><a href="/trial.html" class="cta">Try free</a></li>
     </ul>
   </nav>
@@ -35,170 +137,327 @@
 <section class="page-hero">
   <div class="container">
     <span class="section-eyebrow">Features</span>
-    <h1>Everything you need in one digital chart.</h1>
-    <p class="lead">Our electronic eye chart was developed in a multispecialty ophthalmology and optometry setting — letting you assess visual acuity precisely and refract patients efficiently. Far more than Snellen alone.</p>
+    <h1>Everything AcuityMaster does.</h1>
+    <p class="lead">Our electronic eye chart software was developed in a multispecialty ophthalmology and optometry setting. AcuityMaster lets you efficiently assess visual acuity and refract patients in a precise, robust, and affordable solution.</p>
   </div>
 </section>
 
 <section>
   <div class="container">
 
-    <div class="feature-block">
-      <div class="feature-block-text">
-        <h2>Units of measure</h2>
-        <p>Display visual acuity in every popular notation. Switch between US (20/20), Metric (6/6), LogMAR, and Decimal at a keystroke — no setup, no mode-switching.</p>
-        <ul>
-          <li>US — 20/200, 20/20, etc.</li>
-          <li>Metric — 6/60, 6/6</li>
-          <li>LogMAR — 1.0 through 0.0</li>
-          <li>Decimal — 0.1 through 1.0</li>
-        </ul>
-      </div>
-      <div class="feature-block-visual">
-        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-          <style>
-            .u { font-family: "Fraunces", serif; fill: #0c2340; text-anchor: middle; }
-            .l { font-family: "Inter", sans-serif; font-size: 10px; fill: #5b6675; text-anchor: middle; letter-spacing: .1em; text-transform: uppercase; }
-          </style>
-          <text class="u" x="80"  y="80" font-size="28">20/20</text>
-          <text class="u" x="240" y="80" font-size="28">6/6</text>
-          <text class="u" x="80"  y="150" font-size="28">0.0</text>
-          <text class="u" x="240" y="150" font-size="28">1.0</text>
-          <text class="l" x="80"  y="105">US</text>
-          <text class="l" x="240" y="105">METRIC</text>
-          <text class="l" x="80"  y="175">LOGMAR</text>
-          <text class="l" x="240" y="175">DECIMAL</text>
-        </svg>
-      </div>
-    </div>
+    <div class="feat-tabs" id="feat-tabs">
 
-    <div class="feature-block">
-      <div class="feature-block-visual">
-        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-          <rect x="40" y="40" width="240" height="120" rx="6" fill="none" stroke="#0c2340" stroke-width="1.5"/>
-          <line x1="40" y1="100" x2="280" y2="100" stroke="#00a3a3" stroke-width="1" stroke-dasharray="4 4"/>
-          <circle cx="40" cy="100" r="4" fill="#00a3a3"/>
-          <circle cx="280" cy="100" r="4" fill="#00a3a3"/>
-          <text x="160" y="92" font-family="Inter, sans-serif" font-size="11" fill="#5b6675" text-anchor="middle" letter-spacing=".1em">PATIENT DISTANCE</text>
-          <text x="160" y="118" font-family="Fraunces, serif" font-size="20" fill="#0c2340" text-anchor="middle">10 ft</text>
-        </svg>
-      </div>
-      <div class="feature-block-text">
-        <h2>Calibration</h2>
-        <p>Set the system once for your room. Calibration accounts for the distance between the AcuityMaster display and the patient, your unit of measure, and which video clip plays for pediatric fixation.</p>
-      </div>
-    </div>
+      <!-- Tab navigation -->
+      <ul class="feat-tab-nav" role="tablist" id="feat-tab-nav">
+        <li class="active" role="tab" data-panel="tab-units"    tabindex="0" aria-selected="true">Units of Measure</li>
+        <li               role="tab" data-panel="tab-cal"       tabindex="-1">Calibration</li>
+        <li               role="tab" data-panel="tab-chart"     tabindex="-1">Chart Types</li>
+        <li               role="tab" data-panel="tab-opto"      tabindex="-1">Optotypes</li>
+        <li               role="tab" data-panel="tab-display"   tabindex="-1">Display Mode</li>
+        <li               role="tab" data-panel="tab-peds"      tabindex="-1">Pediatric Friendly</li>
+        <li               role="tab" data-panel="tab-options"   tabindex="-1">Options</li>
+        <li               role="tab" data-panel="tab-color"     tabindex="-1">Color Vision</li>
+        <li               role="tab" data-panel="tab-special"   tabindex="-1">Special</li>
+      </ul>
 
-    <div class="feature-block">
-      <div class="feature-block-text">
-        <h2>Chart types</h2>
-        <p>In addition to Snellen, AcuityMaster includes the color-correct Worth-Dot-Four, Astigmatic dial, ETDRS, and fixation-disparity charts — every test you reach for, in one application.</p>
-        <ul>
-          <li>Snellen</li>
-          <li>ETDRS</li>
-          <li>Worth-Dot-Four (color-correct)</li>
-          <li>Astigmatic dial</li>
-          <li>Fixation disparity</li>
-          <li>Contrast sensitivity</li>
-        </ul>
+      <!-- ① Units of Measure -->
+      <div class="feat-tab-panel active" id="tab-units" role="tabpanel">
+        <div class="feat-panel-grid">
+          <div>
+            <h2>Units of Measure</h2>
+            <p>AcuityMaster displays visual acuity in all popular formats. Switch between US, Metric, LogMAR, and Decimal instantly — no setup required between patients.</p>
+            <ul>
+              <li><strong>US</strong> — 20/200, 20/100 … 20/20, 20/15, 20/10</li>
+              <li><strong>Metric</strong> — 6/60, 6/6</li>
+              <li><strong>LogMAR</strong> — 1.0 through 0.0 (ETDRS standard)</li>
+              <li><strong>Decimal</strong> — 0.1 through 1.0</li>
+            </ul>
+          </div>
+          <div>
+            <div class="feat-gallery">
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/US-e1352519426397.jpg" alt="US 20/20 notation" loading="lazy">
+                <figcaption>US</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/metric.jpg" alt="Metric 6/6 notation" loading="lazy">
+                <figcaption>Metric</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/logmar.jpg" alt="LogMAR notation" loading="lazy">
+                <figcaption>LogMAR</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2023/04/decimal-1024x530-1.jpg" alt="Decimal notation" loading="lazy">
+                <figcaption>Decimal</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="feature-block-visual">
-        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(60,30)">
-            <circle cx="50" cy="40" r="15" fill="#dc2626"/>
-            <circle cx="20" cy="80" r="15" fill="#16a34a"/>
-            <circle cx="80" cy="80" r="15" fill="#16a34a"/>
-            <circle cx="50" cy="120" r="15" fill="#fbbf24"/>
-          </g>
-          <g transform="translate(190,40)">
-            <line x1="50" y1="0" x2="50" y2="120" stroke="#0c2340" stroke-width="2"/>
-            <line x1="0" y1="60" x2="100" y2="60" stroke="#0c2340" stroke-width="2"/>
-            <line x1="15" y1="15" x2="85" y2="105" stroke="#0c2340" stroke-width="2"/>
-            <line x1="85" y1="15" x2="15" y2="105" stroke="#0c2340" stroke-width="2"/>
-          </g>
-          <text x="100" y="195" font-family="Inter, sans-serif" font-size="9" fill="#5b6675" text-anchor="middle" letter-spacing=".1em">WORTH-DOT-FOUR</text>
-          <text x="240" y="195" font-family="Inter, sans-serif" font-size="9" fill="#5b6675" text-anchor="middle" letter-spacing=".1em">ASTIGMATIC</text>
-        </svg>
-      </div>
-    </div>
 
-    <div class="feature-block">
-      <div class="feature-block-visual">
-        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-          <style>
-            .o { font-family: "Fraunces", serif; fill: #0c2340; text-anchor: middle; font-weight: 500; }
-          </style>
-          <text class="o" x="50"  y="120" font-size="60">E</text>
-          <text class="o" x="120" y="120" font-size="60">⌐</text>
-          <text class="o" x="195" y="120" font-size="60">C</text>
-          <text class="o" x="270" y="120" font-size="60">7</text>
-          <text x="160" y="170" font-family="Inter, sans-serif" font-size="10" fill="#5b6675" text-anchor="middle" letter-spacing=".15em">LETTERS · TUMBLING E · LANDOLT C · NUMBERS · PICTURES</text>
-        </svg>
+      <!-- ② Calibration -->
+      <div class="feat-tab-panel" id="tab-cal" role="tabpanel">
+        <div class="feat-panel-grid">
+          <div>
+            <h2>Calibration</h2>
+            <p>The calibration (setup) screen lets you configure AcuityMaster once for your exam lane. Set your preferred unit of measure, the distance between the display and the patient, and which fixation video clip to use for pediatric patients.</p>
+            <ul>
+              <li>Unit of measure selection</li>
+              <li>Patient-to-screen distance (feet or meters)</li>
+              <li>Pediatric fixation video selection</li>
+            </ul>
+          </div>
+          <div>
+            <div class="feat-gallery">
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/120.png" alt="Calibration distance setup" loading="lazy">
+                <figcaption>Distance between Patient and Screen</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/121.png" alt="Distance calibration screen" loading="lazy">
+                <figcaption>Distance Calibration</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/122-e1352518334503.png" alt="Calibration settings" loading="lazy">
+                <figcaption>Setup Screen</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="feature-block-text">
-        <h2>Optotypes</h2>
-        <p>Pick the right optotype for the patient in front of you. Standard Snellen letters, Tumbling E, Landolt C, numbers, and updated recognizable pictures — including a cell phone, because today's kids no longer recognize the rotary telephone.</p>
-      </div>
-    </div>
 
-    <div class="feature-block">
-      <div class="feature-block-text">
-        <h2>Display modes</h2>
-        <p>Switch instantly between single-letter, single-line, and full multi-line display. Toggle the 20/XX label on or off, run in mirror mode, add crowding bars, reduce contrast, or apply a red/green overlay — without leaving the chart.</p>
+      <!-- ③ Chart Types -->
+      <div class="feat-tab-panel" id="tab-chart" role="tabpanel">
+        <div class="feat-panel-grid">
+          <div>
+            <h2>Chart Types</h2>
+            <p>In addition to the standard Snellen chart, AcuityMaster offers a full suite of specialist tests — every chart you need without switching applications.</p>
+            <ul>
+              <li><strong>Snellen</strong> — the standard acuity chart</li>
+              <li><strong>ETDRS</strong> — Early Treatment Diabetic Retinopathy Study chart</li>
+              <li><strong>Worth-Dot-Four</strong> — color-correct, calibrated for accurate results</li>
+              <li><strong>Astigmatic Dial</strong> — Jackson cross-cylinder axis refinement</li>
+              <li><strong>Fixation Disparity</strong> — binocular vision testing</li>
+              <li><strong>Contrast Sensitivity</strong> — assess beyond Snellen acuity</li>
+            </ul>
+          </div>
+          <div>
+            <div class="feat-gallery">
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/fixation-disparity-1024x543.jpg" alt="Fixation Disparity chart" loading="lazy">
+                <figcaption>Fixation Disparity</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/worth-dot-four-1024x542.jpg" alt="Worth Dot Four test" loading="lazy">
+                <figcaption>Worth-Dot-Four</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="feature-block-visual">
-        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-          <rect x="20" y="20" width="80" height="160" rx="4" fill="none" stroke="#0c2340"/>
-          <text x="60" y="115" font-family="Fraunces, serif" font-size="36" text-anchor="middle" fill="#0c2340">E</text>
-          <text x="60" y="195" font-family="Inter, sans-serif" font-size="9" fill="#5b6675" text-anchor="middle">SINGLE</text>
-          <rect x="120" y="20" width="80" height="160" rx="4" fill="none" stroke="#0c2340"/>
-          <text x="160" y="115" font-family="Fraunces, serif" font-size="20" text-anchor="middle" fill="#0c2340">F P T O Z</text>
-          <text x="160" y="195" font-family="Inter, sans-serif" font-size="9" fill="#5b6675" text-anchor="middle">LINE</text>
-          <rect x="220" y="20" width="80" height="160" rx="4" fill="none" stroke="#0c2340"/>
-          <text x="260" y="65" font-family="Fraunces, serif" font-size="14" text-anchor="middle" fill="#0c2340">F P</text>
-          <text x="260" y="100" font-family="Fraunces, serif" font-size="11" text-anchor="middle" fill="#0c2340">T O Z</text>
-          <text x="260" y="130" font-family="Fraunces, serif" font-size="9" text-anchor="middle" fill="#0c2340">L P E D</text>
-          <text x="260" y="155" font-family="Fraunces, serif" font-size="7" text-anchor="middle" fill="#0c2340">P E C F D</text>
-          <text x="260" y="195" font-family="Inter, sans-serif" font-size="9" fill="#5b6675" text-anchor="middle">MULTILINE</text>
-        </svg>
-      </div>
-    </div>
 
-    <div class="feature-block">
-      <div class="feature-block-visual">
-        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-          <rect x="40" y="30" width="240" height="140" rx="6" fill="#0c2340"/>
-          <circle cx="160" cy="100" r="40" fill="#fbbf24"/>
-          <text x="160" y="108" font-family="Fraunces, serif" font-size="14" text-anchor="middle" fill="#0c2340">▶ PLAY</text>
-          <text x="160" y="195" font-family="Inter, sans-serif" font-size="9" fill="#5b6675" text-anchor="middle" letter-spacing=".1em">PEDIATRIC FIXATION VIDEO</text>
-        </svg>
+      <!-- ④ Optotypes -->
+      <div class="feat-tab-panel" id="tab-opto" role="tabpanel">
+        <div class="feat-panel-grid">
+          <div>
+            <h2>Optotypes</h2>
+            <p>In addition to standard Snellen letter optotypes, AcuityMaster provides alternative optotypes to assess visual acuity across a broad range of patients — including pre-literate children and non-English speakers.</p>
+            <ul>
+              <li><strong>Letters</strong> — standard Sloan/Snellen alphabet</li>
+              <li><strong>Pictures</strong> — updated recognizable images, including a cell phone (we retired the rotary telephone!)</li>
+              <li><strong>Tumbling E</strong> — for patients who cannot name letters</li>
+              <li><strong>Landolt C</strong> — ISO standard broken ring</li>
+              <li><strong>Numbers</strong> — Arabic numerals</li>
+            </ul>
+          </div>
+          <div>
+            <div class="feat-gallery">
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/100.png" alt="Letter optotypes" loading="lazy">
+                <figcaption>Letters</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/101-e1352485722771.png" alt="Picture optotypes" loading="lazy">
+                <figcaption>Pictures</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/103.png" alt="Tumbling E optotype" loading="lazy">
+                <figcaption>Tumbling E</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/104.png" alt="Landolt C optotype" loading="lazy">
+                <figcaption>Landolt C</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/105.png" alt="Number optotypes" loading="lazy">
+                <figcaption>Numbers</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="feature-block-text">
-        <h2>Pediatric-friendly</h2>
-        <p>Updated optotype pictures kids actually recognize. Hands-free fixation video controlled by USB foot pedal — perfect for pediatric patients who need to fixate at the end of the room while you finish refraction.</p>
-      </div>
-    </div>
 
-    <div class="feature-block">
-      <div class="feature-block-text">
-        <h2>Dual-monitor support</h2>
-        <p>Running a dual-monitor setup? Undock the AcuityMaster control bar and drag it to the monitor closest to you. Full menu access without squinting at a 20-foot wall display.</p>
-        <p>Add a USB-controlled foot pedal for hands-free video fixation — a favorite of pediatric practices.</p>
+      <!-- ⑤ Display Mode -->
+      <div class="feat-tab-panel" id="tab-display" role="tabpanel">
+        <div class="feat-panel-grid">
+          <div>
+            <h2>Display Mode</h2>
+            <p>Users can instantly change among several display modes without leaving the chart. Choose the presentation that best matches your clinical workflow and patient needs.</p>
+            <ul>
+              <li><strong>Single Letter</strong> — isolate one optotype, eliminate crowding effect</li>
+              <li><strong>Single Line</strong> — display one full acuity line</li>
+              <li><strong>Multiline</strong> — full chart view, traditional Snellen format</li>
+            </ul>
+          </div>
+          <div>
+            <div class="feat-gallery">
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/106-e1352491043929.png" alt="Single letter display mode" loading="lazy">
+                <figcaption>Single Letter</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/107-e1352491136903.png" alt="Single line display mode" loading="lazy">
+                <figcaption>Single Line</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/108-e1352491414465.png" alt="Multiline display mode" loading="lazy">
+                <figcaption>Multiline</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="feature-block-visual">
-        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-          <rect x="20" y="50" width="120" height="80" rx="3" fill="#fbfaf6" stroke="#0c2340"/>
-          <rect x="180" y="30" width="120" height="120" rx="3" fill="#0c2340"/>
-          <text x="240" y="100" font-family="Fraunces, serif" font-size="34" fill="#fbfaf6" text-anchor="middle">E</text>
-          <rect x="35" y="65" width="60" height="6" rx="1" fill="#0c2340"/>
-          <rect x="35" y="78" width="80" height="4" rx="1" fill="#5b6675"/>
-          <rect x="35" y="88" width="40" height="4" rx="1" fill="#5b6675"/>
-          <text x="80" y="180" font-family="Inter, sans-serif" font-size="9" fill="#5b6675" text-anchor="middle">CONTROL</text>
-          <text x="240" y="180" font-family="Inter, sans-serif" font-size="9" fill="#5b6675" text-anchor="middle">PATIENT DISPLAY</text>
-        </svg>
-      </div>
-    </div>
 
+      <!-- ⑥ Pediatric Friendly -->
+      <div class="feat-tab-panel" id="tab-peds" role="tabpanel">
+        <div class="feat-panel-grid">
+          <div>
+            <h2>Pediatric Friendly</h2>
+            <p>AcuityMaster is designed with pediatric patients in mind. Updated optotype pictures include images children actually recognize today — including a cell phone, because today's kids no longer recognize the rotary telephone.</p>
+            <p>A hands-free USB foot pedal lets you toggle the fixation video clip without leaving the patient — perfect for keeping a pediatric patient fixated at distance while you complete refraction.</p>
+            <ul>
+              <li>Updated recognizable picture optotypes</li>
+              <li>Tumbling E and Landolt C for pre-literate patients</li>
+              <li>Hands-free video fixation via keyboard or USB foot pedal</li>
+              <li>Multiline pediatric chart view</li>
+            </ul>
+          </div>
+          <div>
+            <div class="feat-gallery">
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/109-e1352491454722.png" alt="Pediatric picture optotypes" loading="lazy">
+                <figcaption>Pictures</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/110-e1352491496215.png" alt="Tumbling E for pediatric" loading="lazy">
+                <figcaption>Tumbling E</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2020/05/3.png" alt="Video fixation pedal" loading="lazy">
+                <figcaption>Video Fixation via Keyboard or Pedal</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑦ Options -->
+      <div class="feat-tab-panel" id="tab-options" role="tabpanel">
+        <div class="feat-panel-grid">
+          <div>
+            <h2>Options</h2>
+            <p>AcuityMaster offers a broad range of display and testing options that let you tailor each exam without switching applications or reconfiguring your setup.</p>
+            <ul>
+              <li><strong>Mirror mode</strong> — display behind patient via mirror, or standard (in front)</li>
+              <li><strong>Toggle 20/XX label</strong> — show or hide the acuity notation on screen</li>
+              <li><strong>Crowding bars</strong> — add surround optotypes to isolate crowding effect</li>
+              <li><strong>Reduced contrast</strong> — multiple contrast levels for sensitivity testing</li>
+              <li><strong>Red/Green overlay</strong> — for binocular balance and duochrome testing</li>
+            </ul>
+          </div>
+          <div>
+            <div class="feat-gallery">
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/112-e1352492127749.png" alt="Mirror mode option" loading="lazy">
+                <figcaption>Mirror Mode</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/111.png" alt="Options panel" loading="lazy">
+                <figcaption>Toggle 20/XX · Crowding Bars</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑧ Color Vision -->
+      <div class="feat-tab-panel" id="tab-color" role="tabpanel">
+        <div class="feat-panel-grid">
+          <div>
+            <h2>Color Vision</h2>
+            <p>AcuityMaster includes color vision screening as part of its comprehensive test suite. Color vision defects are common and often go undetected without dedicated testing — now integrated seamlessly into your digital chart workflow.</p>
+            <ul>
+              <li>Color vision screening plates</li>
+              <li>Integrated with the standard exam workflow</li>
+              <li>No separate equipment or software required</li>
+              <li>Calibrated display for accurate color reproduction</li>
+            </ul>
+            <p><a href="/trial.html">Try a free 15-day trial →</a></p>
+          </div>
+          <div>
+            <!-- Color vision SVG illustration -->
+            <div style="background:var(--paper-2); border-radius:6px; padding:2.5rem; display:flex; align-items:center; justify-content:center; min-height:220px; box-shadow:var(--shadow-sm);">
+              <svg viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg" style="max-width:260px; width:100%;">
+                <circle cx="55"  cy="55"  r="40" fill="#ef4444" opacity=".85"/>
+                <circle cx="140" cy="55"  r="40" fill="#22c55e" opacity=".85"/>
+                <circle cx="225" cy="55"  r="40" fill="#3b82f6" opacity=".85"/>
+                <circle cx="97"  cy="115" r="40" fill="#eab308" opacity=".85"/>
+                <circle cx="183" cy="115" r="40" fill="#a855f7" opacity=".85"/>
+                <text x="140" y="170" font-family="Inter, sans-serif" font-size="11" fill="#5b6675" text-anchor="middle" letter-spacing=".1em">COLOR VISION SCREENING</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑨ Special -->
+      <div class="feat-tab-panel" id="tab-special" role="tabpanel">
+        <div class="feat-panel-grid">
+          <div>
+            <h2>Special Features</h2>
+            <p>AcuityMaster includes practical features designed around real exam-lane workflows — especially useful for practices with dual-monitor setups or pediatric patients.</p>
+            <ul>
+              <li>
+                <strong>Undockable/Moveable Menu</strong> — for dual-monitor setups, undock the AcuityMaster control bar and drag it to the monitor closest to you. Full menu access without squinting at a display 15–20 feet away.
+              </li>
+              <li>
+                <strong>USB Foot Pedal</strong> — hands-free control of the pediatric fixation video. Keep your patient fixating at the end of the room while you complete refraction, without touching the keyboard.
+              </li>
+              <li>
+                <strong>Pinhole Acuity</strong> — simulate pinhole testing with an on-screen overlay.
+              </li>
+              <li>
+                <strong>Runs on existing hardware</strong> — compatible with Windows XP through Windows 11, including the computer already in your exam lane.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="feat-gallery">
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2012/11/112-e1352492127749.png" alt="Undockable menu" loading="lazy">
+                <figcaption>Undockable Menu</figcaption>
+              </figure>
+              <figure>
+                <img src="https://www.acuitymaster.com/wp-content/uploads/2020/05/3.png" alt="USB foot pedal for video fixation" loading="lazy">
+                <figcaption>Video Fixation Pedal</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /feat-tabs -->
   </div>
 </section>
 
@@ -209,6 +468,7 @@
     <a href="/trial.html" class="btn btn-accent">Request your trial</a>
   </div>
 </section>
+
 </main>
 
 <footer class="site-footer">
@@ -246,5 +506,40 @@
 
 <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 <script src="/assets/js/main.js"></script>
+<script>
+// Tab switching
+(function() {
+  const nav = document.getElementById('feat-tab-nav');
+  if (!nav) return;
+  const tabs = nav.querySelectorAll('li');
+  const panels = document.querySelectorAll('.feat-tab-panel');
+
+  function activate(tab) {
+    tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); t.tabIndex = -1; });
+    panels.forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected','true');
+    tab.tabIndex = 0;
+    const panel = document.getElementById(tab.dataset.panel);
+    if (panel) panel.classList.add('active');
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activate(tab));
+    tab.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(tab); }
+      if (e.key === 'ArrowRight') { const next = tab.nextElementSibling; if (next) { activate(next); next.focus(); } }
+      if (e.key === 'ArrowLeft')  { const prev = tab.previousElementSibling; if (prev) { activate(prev); prev.focus(); } }
+    });
+  });
+
+  // Deep-link: ?tab=calibration etc.
+  const hash = new URLSearchParams(location.search).get('tab');
+  if (hash) {
+    const target = [...tabs].find(t => t.dataset.panel === 'tab-' + hash);
+    if (target) activate(target);
+  }
+})();
+</script>
 </body>
 </html>
