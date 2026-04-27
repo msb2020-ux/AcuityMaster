@@ -1,85 +1,105 @@
-// =========================================================
-// AcuityMaster — site scripts
-// =========================================================
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accessories — AcuityMaster</title>
+  <meta name="description" content="Optional accessories that make AcuityMaster even easier to use — foot pedals, wireless keyboards, backlit remotes, and red/green glasses." />
+  <meta name="theme-color" content="#0c2340" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+</head>
+<body>
 
-document.addEventListener("DOMContentLoaded", () => {
-  // -----------------------------------------------------
-  // Mobile nav toggle
-  // -----------------------------------------------------
-  const toggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-  if (toggle && navLinks) {
-    toggle.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-      toggle.setAttribute(
-        "aria-expanded",
-        navLinks.classList.contains("open") ? "true" : "false"
-      );
-    });
-  }
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span> AcuityMaster</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/" >Home</a></li>
+      <li><a href="/features.html" >Features</a></li>
+      <li><a href="/requirements.html" >Requirements</a></li>
+      <li><a href="/accessories.html" class="active">Accessories</a></li>
+      <li><a href="/faq.html" >FAQ</a></li>
+      <li><a href="/contact.html" >Contact</a></li>
+      <li><a href="/trial.html" class="cta">Try free</a></li>
+    </ul>
+  </nav>
+</header>
 
-  // -----------------------------------------------------
-  // Reveal on scroll
-  // -----------------------------------------------------
-  const revealEls = document.querySelectorAll(".reveal");
-  if (revealEls.length && "IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    revealEls.forEach((el) => io.observe(el));
-  } else {
-    // fallback — just show everything
-    revealEls.forEach((el) => el.classList.add("visible"));
-  }
+<main>
 
-  // -----------------------------------------------------
-  // Demo request form (Trial page) — Formspree AJAX submit
-  // On success: show confirmation message + reveal download link
-  // -----------------------------------------------------
-  const demoForm = document.getElementById("demo-form");
-  if (demoForm) {
-    demoForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const submitBtn = demoForm.querySelector("button[type=submit]");
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = "Sending…";
-      submitBtn.disabled = true;
+<section class="page-hero">
+  <div class="container">
+    <span class="section-eyebrow">Accessories</span>
+    <h1>Optional add-ons that make a real difference.</h1>
+    <p class="lead">AcuityMaster works with a wide range of off-the-shelf accessories. None are required, but each can streamline how your team navigates the software during exams.</p>
+  </div>
+</section>
 
-      const data = new FormData(demoForm);
-      try {
-        const res = await fetch(demoForm.action, {
-          method: "POST",
-          body: data,
-          headers: { Accept: "application/json" },
-        });
-        if (res.ok) {
-          demoForm.classList.add("hidden");
-          const success = document.getElementById("demo-success");
-          if (success) success.classList.remove("hidden");
-        } else {
-          const json = await res.json().catch(() => ({}));
-          alert(
-            json.error ||
-              "Something went wrong. Please email mark@acuitymasters.com directly."
-          );
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        }
-      } catch (err) {
-        alert(
-          "Network error. Please check your connection and try again, or email mark@acuitymasters.com directly."
-        );
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }
-    });
-  }
-});
+<section>
+  <div class="container content">
+
+    <h2>Anaglyphic red/green glasses</h2>
+    <p>Required for the Worth-Dot-Four test. We recommend Richmond Products 955R adult red/green glasses. <a href="https://www.richmondproducts.com/files/6713/2156/7348/Worth_4_Dot_Tech_Bulletin_No_Price_072011.pdf" target="_blank" rel="noopener">View product info →</a></p>
+
+    <h2>USB foot pedal</h2>
+    <p>Foot pedals complement keyboarding — greater comfort, higher productivity, and less wrist strain. Up to three pedals can replace frequently used keystrokes (Shift, Ctrl, Alt, or any custom key/mouse function). Our preferred pedal is pre-programmed and ships ready to use, available directly from the manufacturer.</p>
+    <p>
+      <a href="https://www.fentek-ind.com/FootPedal.htm#afs1usb" target="_blank" rel="noopener">Fentek foot pedal info →</a><br>
+      <a href="https://www.delcomproducts.com/productdetails.asp?PartNumber=703600-5M-Q-EKM71" target="_blank" rel="noopener">Order direct from Delcom →</a>
+    </p>
+
+    <h2>Wireless keyboards</h2>
+    <p>A standard wireless keyboard from Logitech (or similar) makes navigation effortless — particularly for pediatric, pre-verbal, and retinoscopy exams.</p>
+
+    <h2>Backlit remote keyboard</h2>
+    <p>Our preferred full keyboard remote is the Lenovo backlit model. It permits 100% control of AcuityMaster from anywhere in the exam lane.</p>
+
+    <h2>About AcuityMaster</h2>
+    <p>AcuityMaster is state-of-the-art digital visual acuity software — also referred to as a computerized chart projector, computer eye chart, computerized visual acuity system, or digital eye chart. It assesses contrast sensitivity, visual acuity via Snellen and pediatric-friendly optotypes, and runs on a dual-monitor or all-in-one computer mounted in any optometry or ophthalmology exam lane.</p>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/" style="color:var(--paper);"><span class="brand-mark"></span> AcuityMaster</a>
+        <p style="margin-top:1rem; max-width:34ch;">Affordable, feature-rich digital visual acuity software for ophthalmology and optometry practices.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/features.html">Features</a></li>
+          <li><a href="/requirements.html">Requirements</a></li>
+          <li><a href="/accessories.html">Accessories</a></li>
+          <li><a href="/trial.html">Free trial</a></li>
+          <li><a href="/buy.html">Buy now</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/help.html">Help &amp; manuals</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="yr"></span> AcuityMaster, LLC — Mark S. Brown, MD</span>
+      <span>PO Box 851351, Mobile AL 36685 · 330-822-8489</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

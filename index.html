@@ -3,12 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — AcuityMaster</title>
-  <meta name="description" content="Get in touch with AcuityMaster, LLC about digital visual acuity software, exam-lane setup, or licensing questions." />
+  <title>AcuityMaster — Digital Visual Acuity Software for Eye Care Practices</title>
+  <meta name="description" content="AcuityMaster is the most affordable, feature-rich digital eye chart software for ophthalmologists and optometrists. Replace your projector with a state-of-the-art digital acuity system." />
   <meta name="theme-color" content="#0c2340" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AcuityMaster — Digital Visual Acuity Software" />
+  <meta property="og:description" content="The most affordable, feature-rich digital eye chart software available today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://acuitymasters.com/" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
 </head>
@@ -19,12 +28,12 @@
     <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span> AcuityMaster</a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">☰</button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="/" >Home</a></li>
-      <li><a href="/features.html" >Features</a></li>
-      <li><a href="/requirements.html" >Requirements</a></li>
-      <li><a href="/accessories.html" >Accessories</a></li>
-      <li><a href="/faq.html" >FAQ</a></li>
-      <li><a href="/contact.html" class="active">Contact</a></li>
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/features.html">Features</a></li>
+      <li><a href="/requirements.html">Requirements</a></li>
+      <li><a href="/accessories.html">Accessories</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="/contact.html">Contact</a></li>
       <li><a href="/trial.html" class="cta">Try free</a></li>
     </ul>
   </nav>
@@ -32,56 +41,139 @@
 
 <main>
 
-<section class="page-hero">
-  <div class="container">
-    <span class="section-eyebrow">Contact</span>
-    <h1>Get in touch.</h1>
-    <p class="lead">Questions about AcuityMaster, your exam-lane setup, or licensing? We're a small, hands-on team — your message reaches a clinician.</p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="split">
-
-      <div class="split-info">
-        <h2>AcuityMaster, LLC</h2>
-        <p>Our software was developed in a multispecialty ophthalmology and optometry setting. AcuityMaster lets you assess visual acuity and refract patients precisely, robustly, and affordably.</p>
-        <ul class="contact-info">
-          <li><strong>Mailing address</strong>AcuityMaster, LLC<br>Mark S. Brown, MD<br>PO Box 851351<br>Mobile, AL 36685</li>
-          <li><strong>Phone</strong><a href="tel:+13308228489">330-822-8489</a></li>
-          <li><strong>Email</strong><a href="mailto:mark@acuitymasters.com">mark@acuitymasters.com</a></li>
-        </ul>
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="hero-eyebrow">Digital visual acuity software</span>
+      <h1>The modern eye chart, <em>built by clinicians.</em></h1>
+      <p class="hero-lead">
+        Replace your projector with a robust, affordable digital acuity system.
+        Designed in a multispecialty ophthalmology and optometry setting — and trusted
+        by practices that demand precision.
+      </p>
+      <div class="hero-actions">
+        <a href="/trial.html" class="btn btn-primary">Request a free trial</a>
+        <a href="/features.html" class="btn btn-secondary">See features</a>
       </div>
-
-      <div>
-        <!-- Replace yourFormID with your real Formspree form ID -->
-        <form class="form" action="https://formspree.io/f/yourContactFormID" method="POST">
-          <div class="form-row">
-            <label for="cname">Your name</label>
-            <input type="text" id="cname" name="name" required autocomplete="name" />
-          </div>
-          <div class="form-row">
-            <label for="cemail">Your email</label>
-            <input type="email" id="cemail" name="email" required autocomplete="email" />
-          </div>
-          <div class="form-row">
-            <label for="csubject">Subject</label>
-            <input type="text" id="csubject" name="subject" required />
-          </div>
-          <div class="form-row">
-            <label for="cmessage">Message</label>
-            <textarea id="cmessage" name="message" required></textarea>
-          </div>
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-          <input type="hidden" name="_subject" value="AcuityMaster — contact form" />
-          <button type="submit" class="btn btn-primary">Send message</button>
-        </form>
-      </div>
-
+    </div>
+    <div class="hero-visual reveal" aria-hidden="true">
+      <!-- Inline Snellen-style chart, abstracted -->
+      <svg class="eye-chart-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .ec-line { font-family: "Fraunces", Georgia, serif; font-weight: 500; fill: #0c2340; text-anchor: middle; }
+          .ec-tick { fill: #5b6675; font-family: "Inter", sans-serif; font-size: 8px; text-anchor: end; }
+        </style>
+        <text x="160" y="50"  class="ec-line" font-size="48">E</text>
+        <text x="160" y="95"  class="ec-line" font-size="34">F P</text>
+        <text x="160" y="135" class="ec-line" font-size="26">T O Z</text>
+        <text x="160" y="170" class="ec-line" font-size="20">L P E D</text>
+        <text x="160" y="200" class="ec-line" font-size="16">P E C F D</text>
+        <text x="160" y="225" class="ec-line" font-size="13">E D F C Z P</text>
+        <text x="160" y="247" class="ec-line" font-size="11">F E L O P Z D</text>
+        <text x="160" y="266" class="ec-line" font-size="9">D E F P O T E C</text>
+        <!-- size ticks -->
+        <text x="50" y="55" class="ec-tick">20/200</text>
+        <text x="50" y="100" class="ec-tick">20/100</text>
+        <text x="50" y="140" class="ec-tick">20/70</text>
+        <text x="50" y="175" class="ec-tick">20/50</text>
+        <text x="50" y="205" class="ec-tick">20/40</text>
+        <text x="50" y="230" class="ec-tick">20/30</text>
+        <text x="50" y="251" class="ec-tick">20/25</text>
+        <text x="50" y="270" class="ec-tick">20/20</text>
+      </svg>
     </div>
   </div>
 </section>
+
+<!-- Three benefits -->
+<section class="bg-paper-2">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-eyebrow">Why AcuityMaster</span>
+      <h2 class="section-title">Three reasons practices switch.</h2>
+    </div>
+    <div class="benefits">
+      <article class="benefit reveal">
+        <span class="benefit-num">01</span>
+        <h3>Better quality of care</h3>
+        <p>Provide a unique chart-set each exam. Assess far beyond Snellen — ETDRS, contrast sensitivity, Worth-Dot-Four, and more.</p>
+      </article>
+      <article class="benefit reveal">
+        <span class="benefit-num">02</span>
+        <h3>Faster patient throughput</h3>
+        <p>Switch between exams and chart types with a click. One additional patient a day pays for AcuityMaster in under a year.</p>
+      </article>
+      <article class="benefit reveal">
+        <span class="benefit-num">03</span>
+        <h3>A modern impression</h3>
+        <p>A digital display signals state-of-the-art comprehensive eye care to every patient who walks into your exam lane.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section>
+  <div class="container">
+    <div class="split">
+      <div class="split-info reveal">
+        <span class="section-eyebrow">About</span>
+        <h2>Built by ophthalmologists, optometrists, and engineers.</h2>
+        <p>
+          Our team consists of ophthalmologists, optometrists, certified ophthalmic technicians,
+          and skilled programmers. AcuityMaster is built on .NET and runs on Windows XP through
+          Windows 11 — including the existing computer in your exam lane.
+        </p>
+        <p>
+          <a href="/features.html">See the full feature list →</a>
+        </p>
+      </div>
+      <div class="reveal">
+        <ul class="contact-info" style="background:var(--paper-2); padding:1.5rem; border-radius:6px;">
+          <li><strong>Compatible with</strong> Windows XP, 7, 8, 10, 11</li>
+          <li><strong>Hardware</strong> Runs on your existing EMR computer</li>
+          <li><strong>Display options</strong> Single, dual-monitor, or all-in-one</li>
+          <li><strong>Trial</strong> 15-day fully functional demo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="bg-paper-2">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-eyebrow">Testimonials</span>
+      <h2 class="section-title">From the practices using it daily.</h2>
+    </div>
+    <div class="testimonials">
+      <div class="testimonial reveal">
+        <blockquote>AcuityMaster is hands down the best digital acuity program I have seen. Blown bulbs and overheated projectors are a thing of the past.</blockquote>
+        <cite><strong>Timothy White</strong>Gulf Coast Optometric Zone President</cite>
+      </div>
+      <div class="testimonial reveal">
+        <blockquote>The images are well defined with stable contrast that permits more accurate monitoring of central visual acuity in patients with retinal disease.</blockquote>
+        <cite><strong>Alan J. Franklin, MD, PhD</strong>Retina Specialty Institute</cite>
+      </div>
+      <div class="testimonial reveal">
+        <blockquote>AcuityMaster is very user friendly. Ophthalmic technicians are easily trained on all of the options.</blockquote>
+        <cite><strong>Nikki Broadus</strong>Technical Coordinator, Vision Partners</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA strip -->
+<section class="bg-navy cta-strip">
+  <div class="container">
+    <h2>Try AcuityMaster in your own office.</h2>
+    <p>Download a 15-day fully functional trial. No risk, no obligation.</p>
+    <a href="/trial.html" class="btn btn-accent">Request your trial</a>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">

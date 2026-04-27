@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Help & Manuals — AcuityMaster</title>
-  <meta name="description" content="Download the AcuityMaster user manual, help guide, and keyboard shortcuts reference." />
+  <title>Free Trial — AcuityMaster</title>
+  <meta name="description" content="Download a 15-day fully functional trial of AcuityMaster digital visual acuity software. No risk, no obligation." />
   <meta name="theme-color" content="#0c2340" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,26 +34,75 @@
 
 <section class="page-hero">
   <div class="container">
-    <span class="section-eyebrow">Help &amp; manuals</span>
-    <h1>Documentation and support resources.</h1>
-    <p class="lead">Everything you need to get the most out of AcuityMaster.</p>
+    <span class="section-eyebrow">Free trial</span>
+    <h1>Try AcuityMaster, no obligation.</h1>
+    <p class="lead">Download a fully functional 15-day evaluation. We'll email the download link as soon as you submit the form below.</p>
   </div>
 </section>
 
 <section>
-  <div class="container content">
-    <h2>Downloads</h2>
-    <ul>
-      <li><a href="https://acuitymaster.com/wp-content/uploads/2012/11/help-menu.pdf" target="_blank" rel="noopener">Detailed help guide (PDF)</a></li>
-      <li><a href="https://acuitymaster.com/wp-content/uploads/2012/11/AM-Manual.pdf" target="_blank" rel="noopener">AcuityMaster user manual (PDF)</a></li>
-      <li><a href="https://acuitymaster.com/wp-content/uploads/2012/11/help-menu1.pdf" target="_blank" rel="noopener">Keyboard shortcuts reference (PDF)</a></li>
-    </ul>
+  <div class="container">
+    <div class="split">
 
-    <h2>Need a hand?</h2>
-    <p>Reach out directly — we're a small team and your email lands in front of someone who can actually help.</p>
-    <p>
-      <a class="btn btn-secondary" href="/contact.html">Contact support</a>
-    </p>
+      <div class="split-info">
+        <h2>What you get</h2>
+        <ul>
+          <li>Full AcuityMaster software, 15-day trial</li>
+          <li>Every chart type, every optotype, every option</li>
+          <li>Use it in your own exam lane, on your own hardware</li>
+          <li>No credit card, no obligation</li>
+        </ul>
+        <p>If you're still using a Snellen-only projector, this is the simplest way to compare. Run it side-by-side for a couple of weeks and decide.</p>
+        <p style="color:var(--muted); font-size:.9rem;">
+          Have trouble with the form? Email <a href="mailto:mark@acuitymasters.com">mark@acuitymasters.com</a> and we'll send the link directly.
+        </p>
+      </div>
+
+      <div>
+        <!-- Successful submit reveals this -->
+        <div id="demo-success" class="form-success hidden">
+          <h3>Thanks — your trial is ready.</h3>
+          <p>We've also emailed you a copy of the link. Click below to download the AcuityMaster installer:</p>
+          <p style="margin-top:1rem;">
+            <a class="btn btn-primary" href="https://acuitymaster.com/DemoSoftware/AMsetup.exe">Download AcuityMaster trial (.exe)</a>
+          </p>
+          <p style="margin-top:1rem; font-size:.85rem; color:var(--muted);">Windows installer · ~5 MB · requires .NET 4</p>
+        </div>
+
+        <!-- Replace yourFormID with your real Formspree form ID -->
+        <form id="demo-form" class="form" action="https://formspree.io/f/yourDemoFormID" method="POST">
+          <div class="form-row">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="form-row">
+            <label for="practice">Practice or organization (optional)</label>
+            <input type="text" id="practice" name="practice" autocomplete="organization" />
+          </div>
+          <div class="form-row">
+            <label for="role">Role</label>
+            <select id="role" name="role">
+              <option value="">Select…</option>
+              <option>Ophthalmologist</option>
+              <option>Optometrist</option>
+              <option>Ophthalmic technician</option>
+              <option>Practice administrator</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="_subject" value="AcuityMaster — new trial request" />
+          <button type="submit" class="btn btn-primary">Email me the download link</button>
+          <p class="form-note">By submitting, you'll receive the download link by email. We don't share your information.</p>
+        </form>
+      </div>
+
+    </div>
   </div>
 </section>
 </main>
