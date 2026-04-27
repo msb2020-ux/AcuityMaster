@@ -68,14 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
           const json = await res.json().catch(() => ({}));
           alert(
             json.error ||
-              "Something went wrong. Please email mark@acuitymasters.com directly."
+              "Something went wrong. Please email Mark@AcuityMaster.com directly."
           );
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;
         }
       } catch (err) {
         alert(
-          "Network error. Please check your connection and try again, or email mark@acuitymasters.com directly."
+          "Network error. Please check your connection and try again, or email Mark@AcuityMaster.com directly."
         );
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
