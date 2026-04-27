@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — AcuityMaster</title>
-  <meta name="description" content="Get in touch with AcuityMaster, LLC about digital visual acuity software, exam-lane setup, or licensing questions." />
+  <title>Buy AcuityMaster</title>
+  <meta name="description" content="Purchase AcuityMaster digital visual acuity software. $1,300 initial license, $500 per additional workstation. Free upgrades for 12 months." />
   <meta name="theme-color" content="#0c2340" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,7 +24,7 @@
       <li><a href="/requirements.html" >Requirements</a></li>
       <li><a href="/accessories.html" >Accessories</a></li>
       <li><a href="/faq.html" >FAQ</a></li>
-      <li><a href="/contact.html" class="active">Contact</a></li>
+      <li><a href="/contact.html" >Contact</a></li>
       <li><a href="/trial.html" class="cta">Try free</a></li>
     </ul>
   </nav>
@@ -34,52 +34,90 @@
 
 <section class="page-hero">
   <div class="container">
-    <span class="section-eyebrow">Contact</span>
-    <h1>Get in touch.</h1>
-    <p class="lead">Questions about AcuityMaster, your exam-lane setup, or licensing? We're a small, hands-on team — your message reaches a clinician.</p>
+    <span class="section-eyebrow">Buy AcuityMaster</span>
+    <h1>Ready to make the switch?</h1>
+    <p class="lead">Our Windows-based digital visual acuity software is available for immediate purchase. We'll send an invoice you can pay online via secure checkout — or by check.</p>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="split">
 
+    <div class="pricing-grid">
+      <div class="price-card featured">
+        <h3>First workstation</h3>
+        <span class="price">$1,300</span>
+        <p class="price-note">Per location</p>
+        <ul>
+          <li>Per physical address</li>
+          <li>Single workstation included</li>
+          <li>Free upgrades for 12 months</li>
+          <li>Built-in live update</li>
+          <li>Full feature set</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>Additional workstation</h3>
+        <span class="price">$500</span>
+        <p class="price-note">Each, same location</p>
+        <ul>
+          <li>Same address as initial license</li>
+          <li>Independent workstation use</li>
+          <li>Same feature set</li>
+          <li>Same upgrade window</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content text-center" style="max-width:60ch;">
+      <p>Before you buy, please <a href="/trial.html">download the evaluation</a> and confirm AcuityMaster works to your satisfaction in your own exam lane.</p>
+      <p style="font-size:.9rem; color:var(--muted);">Keyboards, remote controls, and pedal options are sold separately. See the <a href="/accessories.html">accessories page</a>.</p>
+    </div>
+
+    <div class="split" style="margin-top:3rem;">
       <div class="split-info">
-        <h2>AcuityMaster, LLC</h2>
-        <p>Our software was developed in a multispecialty ophthalmology and optometry setting. AcuityMaster lets you assess visual acuity and refract patients precisely, robustly, and affordably.</p>
+        <h2>Questions before you order?</h2>
+        <p>Send a quick note and we'll reply with an invoice you can pay online or by check, plus answers to any questions about exam-lane configuration, monitor sizing, or accessories.</p>
         <ul class="contact-info">
-          <li><strong>Mailing address</strong>AcuityMaster, LLC<br>Mark S. Brown, MD<br>PO Box 851351<br>Mobile, AL 36685</li>
           <li><strong>Phone</strong><a href="tel:+13308228489">330-822-8489</a></li>
           <li><strong>Email</strong><a href="mailto:mark@acuitymasters.com">mark@acuitymasters.com</a></li>
         </ul>
       </div>
-
       <div>
         <!-- Replace yourFormID with your real Formspree form ID -->
-        <form class="form" action="https://formspree.io/f/yourContactFormID" method="POST">
+        <form class="form" action="https://formspree.io/f/yourBuyFormID" method="POST">
           <div class="form-row">
-            <label for="cname">Your name</label>
-            <input type="text" id="cname" name="name" required autocomplete="name" />
+            <label for="bname">Your name</label>
+            <input type="text" id="bname" name="name" required autocomplete="name" />
           </div>
           <div class="form-row">
-            <label for="cemail">Your email</label>
-            <input type="email" id="cemail" name="email" required autocomplete="email" />
+            <label for="bemail">Your email</label>
+            <input type="email" id="bemail" name="email" required autocomplete="email" />
           </div>
           <div class="form-row">
-            <label for="csubject">Subject</label>
-            <input type="text" id="csubject" name="subject" required />
+            <label for="bpractice">Practice / location</label>
+            <input type="text" id="bpractice" name="practice" autocomplete="organization" />
           </div>
           <div class="form-row">
-            <label for="cmessage">Message</label>
-            <textarea id="cmessage" name="message" required></textarea>
+            <label for="bworkstations"># of workstations</label>
+            <select id="bworkstations" name="workstations">
+              <option value="1">1 (initial license — $1,300)</option>
+              <option value="2">2 ($1,300 + $500)</option>
+              <option value="3">3 ($1,300 + $1,000)</option>
+              <option value="4+">4 or more</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="bmessage">Notes (optional)</label>
+            <textarea id="bmessage" name="message"></textarea>
           </div>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-          <input type="hidden" name="_subject" value="AcuityMaster — contact form" />
-          <button type="submit" class="btn btn-primary">Send message</button>
+          <input type="hidden" name="_subject" value="AcuityMaster — purchase inquiry" />
+          <button type="submit" class="btn btn-primary">Request invoice</button>
         </form>
       </div>
-
     </div>
+
   </div>
 </section>
 </main>
