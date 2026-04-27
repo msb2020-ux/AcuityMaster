@@ -112,6 +112,13 @@ a:hover { border-bottom-color: var(--accent); }
 }
 .brand-mark::before { content: "E"; }
 
+/* Brand logo image */
+.brand-logo {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
 .nav-links {
   display: flex;
   gap: 1.4rem;
