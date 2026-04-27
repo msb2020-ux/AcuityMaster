@@ -1,85 +1,79 @@
-// =========================================================
-// AcuityMaster — site scripts
-// =========================================================
+// AcuityMaster — main.js v3.0
 
-document.addEventListener("DOMContentLoaded", () => {
-  // -----------------------------------------------------
-  // Mobile nav toggle
-  // -----------------------------------------------------
-  const toggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-  if (toggle && navLinks) {
-    toggle.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-      toggle.setAttribute(
-        "aria-expanded",
-        navLinks.classList.contains("open") ? "true" : "false"
-      );
+// ── Mobile nav ───────────────────────────────────────────────────
+const toggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (toggle && navLinks) {
+  toggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.textContent = open ? '✕' : '☰';
+  });
+  document.addEventListener('click', e => {
+    if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }
+  });
+}
+
+// ── Scroll reveal ────────────────────────────────────────────────
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
+// ── Pricing toggle (buy page) ────────────────────────────────────
+const billingToggle = document.getElementById('billing-toggle');
+if (billingToggle) {
+  const prices = {
+    monthly: { solo: 29, practice: 79, enterprise: 149 },
+    annual:  { solo: 249, practice: 679, enterprise: 1279 }
+  };
+  const periods = { monthly: '/month', annual: '/year' };
+
+  function updatePricing(isAnnual) {
+    const p = isAnnual ? prices.annual : prices.monthly;
+    const period = isAnnual ? periods.annual : periods.monthly;
+    document.querySelectorAll('[data-tier]').forEach(card => {
+      const tier = card.dataset.tier;
+      const valEl = card.querySelector('.pricing-price-value');
+      const perEl = card.querySelector('.pricing-period');
+      if (valEl && p[tier] !== undefined) valEl.textContent = p[tier];
+      if (perEl) perEl.textContent = period;
+    });
+    document.querySelectorAll('.annual-savings').forEach(el => {
+      el.style.display = isAnnual ? 'inline' : 'none';
     });
   }
 
-  // -----------------------------------------------------
-  // Reveal on scroll
-  // -----------------------------------------------------
-  const revealEls = document.querySelectorAll(".reveal");
-  if (revealEls.length && "IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    revealEls.forEach((el) => io.observe(el));
-  } else {
-    // fallback — just show everything
-    revealEls.forEach((el) => el.classList.add("visible"));
-  }
+  billingToggle.addEventListener('change', () => updatePricing(billingToggle.checked));
+}
 
-  // -----------------------------------------------------
-  // Demo request form (Trial page) — Formspree AJAX submit
-  // On success: show confirmation message + reveal download link
-  // -----------------------------------------------------
-  const demoForm = document.getElementById("demo-form");
-  if (demoForm) {
-    demoForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const submitBtn = demoForm.querySelector("button[type=submit]");
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = "Sending…";
-      submitBtn.disabled = true;
-
-      const data = new FormData(demoForm);
-      try {
-        const res = await fetch(demoForm.action, {
-          method: "POST",
-          body: data,
-          headers: { Accept: "application/json" },
-        });
-        if (res.ok) {
-          demoForm.classList.add("hidden");
-          const success = document.getElementById("demo-success");
-          if (success) success.classList.remove("hidden");
-        } else {
-          const json = await res.json().catch(() => ({}));
-          alert(
-            json.error ||
-              "Something went wrong. Please email Mark@AcuityMaster.com directly."
-          );
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        }
-      } catch (err) {
-        alert(
-          "Network error. Please check your connection and try again, or email Mark@AcuityMaster.com directly."
-        );
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }
-    });
-  }
+// ── Contact / trial form ─────────────────────────────────────────
+document.querySelectorAll('form[data-formspree]').forEach(form => {
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('[type=submit]');
+    const orig = btn ? btn.textContent : '';
+    if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
+    try {
+      const res = await fetch('https://formspree.io/f/xpzgndvk', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      if (res.ok) {
+        form.innerHTML = '<p class="form-success">✓ Message sent — we\'ll reply to <strong>Mark@AcuityMaster.com</strong> shortly.</p>';
+      } else throw new Error();
+    } catch {
+      if (btn) { btn.textContent = orig; btn.disabled = false; }
+      alert('Something went wrong. Please email Mark@AcuityMaster.com directly.');
+    }
+  });
 });
