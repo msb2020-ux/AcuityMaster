@@ -1,4 +1,4 @@
-// AcuityMaster — main.js v3.0
+// AcuityMaster — main.js v3.1
 
 // ── Mobile nav ───────────────────────────────────────────────────
 const toggle = document.querySelector('.menu-toggle');
@@ -7,13 +7,13 @@ if (toggle && navLinks) {
   toggle.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
     toggle.setAttribute('aria-expanded', open);
-    toggle.textContent = open ? '✕' : '☰';
+    toggle.textContent = open ? '\u2715' : '\u2630';
   });
   document.addEventListener('click', e => {
     if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
       navLinks.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
+      toggle.textContent = '\u2630';
     }
   });
 }
@@ -28,48 +28,23 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 }
 
-// ── Pricing toggle (buy page) ────────────────────────────────────
-const billingToggle = document.getElementById('billing-toggle');
-if (billingToggle) {
-  const prices = {
-    monthly: { solo: 29, practice: 79, enterprise: 149 },
-    annual:  { solo: 249, practice: 679, enterprise: 1279 }
-  };
-  const periods = { monthly: '/month', annual: '/year' };
-
-  function updatePricing(isAnnual) {
-    const p = isAnnual ? prices.annual : prices.monthly;
-    const period = isAnnual ? periods.annual : periods.monthly;
-    document.querySelectorAll('[data-tier]').forEach(card => {
-      const tier = card.dataset.tier;
-      const valEl = card.querySelector('.pricing-price-value');
-      const perEl = card.querySelector('.pricing-period');
-      if (valEl && p[tier] !== undefined) valEl.textContent = p[tier];
-      if (perEl) perEl.textContent = period;
-    });
-    document.querySelectorAll('.annual-savings').forEach(el => {
-      el.style.display = isAnnual ? 'inline' : 'none';
-    });
-  }
-
-  billingToggle.addEventListener('change', () => updatePricing(billingToggle.checked));
-}
-
-// ── Contact / trial form ─────────────────────────────────────────
+// ── Formspree forms — uses each form's own action URL ────────────
 document.querySelectorAll('form[data-formspree]').forEach(form => {
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('[type=submit]');
     const orig = btn ? btn.textContent : '';
-    if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
+    if (btn) { btn.textContent = 'Sending\u2026'; btn.disabled = true; }
+    // Use the form's action attribute, fall back to default endpoint
+    const endpoint = form.getAttribute('action') || 'https://formspree.io/f/xpzgndvk';
     try {
-      const res = await fetch('https://formspree.io/f/xpzgndvk', {
+      const res = await fetch(endpoint, {
         method: 'POST',
         body: new FormData(form),
         headers: { Accept: 'application/json' }
       });
       if (res.ok) {
-        form.innerHTML = '<p class="form-success">✓ Message sent — we\'ll reply to <strong>Mark@AcuityMaster.com</strong> shortly.</p>';
+        form.innerHTML = '<p class="form-success">\u2713 Message sent \u2014 we\'ll be in touch at <strong>Mark@AcuityMaster.com</strong> shortly.</p>';
       } else throw new Error();
     } catch {
       if (btn) { btn.textContent = orig; btn.disabled = false; }
