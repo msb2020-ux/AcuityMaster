@@ -660,3 +660,64 @@ h3 { font-size: clamp(1rem, 2.5vw, 1.35rem); }
   /* Enlarge dots for easier tapping */
   .slider-dot { width: 11px; height: 11px; }
 }
+
+/* ── HOMEPAGE MOBILE FIX v2 ─────────────────────────────────────────────── */
+
+/* Stop the whole page sloshing sideways */
+html { overflow-x: hidden; }
+
+/* Why Us advantage cards — desktop 3-col grid */
+.why-adv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  /* Slider: collapse to single column, hide illustration */
+  .slide-container {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .slide-image { display: none; }
+
+  /* Hover cards (4-up) → native CSS scroll-snap carousel */
+  .hover-cards {
+    display: flex !important;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    /* hide scrollbar — users swipe */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .hover-cards::-webkit-scrollbar { display: none; }
+  .hover-card {
+    flex: 0 0 calc(100vw - 4rem) !important;
+    max-width: calc(100vw - 4rem);
+    scroll-snap-align: start;
+  }
+
+  /* Why Us adv grid → same scroll-snap carousel */
+  .why-adv-grid {
+    display: flex !important;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .why-adv-grid::-webkit-scrollbar { display: none; }
+  .why-adv-grid > div {
+    flex: 0 0 calc(100vw - 4rem);
+    max-width: calc(100vw - 4rem);
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+}
