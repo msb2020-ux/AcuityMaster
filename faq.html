@@ -22,11 +22,15 @@
       border-radius: 10px; padding: 2rem;
     }
     .faq-col-head {
-      display: flex; align-items: center; gap: .7rem;
-      margin-bottom: 1.5rem; padding-bottom: 1rem;
+      text-align: center;
+      margin-bottom: 1.5rem; padding-bottom: 1.1rem;
       border-bottom: 2px solid var(--border);
     }
-    .faq-col-head h2 { margin: 0; font-size: 1.2rem; }
+    .faq-col-head h2 { margin: 0 0 .4rem; font-size: 1.25rem; }
+    .faq-col-subtitle {
+      font-size: .82rem; font-weight: 600; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--text-light);
+    }
     .faq-list { display: flex; flex-direction: column; gap: .6rem; }
     .faq-item {
       border: 1px solid var(--border); border-radius: 7px; overflow: hidden;
@@ -40,7 +44,7 @@
     .faq-q::-webkit-details-marker { display: none; }
     .faq-q::after { content: '+'; font-size: 1.1rem; color: var(--blue); flex-shrink: 0; }
     details[open] .faq-q { background: #edf6fb; }
-    details[open] .faq-q::after { content: '−'; }
+    details[open] .faq-q::after { content: "−"; }
     .faq-a {
       padding: .75rem 1.1rem 1rem; font-size: .9rem;
       color: var(--text-light); line-height: 1.7; background: #fff;
@@ -86,7 +90,7 @@
       <div class="faq-col">
         <div class="faq-col-head">
           <h2>AcuityMaster Legacy</h2>
-          <span class="version-badge badge-legacy">Windows</span>
+          <div class="faq-col-subtitle">Windows</div>
         </div>
         <div class="faq-list">
 
@@ -158,7 +162,7 @@
       <div class="faq-col">
         <div class="faq-col-head">
           <h2>AcuityMaster Cloud</h2>
-          <span class="version-badge badge-cloud">Browser-Based</span>
+          <div class="faq-col-subtitle">Browser-Based</div>
         </div>
         <div class="faq-list">
 
