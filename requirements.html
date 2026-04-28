@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>System Requirements | AcuityMaster &#8212; Mac &amp; Windows</title>
+  <title>System Requirements | AcuityMaster &mdash; Mac &amp; Windows</title>
   <meta name="description" content="AcuityMaster system requirements for Legacy (Windows desktop) and Cloud (browser-based, Mac and Windows). Works on the computer already in your exam lane." />
   <meta name="theme-color" content="#3399CC" />
   <link rel="canonical" href="https://acuitymasters.com/requirements.html" />
@@ -12,6 +12,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <style>
+    .req-cols {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; align-items: start; margin-top: 1rem;
+    }
+    .req-col {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 10px; padding: 2rem 2rem 2rem;
+    }
+    .req-col-head {
+      display: flex; align-items: center; gap: .7rem;
+      margin-bottom: 1.5rem; padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+    .req-col-head h2 { margin: 0; font-size: 1.2rem; }
+    .req-col table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    .req-col table th, .req-col table td {
+      padding: .6rem .75rem; border: 1px solid var(--border); text-align: left;
+    }
+    .req-col table th { background: #f5f7fa; font-weight: 600; font-size: .85rem; }
+    .req-col table tr:nth-child(even) td { background: #fafbfc; }
+    .req-col h3 { font-size: 1rem; margin: 1.75rem 0 .6rem; color: var(--text); }
+    .req-col p { font-size: .93rem; color: var(--text-light); line-height: 1.65; margin-bottom: .75rem; }
+    .req-col ul { padding-left: 1.2rem; margin: .5rem 0 0; }
+    .req-col li { font-size: .93rem; color: var(--text-light); margin-bottom: .35rem; line-height: 1.6; }
+    .standards-section { margin-top: 3rem; }
+    .standards-section h2 { font-size: 1.25rem; margin-bottom: .75rem; }
+    .standards-section p { color: var(--text-light); font-size: .95rem; margin-bottom: 1rem; max-width: 680px; }
+    .standards-table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    .standards-table th, .standards-table td { padding: .65rem .9rem; border: 1px solid var(--border); text-align: left; }
+    .standards-table th { background: #f5f7fa; font-weight: 600; }
+    .standards-table tr:nth-child(even) td { background: #fafbfc; }
+    td.yes { color: #166534; font-weight: 500; }
+    @media (max-width: 768px) { .req-cols { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -47,64 +82,67 @@
 
       <!-- LEGACY -->
       <div class="req-col">
-        <h2>AcuityMaster Legacy <span class="version-badge badge-legacy">Windows Desktop</span></h2>
-        <div class="content">
-          <table>
-            <thead><tr><th>Component</th><th>Requirement</th></tr></thead>
-            <tbody>
-              <tr><td>Operating System</td><td>Windows XP, 7, 8, 10, or 11</td></tr>
-              <tr><td>Runtime</td><td>.NET Framework 4.0 or higher</td></tr>
-              <tr><td>RAM</td><td>1 GB minimum</td></tr>
-              <tr><td>Disk Space</td><td>5 MB free</td></tr>
-              <tr><td>Display</td><td>Primary monitor + optional patient display (HDMI/VGA)</td></tr>
-              <tr><td>Internet</td><td>Required for activation only</td></tr>
-            </tbody>
-          </table>
+        <div class="req-col-head">
+          <h2>AcuityMaster Legacy</h2>
+          <span class="version-badge badge-legacy">Windows Desktop</span>
         </div>
-        <h3 style="margin-top:1.75rem;margin-bottom:.75rem;">Dual-monitor setup</h3>
-        <p style="color:var(--text-light);font-size:.95rem;">Most practices share one computer between EMR and AcuityMaster. With a dual-output video card, the first display drives the EMR; the second drives the patient-facing chart.</p>
-        <ul style="padding-left:1.25rem;color:var(--text-light);font-size:.95rem;margin-top:.6rem;line-height:1.8;">
+        <table>
+          <thead><tr><th>Component</th><th>Requirement</th></tr></thead>
+          <tbody>
+            <tr><td>Operating System</td><td>Windows XP, 7, 8, 10, or 11</td></tr>
+            <tr><td>Runtime</td><td>.NET Framework 4.0 or higher</td></tr>
+            <tr><td>RAM</td><td>1 GB minimum</td></tr>
+            <tr><td>Disk Space</td><td>5 MB free</td></tr>
+            <tr><td>Display</td><td>Primary monitor + optional patient display (HDMI/VGA)</td></tr>
+            <tr><td>Internet</td><td>Required for activation only</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Dual-monitor setup</h3>
+        <p>Most practices share one computer between EMR and AcuityMaster. With a dual-output video card, the first display drives the EMR; the second drives the patient-facing chart.</p>
+        <ul>
           <li>Video card with dual video output</li>
-          <li>20&ndash;24&quot; LCD/LED monitor with HDMI (&sim;$150)</li>
+          <li>20&ndash;24&Prime; LCD/LED monitor with HDMI (&sim;$150)</li>
           <li>For video fixation: monitor with built-in speakers (audio over HDMI)</li>
         </ul>
-        <h3 style="margin-top:1.75rem;margin-bottom:.75rem;">All-in-one option</h3>
-        <p style="color:var(--text-light);font-size:.95rem;">A refurbished Dell OptiPlex AIO (models 2330, 2320, or 9010) mounted on the wall is often available from Dell Outlet for under $350. Mount directly in front of or behind the patient with a mirror.</p>
+
+        <h3>All-in-one option</h3>
+        <p>A refurbished Dell OptiPlex AIO (models 2330, 2320, or 9010) mounted on the wall is often available from Dell Outlet for under $350. Mount directly in front of or behind the patient with a mirror.</p>
       </div>
 
       <!-- CLOUD -->
       <div class="req-col">
-        <h2>AcuityMaster Cloud <span class="version-badge badge-cloud">Browser-Based</span></h2>
-        <div class="content">
-          <table>
-            <thead><tr><th>Component</th><th>Requirement</th></tr></thead>
-            <tbody>
-              <tr><td>Browser</td><td>Safari 16+, Chrome 110+, Firefox 115+, or Edge 110+</td></tr>
-              <tr><td>Operating System</td><td>macOS 12+ or Windows 10/11</td></tr>
-              <tr><td>Display</td><td>Any monitor; second display optional for patient chart</td></tr>
-              <tr><td>Internet</td><td>Standard broadband required</td></tr>
-              <tr><td>Installation</td><td>None &mdash; fully browser-based</td></tr>
-              <tr><td>Hardware</td><td>Works on existing exam-lane computer</td></tr>
-            </tbody>
-          </table>
+        <div class="req-col-head">
+          <h2>AcuityMaster Cloud</h2>
+          <span class="version-badge badge-cloud">Browser-Based</span>
         </div>
-        <div class="info-box" style="margin-top:1.75rem;">
+        <table>
+          <thead><tr><th>Component</th><th>Requirement</th></tr></thead>
+          <tbody>
+            <tr><td>Browser</td><td>Safari 16+, Chrome 110+, Firefox 115+, or Edge 110+</td></tr>
+            <tr><td>Operating System</td><td>macOS 12+ or Windows 10/11</td></tr>
+            <tr><td>Display</td><td>Any monitor; second display optional for patient chart</td></tr>
+            <tr><td>Internet</td><td>Standard broadband required</td></tr>
+            <tr><td>Installation</td><td>None &mdash; fully browser-based</td></tr>
+            <tr><td>Hardware</td><td>Works on existing exam-lane computer</td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box" style="margin-top:1.5rem;">
           <p><strong>AcuityMaster Cloud launches July 1, 2026.</strong> If you already have a Mac or Windows computer in your exam lane with internet access, you have everything you need. <a href="/buy.html#interest">Register your interest</a> to be notified at launch.</p>
         </div>
-        <h3 style="margin-top:1.75rem;margin-bottom:.75rem;">Dual-monitor setup (Cloud)</h3>
-        <p style="color:var(--text-light);font-size:.95rem;">AcuityMaster Cloud supports extended/mirrored display mode. Use your primary display for clinician controls and the second display for the patient-facing chart &mdash; or run single-screen mode from any computer.</p>
+
+        <h3>Dual-monitor setup (Cloud)</h3>
+        <p>AcuityMaster Cloud supports extended/mirrored display mode. Use your primary display for clinician controls and the second display for the patient-facing chart &mdash; or run single-screen mode from any computer.</p>
       </div>
 
-    </div>
-  </div>
-</section>
+    </div><!-- /req-cols -->
 
-<section class="bg-paper-2" style="padding:3rem 0">
-  <div class="container">
-    <h2 style="margin-bottom:1.25rem;">Standards we meet</h2>
-    <p style="color:var(--text-light);max-width:720px;margin-bottom:1rem;">The following standards apply to both Legacy and Cloud versions. Letter sizes are calibrated to the patient-to-screen distance you configure during setup.</p>
-    <div class="content">
-      <table>
+    <!-- Standards -->
+    <div class="standards-section">
+      <h2>Standards we meet</h2>
+      <p>The following standards apply to both Legacy and Cloud versions. Letter sizes are calibrated to the patient-to-screen distance you configure during setup.</p>
+      <table class="standards-table">
         <thead><tr><th>Standard</th><th>Requirement</th><th>Status</th></tr></thead>
         <tbody>
           <tr><td>ANSI Z80.21 &mdash; Luminance</td><td>Background luminance 80&ndash;320 cd/m&sup2;</td><td class="yes">&#10003; Met by all current monitors</td></tr>
@@ -113,6 +151,7 @@
         </tbody>
       </table>
     </div>
+
   </div>
 </section>
 
@@ -127,6 +166,7 @@
   </div>
 </section>
 </main>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
