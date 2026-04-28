@@ -19,15 +19,19 @@
     }
     .req-col {
       background: #fff; border: 1px solid var(--border);
-      border-radius: 10px; padding: 2rem 2rem 2rem;
+      border-radius: 10px; padding: 2rem;
     }
     .req-col-head {
-      display: flex; align-items: center; gap: .7rem;
-      margin-bottom: 1.5rem; padding-bottom: 1rem;
+      text-align: center;
+      margin-bottom: 1.5rem; padding-bottom: 1.1rem;
       border-bottom: 2px solid var(--border);
     }
-    .req-col-head h2 { margin: 0; font-size: 1.2rem; }
-    .req-col table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    .req-col-head h2 { margin: 0 0 .4rem; font-size: 1.25rem; }
+    .req-col-subtitle {
+      font-size: .82rem; font-weight: 600; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--text-light);
+    }
+    .req-col table { width: 100%; border-collapse: collapse; font-size: .92rem; margin-top: .5rem; }
     .req-col table th, .req-col table td {
       padding: .6rem .75rem; border: 1px solid var(--border); text-align: left;
     }
@@ -84,7 +88,7 @@
       <div class="req-col">
         <div class="req-col-head">
           <h2>AcuityMaster Legacy</h2>
-          <span class="version-badge badge-legacy">Windows Desktop</span>
+          <div class="req-col-subtitle">Windows</div>
         </div>
         <table>
           <thead><tr><th>Component</th><th>Requirement</th></tr></thead>
@@ -114,7 +118,7 @@
       <div class="req-col">
         <div class="req-col-head">
           <h2>AcuityMaster Cloud</h2>
-          <span class="version-badge badge-cloud">Browser-Based</span>
+          <div class="req-col-subtitle">Browser-Based</div>
         </div>
         <table>
           <thead><tr><th>Component</th><th>Requirement</th></tr></thead>
@@ -166,7 +170,6 @@
   </div>
 </section>
 </main>
-
 <footer>
   <div class="container">
     <div class="footer-grid">
