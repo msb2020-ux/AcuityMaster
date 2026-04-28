@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Features | Digital Eye Chart Types, Optotypes &amp; Color Vision | AcuityMaster</title>
   <meta name="description" content="AcuityMaster features: 9 chart categories, 20+ optotypes, color vision testing, pediatric charts, calibrated display modes, fixation disparity, and Worth 4-dot testing." />
-  <meta name="keywords" content="digital eye chart features, optotypes visual acuity, color vision testing software, ETDRS chart, logMAR chart, Snellen chart software, pediatric eye chart, fixation disparity test" />
   <meta name="theme-color" content="#3399CC" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,11 +13,7 @@
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
   <style>
-    .features-intro { max-width: 72ch; margin: 0 auto 2.5rem; text-align: center; }
-    .features-intro p { color: var(--muted); font-size: 1.05rem; }
-
     .feat-tabs { margin-top: 1rem; }
-
     .feat-tab-nav {
       display: flex; flex-wrap: wrap; gap: .35rem;
       list-style: none; padding: 0; margin: 0 0 2rem;
@@ -38,7 +33,6 @@
       color: var(--navy); background: var(--paper);
       border-color: var(--line); border-bottom-color: var(--paper);
     }
-
     .feat-tab-panel { display: none; }
     .feat-tab-panel.active { display: block; animation: tabFade .25s ease; }
     @keyframes tabFade { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
@@ -54,20 +48,18 @@
     .feat-panel-grid li { margin-bottom: .4rem; color: var(--muted); }
 
     .feat-gallery {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem; margin-top: 1.5rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: .85rem; margin-top: .5rem;
     }
     .feat-gallery figure {
-      margin: 0; background: var(--paper-2);
+      margin: 0; background: #f5f7fa;
       border: 1px solid var(--line); border-radius: 6px; overflow: hidden;
     }
     .feat-gallery figure img { width: 100%; height: auto; display: block; }
     .feat-gallery figcaption {
-      padding: .5rem .75rem; font-size: .8rem; font-weight: 500;
+      padding: .45rem .65rem; font-size: .76rem; font-weight: 600;
       color: var(--navy); text-align: center; letter-spacing: .04em; text-transform: uppercase;
     }
-
-    .feat-hero-img { width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--line); box-shadow: var(--shadow-md); }
 
     @media (max-width: 760px) {
       .feat-panel-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -107,7 +99,6 @@
 
 <section>
   <div class="container">
-
     <div class="feat-tabs" id="feat-tabs">
 
       <ul class="feat-tab-nav" role="tablist" id="feat-tab-nav">
@@ -137,22 +128,10 @@
           </div>
           <div>
             <div class="feat-gallery">
-              <figure>
-                <img src="/assets/img/features/us.jpg" alt="US 20/20 notation" loading="lazy">
-                <figcaption>US</figcaption>
-              </figure>
-              <figure>
-                <img src="/assets/img/features/metric.jpg" alt="Metric 6/6 notation" loading="lazy">
-                <figcaption>Metric</figcaption>
-              </figure>
-              <figure>
-                <img src="/assets/img/features/logmar.jpg" alt="LogMAR notation" loading="lazy">
-                <figcaption>LogMAR</figcaption>
-              </figure>
-              <figure>
-                <img src="/assets/img/features/decimal.jpg" alt="Decimal notation" loading="lazy">
-                <figcaption>Decimal</figcaption>
-              </figure>
+              <figure><img src="/assets/img/features/us.jpg" alt="US 20/20 notation" loading="lazy"><figcaption>US</figcaption></figure>
+              <figure><img src="/assets/img/features/metric.jpg" alt="Metric 6/6 notation" loading="lazy"><figcaption>Metric</figcaption></figure>
+              <figure><img src="/assets/img/features/logmar.jpg" alt="LogMAR notation" loading="lazy"><figcaption>LogMAR</figcaption></figure>
+              <figure><img src="/assets/img/features/decimal.jpg" alt="Decimal notation" loading="lazy"><figcaption>Decimal</figcaption></figure>
             </div>
           </div>
         </div>
@@ -172,18 +151,9 @@
           </div>
           <div>
             <div class="feat-gallery">
-              <figure>
-                <img src="/assets/img/features/cal-1.png" alt="Calibration distance setup" loading="lazy">
-                <figcaption>Distance between Patient and Screen</figcaption>
-              </figure>
-              <figure>
-                <img src="/assets/img/features/cal-2.png" alt="Distance calibration screen" loading="lazy">
-                <figcaption>Distance Calibration</figcaption>
-              </figure>
-              <figure>
-                <img src="/assets/img/features/cal-3.png" alt="Calibration settings" loading="lazy">
-                <figcaption>Setup Screen</figcaption>
-              </figure>
+              <figure><img src="/assets/img/features/cal-1.png" alt="Calibration distance setup" loading="lazy"><figcaption>Distance Setup</figcaption></figure>
+              <figure><img src="/assets/img/features/cal-2.png" alt="Distance calibration screen" loading="lazy"><figcaption>Calibration</figcaption></figure>
+              <figure><img src="/assets/img/features/cal-3.png" alt="Calibration settings" loading="lazy"><figcaption>Setup Screen</figcaption></figure>
             </div>
           </div>
         </div>
@@ -206,14 +176,8 @@
           </div>
           <div>
             <div class="feat-gallery">
-              <figure>
-                <img src="/assets/img/features/fixation-disparity.jpg" alt="Fixation Disparity chart" loading="lazy">
-                <figcaption>Fixation Disparity</figcaption>
-              </figure>
-              <figure>
-                <img src="/assets/img/features/worth-dot-four.jpg" alt="Worth Dot Four test" loading="lazy">
-                <figcaption>Worth-Dot-Four</figcaption>
-              </figure>
+              <figure><img src="/assets/img/features/fixation-disparity.jpg" alt="Fixation Disparity chart" loading="lazy"><figcaption>Fixation Disparity</figcaption></figure>
+              <figure><img src="/assets/img/features/worth-dot-four.jpg" alt="Worth Dot Four test" loading="lazy"><figcaption>Worth-Dot-Four</figcaption></figure>
             </div>
           </div>
         </div>
@@ -227,7 +191,7 @@
             <p>In addition to standard Snellen letter optotypes, AcuityMaster provides alternative optotypes to assess visual acuity across a broad range of patients &mdash; including pre-literate children and non-English speakers.</p>
             <ul>
               <li><strong>Letters</strong> &mdash; standard Sloan/Snellen alphabet</li>
-              <li><strong>Pictures</strong> &mdash; updated recognizable images, including a cell phone (we retired the rotary telephone!)</li>
+              <li><strong>Pictures</strong> &mdash; updated recognizable images, including a cell phone</li>
               <li><strong>Tumbling E</strong> &mdash; for patients who cannot name letters</li>
               <li><strong>Landolt C</strong> &mdash; ISO standard broken ring</li>
               <li><strong>Numbers</strong> &mdash; Arabic numerals</li>
@@ -235,83 +199,86 @@
           </div>
           <div>
             <div class="feat-gallery">
-              <figure>
-                <img src="/assets/img/features/opto-letters.png" alt="Letter optotypes" loading="lazy">
-                <figcaption>Letters</figcaption>
-              </figure>
-              <figure>
-                <img src="/assets/img/features/opto-pictures.png" alt="Picture optotypes" loading="lazy">
-                <figcaption>Pictures</figcaption>
-              </figure>
-              <figure>
-                <img src="/assets/img/features/opto-tumbling-e.png" alt="Tumbling E optotype" loading="lazy">
-                <figcaption>Tumbling E</figcaption>
-              </figure>
-              <figure>
-                <img src="/assets/img/features/opto-landolt-c.png" alt="Landolt C optotype" loading="lazy">
-                <figcaption>Landolt C</figcaption>
-              </figure>
-              <figure>
-                <img src="/assets/img/features/opto-numbers.png" alt="Number optotypes" loading="lazy">
-                <figcaption>Numbers</figcaption>
-              </figure>
+              <figure><img src="/assets/img/features/opto-letters.png" alt="Letter optotypes" loading="lazy"><figcaption>Letters</figcaption></figure>
+              <figure><img src="/assets/img/features/opto-pictures.png" alt="Picture optotypes" loading="lazy"><figcaption>Pictures</figcaption></figure>
+              <figure><img src="/assets/img/features/opto-tumbling-e.png" alt="Tumbling E optotype" loading="lazy"><figcaption>Tumbling E</figcaption></figure>
+              <figure><img src="/assets/img/features/opto-landolt-c.png" alt="Landolt C optotype" loading="lazy"><figcaption>Landolt C</figcaption></figure>
+              <figure><img src="/assets/img/features/opto-numbers.png" alt="Number optotypes" loading="lazy"><figcaption>Numbers</figcaption></figure>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ⑤ Display Mode — text only (screenshots pending) -->
+      <!-- ⑤ Display Mode -->
       <div class="feat-tab-panel" id="tab-display" role="tabpanel">
-        <div class="feat-panel-grid full">
+        <div class="feat-panel-grid">
           <div>
             <h2>Display Mode</h2>
             <p>Users can instantly change among several display modes without leaving the chart. Choose the presentation that best matches your clinical workflow and patient needs.</p>
             <ul>
-              <li><strong>Single Letter</strong> &mdash; isolate one optotype to eliminate the crowding effect; especially useful for amblyopia testing</li>
+              <li><strong>Single Letter</strong> &mdash; isolate one optotype to eliminate the crowding effect</li>
               <li><strong>Single Line</strong> &mdash; display one full acuity line at a time</li>
               <li><strong>Multiline</strong> &mdash; full chart view in traditional Snellen format</li>
             </ul>
-            <p>Switch modes instantly with a single click &mdash; no need to leave the chart or reconfigure between patients.</p>
+          </div>
+          <div>
+            <div class="feat-gallery">
+              <figure><img src="/assets/img/features/display-single.png" alt="Single letter display mode" loading="lazy"><figcaption>Single Letter</figcaption></figure>
+              <figure><img src="/assets/img/features/display-line.png" alt="Single line display mode" loading="lazy"><figcaption>Single Line</figcaption></figure>
+              <figure><img src="/assets/img/features/display-multi.png" alt="Multiline display mode" loading="lazy"><figcaption>Multiline</figcaption></figure>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- ⑥ Pediatric Friendly — text only (screenshots pending) -->
+      <!-- ⑥ Pediatric Friendly -->
       <div class="feat-tab-panel" id="tab-peds" role="tabpanel">
-        <div class="feat-panel-grid full">
+        <div class="feat-panel-grid">
           <div>
             <h2>Pediatric Friendly</h2>
-            <p>AcuityMaster is designed with pediatric patients in mind. Updated optotype pictures include images children actually recognize today &mdash; including a cell phone, because today's kids no longer recognize the rotary telephone.</p>
+            <p>AcuityMaster is designed with pediatric patients in mind. Updated optotype pictures include images children actually recognize today &mdash; including a cell phone, because today&rsquo;s kids no longer recognize the rotary telephone.</p>
             <p>A hands-free USB foot pedal lets you toggle the fixation video clip without leaving the patient &mdash; perfect for keeping a pediatric patient fixated at distance while you complete refraction.</p>
             <ul>
-              <li>Updated recognizable picture optotypes (cell phone, animals, everyday objects)</li>
+              <li>Updated recognizable picture optotypes</li>
               <li>Tumbling E and Landolt C for pre-literate patients</li>
-              <li>Hands-free video fixation via keyboard shortcut or USB foot pedal</li>
+              <li>Hands-free video fixation via keyboard or USB foot pedal</li>
               <li>Multiline pediatric chart view</li>
             </ul>
-            <p>See the <a href="/accessories.html">Accessories</a> page for the compatible USB foot pedal.</p>
+          </div>
+          <div>
+            <div class="feat-gallery">
+              <figure><img src="/assets/img/features/peds-pictures.png" alt="Pediatric picture optotypes" loading="lazy"><figcaption>Pictures</figcaption></figure>
+              <figure><img src="/assets/img/features/peds-tumbling-e.png" alt="Tumbling E for pediatric" loading="lazy"><figcaption>Tumbling E</figcaption></figure>
+              <figure><img src="/assets/img/features/peds-video.png" alt="Video fixation" loading="lazy"><figcaption>Video Fixation</figcaption></figure>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- ⑦ Options — text only (screenshots pending) -->
+      <!-- ⑦ Options -->
       <div class="feat-tab-panel" id="tab-options" role="tabpanel">
-        <div class="feat-panel-grid full">
+        <div class="feat-panel-grid">
           <div>
             <h2>Options</h2>
             <p>AcuityMaster offers a broad range of display and testing options that let you tailor each exam without switching applications or reconfiguring your setup.</p>
             <ul>
-              <li><strong>Mirror mode</strong> &mdash; display the chart behind the patient via a mirror for compact exam lanes; also supports standard (in front) display</li>
-              <li><strong>Toggle 20/XX label</strong> &mdash; show or hide the acuity notation on the patient-facing display</li>
-              <li><strong>Crowding bars</strong> &mdash; add surrounding optotypes to isolate the crowding effect</li>
-              <li><strong>Reduced contrast</strong> &mdash; multiple contrast levels for contrast sensitivity testing</li>
-              <li><strong>Red/Green overlay</strong> &mdash; for binocular balance and duochrome refraction</li>
+              <li><strong>Mirror mode</strong> &mdash; display behind patient via mirror, or standard (in front)</li>
+              <li><strong>Toggle 20/XX label</strong> &mdash; show or hide the acuity notation on screen</li>
+              <li><strong>Crowding bars</strong> &mdash; add surround optotypes to isolate crowding effect</li>
+              <li><strong>Reduced contrast</strong> &mdash; multiple contrast levels for sensitivity testing</li>
+              <li><strong>Red/Green overlay</strong> &mdash; for binocular balance and duochrome testing</li>
             </ul>
+          </div>
+          <div>
+            <div class="feat-gallery">
+              <figure><img src="/assets/img/features/options-mirror.png" alt="Mirror mode option" loading="lazy"><figcaption>Mirror Mode</figcaption></figure>
+              <figure><img src="/assets/img/features/options-overlay.png" alt="Overlay options" loading="lazy"><figcaption>Overlays</figcaption></figure>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- ⑧ Color Vision — text only -->
+      <!-- ⑧ Color Vision — text only (no dedicated screenshots yet) -->
       <div class="feat-tab-panel" id="tab-color" role="tabpanel">
         <div class="feat-panel-grid full">
           <div>
@@ -335,21 +302,11 @@
             <h2>Special Features</h2>
             <p>AcuityMaster includes practical features designed around real exam-lane workflows &mdash; especially useful for practices with dual-monitor setups or pediatric patients.</p>
             <ul>
-              <li>
-                <strong>Undockable/Moveable Menu</strong> &mdash; for dual-monitor setups, undock the AcuityMaster control bar and drag it to the monitor closest to you. Full menu access without squinting at a display 15&ndash;20 feet away.
-              </li>
-              <li>
-                <strong>USB Foot Pedal</strong> &mdash; hands-free control of the pediatric fixation video. Keep your patient fixating while you complete refraction, without touching the keyboard. See the <a href="/accessories.html">Accessories</a> page.
-              </li>
-              <li>
-                <strong>Pinhole Acuity</strong> &mdash; simulate pinhole testing with an on-screen overlay.
-              </li>
-              <li>
-                <strong>Mirror Mode</strong> &mdash; display the chart behind the patient via a mirror for compact exam lanes. See the <em>Options</em> tab for details.
-              </li>
-              <li>
-                <strong>Runs on existing hardware</strong> &mdash; compatible with Windows XP through Windows 11, including the computer already in your exam lane.
-              </li>
+              <li><strong>Undockable/Moveable Menu</strong> &mdash; for dual-monitor setups, undock the AcuityMaster control bar and drag it to the monitor closest to you. Full menu access without squinting at a display 15&ndash;20 feet away.</li>
+              <li><strong>USB Foot Pedal</strong> &mdash; hands-free control of the pediatric fixation video. Keep your patient fixating while you complete refraction, without touching the keyboard. See the <a href="/accessories.html">Accessories</a> page.</li>
+              <li><strong>Pinhole Acuity</strong> &mdash; simulate pinhole testing with an on-screen overlay.</li>
+              <li><strong>Mirror Mode</strong> &mdash; display the chart behind the patient via a mirror for compact exam lanes. See the <em>Options</em> tab for details.</li>
+              <li><strong>Runs on existing hardware</strong> &mdash; compatible with Windows XP through Windows 11, including the computer already in your exam lane.</li>
             </ul>
           </div>
         </div>
