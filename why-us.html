@@ -38,7 +38,26 @@
   <style>
     .adv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; margin-top:2.5rem; }
     @media(max-width:900px){ .adv-grid { grid-template-columns:repeat(2,1fr); } }
-    @media(max-width:600px){ .adv-grid { grid-template-columns:1fr; } }
+    @media(max-width:600px){
+      .adv-grid {
+        display: flex !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        margin-top: 1.5rem;
+      }
+      .adv-grid::-webkit-scrollbar { display: none; }
+      .adv-card {
+        flex: 0 0 calc(100vw - 4rem);
+        max-width: calc(100vw - 4rem);
+        scroll-snap-align: start;
+        min-width: 0;
+      }
+    }
     .adv-card { background:#fff; border:1px solid var(--border); border-radius:10px; padding:1.75rem 1.5rem; }
     .adv-icon { font-size:2rem; margin-bottom:.75rem; }
     .adv-card h3 { font-size:1.05rem; margin-bottom:.5rem; color:var(--blue); }
