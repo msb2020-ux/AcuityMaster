@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Features | AcuityMaster Digital Eye Chart Software</title>
-  <meta name="description" content="AcuityMaster features: 9 chart categories, 20+ optotypes, color vision testing, pediatric charts, calibrated display modes, fixation disparity, and Worth 4-dot testing." />
+  <meta name="description" content="AcuityMaster features: Snellen, ETDRS, LogMAR, colour vision, Tumbling E, Landolt C, HOTV, Lea Symbols, display modes, pediatric testing, and more." />
   <meta name="theme-color" content="#3399CC" />
   <link rel="canonical" href="https://acuitymasters.com/features.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,21 +12,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
-  <!-- Open Graph -->
   <meta property="og:title" content="Features | AcuityMaster Digital Eye Chart Software" />
-  <meta property="og:description" content="AcuityMaster features: 9 chart categories, 20+ optotypes, color vision, pediatric charts, display modes, and more." />
+  <meta property="og:description" content="AcuityMaster: Snellen, ETDRS, LogMAR, colour vision, Tumbling E, HOTV, Lea Symbols, and more." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://acuitymasters.com/features.html" />
   <meta property="og:image" content="https://acuitymasters.com/assets/img/logo.png" />
   <meta property="og:site_name" content="AcuityMaster" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Features | AcuityMaster Digital Eye Chart Software" />
-  <meta name="twitter:description" content="AcuityMaster features: chart types, optotypes, color vision, pediatric testing, and more." />
   <meta name="twitter:image" content="https://acuitymasters.com/assets/img/logo.png" />
   <link rel="apple-touch-icon" href="/assets/img/logo.png" />
   <meta name="robots" content="index, follow" />
   <style>
-    /* ── Feature tab nav ─────────────────────────────────── */
     .feat-tab-nav {
       display: flex; flex-wrap: wrap; gap: .3rem;
       list-style: none; padding: 0; margin: 0 0 2rem;
@@ -34,68 +31,42 @@
     }
     .feat-tab-nav li {
       cursor: pointer; padding: .6rem 1rem; font-size: .87rem;
-      font-weight: 500; font-family: "Roboto", sans-serif; color: #555e6d;
+      font-weight: 500; font-family: "Roboto",sans-serif; color: #555e6d;
       border: 1px solid transparent; border-bottom: none;
       border-radius: 6px 6px 0 0; margin-bottom: -2px;
       transition: color .15s, background .15s, border-color .15s;
       white-space: nowrap; min-height: 44px; display: flex; align-items: center;
     }
     .feat-tab-nav li:hover  { color: #2c3440; background: #f7f8fa; border-color: #d8dde4; }
-    .feat-tab-nav li.active { color: #2c3440; background: #fff; border-color: #d8dde4; border-bottom-color: #fff; }
+    .feat-tab-nav li.active { color: #2c3440; background: #fff; border-color: #d8dde4; border-bottom-color: #fff; font-weight: 700; }
 
-    /* ── Tab panels ──────────────────────────────────────── */
     .feat-tab-panel { display: none; }
     .feat-tab-panel.active { display: block; animation: tfade .22s ease; }
     @keyframes tfade { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:none; } }
 
-    /* ── Two-column layout ───────────────────────────────── */
-    .feat-panel-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3rem; align-items: start;
-    }
+    .feat-panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     .feat-panel-grid.full { grid-template-columns: 1fr; max-width: 760px; }
-    .feat-panel-grid h2 { margin-top: 0; font-size: clamp(1.3rem,3vw,1.7rem); }
-    .feat-panel-grid p  { color: #555e6d; line-height: 1.7; }
-    .feat-panel-grid ul { padding-left: 1.25rem; margin-top: .6rem; }
-    .feat-panel-grid li { margin-bottom: .45rem; color: #555e6d; }
+    .feat-panel-grid h2 { margin-top: 0; font-size: clamp(1.25rem,3vw,1.65rem); }
+    .feat-panel-grid p  { color: #555e6d; line-height: 1.7; margin-bottom: .75rem; }
+    .feat-panel-grid ul { padding-left: 1.25rem; margin-top: .5rem; }
+    .feat-panel-grid li { margin-bottom: .45rem; color: #555e6d; line-height: 1.6; }
 
-    /* ── Per-tab image carousel ──────────────────────────── */
-    .feat-carousel {
-      background: #f5f7fa; border: 1px solid #d8dde4;
-      border-radius: 8px; overflow: hidden;
-      display: flex; flex-direction: column;
-    }
+    /* Carousel */
+    .feat-carousel { background: #f5f7fa; border: 1px solid #d8dde4; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
     .feat-carousel-slide { display: none; }
     .feat-carousel-slide.active { display: block; }
     .feat-carousel-slide img { width: 100%; height: auto; display: block; }
-    .feat-carousel-slide figcaption {
-      text-align: center; padding: .45rem .75rem;
-      font-size: .76rem; font-weight: 700; letter-spacing: .06em;
-      text-transform: uppercase; color: #3399CC; background: #f5f7fa;
-    }
-    .feat-c-bar {
-      display: flex; align-items: center; gap: .5rem;
-      padding: .5rem .75rem; background: #fff;
-      border-top: 1px solid #d8dde4; justify-content: space-between;
-    }
-    .feat-c-btn {
-      background: #3399CC; border: none; color: #fff;
-      width: 32px; height: 32px; border-radius: 50%;
-      font-size: 1.1rem; cursor: pointer; display: flex;
-      align-items: center; justify-content: center; flex-shrink: 0;
-      transition: background .18s;
-    }
+    .feat-carousel-slide figcaption { text-align: center; padding: .4rem .75rem; font-size: .76rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #3399CC; background: #f5f7fa; }
+    .feat-c-svg-wrap { background: #fff; padding: 1rem; display: flex; align-items: center; justify-content: center; min-height: 220px; }
+    .feat-c-svg-wrap svg { max-width: 100%; height: auto; max-height: 260px; }
+    .feat-c-bar { display: flex; align-items: center; gap: .5rem; padding: .45rem .75rem; background: #fff; border-top: 1px solid #d8dde4; justify-content: space-between; }
+    .feat-c-btn { background: #3399CC; border: none; color: #fff; width: 32px; height: 32px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .18s; }
     .feat-c-btn:hover { background: #2277aa; }
     .feat-c-counter { font-size: .82rem; color: #555e6d; flex: 1; text-align: center; }
     .feat-c-dots { display: flex; justify-content: center; gap: .35rem; padding: .4rem .75rem .55rem; background: #fff; }
-    .feat-c-dot {
-      width: 8px; height: 8px; border-radius: 50%; padding: 0; border: none; cursor: pointer;
-      background: rgba(51,153,204,.25); transition: background .18s, transform .18s;
-    }
+    .feat-c-dot { width: 8px; height: 8px; border-radius: 50%; padding: 0; border: none; cursor: pointer; background: rgba(51,153,204,.25); transition: background .18s, transform .18s; }
     .feat-c-dot.active { background: #3399CC; transform: scale(1.3); }
-    /* single-image: hide nav bar and dots */
-    .feat-carousel.single .feat-c-bar,
-    .feat-carousel.single .feat-c-dots { display: none; }
+    .feat-carousel.single .feat-c-bar, .feat-carousel.single .feat-c-dots { display: none; }
 
     @media (max-width: 760px) {
       .feat-tab-nav { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }
@@ -105,7 +76,6 @@
   </style>
 </head>
 <body>
-
 <header class="site-header">
   <nav class="nav" aria-label="Primary">
     <a class="brand" href="/"><img src="/assets/img/logo.png" alt="" class="brand-logo" aria-hidden="true"> AcuityMaster</a>
@@ -123,14 +93,13 @@
     </ul>
   </nav>
 </header>
-
 <main>
 
 <section class="page-hero">
   <div class="container">
     <span class="section-eyebrow">Features</span>
     <h1>Everything AcuityMaster does.</h1>
-    <p class="lead">Developed in a multispecialty ophthalmology and optometry setting &mdash; AcuityMaster lets you efficiently assess visual acuity and refract patients with precision.</p>
+    <p class="lead">Developed in a multispecialty ophthalmology and optometry setting &mdash; AcuityMaster delivers the full test suite your patients need, in one affordable application.</p>
   </div>
 </section>
 
@@ -149,7 +118,7 @@
       <li               role="tab" data-tab="tab-special"  tabindex="-1" aria-selected="false">Special</li>
     </ul>
 
-    <!-- ① Units of Measure ─── images: us.jpg metric.jpg logmar.jpg decimal.jpg -->
+    <!-- ① Units of Measure -->
     <div class="feat-tab-panel active" id="tab-units" role="tabpanel">
       <div class="feat-panel-grid">
         <div>
@@ -163,19 +132,19 @@
           </ul>
         </div>
         <div class="feat-carousel" id="car-units">
-          <figure class="feat-carousel-slide active">
-            <img src="/assets/img/features/us.jpg" alt="US Snellen notation — 20/20" loading="lazy">
+<figure class="feat-carousel-slide active">
+            <img src="/assets/img/features/us.jpg" alt="US Snellen 20/20 notation" loading="lazy">
             <figcaption>US Snellen</figcaption>
           </figure>
-          <figure class="feat-carousel-slide">
-            <img src="/assets/img/features/metric.jpg" alt="Metric notation — 6/6" loading="lazy">
+<figure class="feat-carousel-slide">
+            <img src="/assets/img/features/metric.jpg" alt="Metric 6/6 notation" loading="lazy">
             <figcaption>Metric</figcaption>
           </figure>
-          <figure class="feat-carousel-slide">
+<figure class="feat-carousel-slide">
             <img src="/assets/img/features/logmar.jpg" alt="LogMAR notation" loading="lazy">
             <figcaption>LogMAR</figcaption>
           </figure>
-          <figure class="feat-carousel-slide">
+<figure class="feat-carousel-slide">
             <img src="/assets/img/features/decimal.jpg" alt="Decimal notation" loading="lazy">
             <figcaption>Decimal</figcaption>
           </figure>
@@ -189,28 +158,29 @@
       </div>
     </div>
 
-    <!-- ② Calibration ─── images: cal-1.png cal-2.png cal-3.png -->
+    <!-- ② Calibration -->
     <div class="feat-tab-panel" id="tab-cal" role="tabpanel">
       <div class="feat-panel-grid">
         <div>
           <h2>Calibration</h2>
-          <p>Configure AcuityMaster once for your exam lane. Settings persist between sessions.</p>
+          <p>Configure AcuityMaster once for your exam lane &mdash; settings persist between sessions.</p>
           <ul>
             <li>Unit of measure selection (US, Metric, LogMAR, Decimal)</li>
             <li>Patient-to-screen distance in feet or meters</li>
+            <li>Letter size auto-calculated from entered distance</li>
             <li>Pediatric fixation video clip selection</li>
           </ul>
         </div>
         <div class="feat-carousel" id="car-cal">
-          <figure class="feat-carousel-slide active">
+<figure class="feat-carousel-slide active">
             <img src="/assets/img/features/cal-1.png" alt="Calibration — patient distance setup" loading="lazy">
             <figcaption>Distance Setup</figcaption>
           </figure>
-          <figure class="feat-carousel-slide">
+<figure class="feat-carousel-slide">
             <img src="/assets/img/features/cal-2.png" alt="Calibration — distance measurement" loading="lazy">
             <figcaption>Distance Calibration</figcaption>
           </figure>
-          <figure class="feat-carousel-slide">
+<figure class="feat-carousel-slide">
             <img src="/assets/img/features/cal-3.png" alt="Calibration — setup screen" loading="lazy">
             <figcaption>Setup Screen</figcaption>
           </figure>
@@ -224,29 +194,117 @@
       </div>
     </div>
 
-    <!-- ③ Chart Types ─── images: fixation-disparity.jpg worth-dot-four.jpg -->
+    <!-- ③ Chart Types — 6 items: 4 SVG + 2 real images -->
     <div class="feat-tab-panel" id="tab-chart" role="tabpanel">
       <div class="feat-panel-grid">
         <div>
           <h2>Chart Types</h2>
-          <p>Every specialist test in one application &mdash; no switching software between chart types.</p>
+          <p>Every specialist test in one application &mdash; no switching software between exam types.</p>
           <ul>
-            <li><strong>Snellen</strong> &mdash; standard acuity chart</li>
-            <li><strong>ETDRS</strong> &mdash; Early Treatment Diabetic Retinopathy Study</li>
-            <li><strong>Worth-Dot-Four</strong> &mdash; color-correct, calibrated</li>
-            <li><strong>Astigmatic Dial</strong> &mdash; Jackson cross-cylinder refinement</li>
-            <li><strong>Fixation Disparity</strong> &mdash; binocular vision testing</li>
-            <li><strong>Contrast Sensitivity</strong> &mdash; beyond standard Snellen</li>
+            <li><strong>Snellen</strong> &mdash; the universal standard acuity chart</li>
+            <li><strong>ETDRS / LogMAR</strong> &mdash; 5 letters per row, equal spacing, gold standard for clinical trials</li>
+            <li><strong>Worth-Dot-Four</strong> &mdash; color-correct, calibrated for binocular testing</li>
+            <li><strong>Astigmatic Dial</strong> &mdash; Jackson cross-cylinder axis refinement</li>
+            <li><strong>Fixation Disparity</strong> &mdash; binocular balance and vergence testing</li>
+            <li><strong>Contrast Sensitivity</strong> &mdash; Pelli-Robson style, assess beyond Snellen</li>
           </ul>
         </div>
         <div class="feat-carousel" id="car-chart">
-          <figure class="feat-carousel-slide active">
+<figure class="feat-carousel-slide active">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="230" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">SNELLEN VISUAL ACUITY</text>
+  <text x="18" y="64" font-size="7" fill="#3399CC" font-family="sans-serif">20/200</text>
+  <text x="150" y="68" text-anchor="middle" font-size="34" font-weight="700" fill="#111" font-family="'Courier New',monospace">E</text>
+  <text x="18" y="96" font-size="7" fill="#3399CC" font-family="sans-serif">20/100</text>
+  <text x="150" y="98" text-anchor="middle" font-size="20" font-weight="700" fill="#111" font-family="'Courier New',monospace">F  P</text>
+  <text x="18" y="120" font-size="7" fill="#3399CC" font-family="sans-serif">20/70</text>
+  <text x="150" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#111" font-family="'Courier New',monospace">T O Z</text>
+  <text x="18" y="141" font-size="7" fill="#3399CC" font-family="sans-serif">20/50</text>
+  <text x="150" y="143" text-anchor="middle" font-size="11" font-weight="700" fill="#111" font-family="'Courier New',monospace">L P E D</text>
+  <text x="18" y="159" font-size="7" fill="#3399CC" font-family="sans-serif">20/40</text>
+  <text x="150" y="161" text-anchor="middle" font-size="9" font-weight="700" fill="#222" font-family="'Courier New',monospace">P E C F D</text>
+  <text x="18" y="175" font-size="7" fill="#3399CC" font-family="sans-serif">20/30</text>
+  <text x="150" y="177" text-anchor="middle" font-size="7.5" font-weight="700" fill="#333" font-family="'Courier New',monospace">E D F C Z P</text>
+  <rect x="0" y="184" width="300" height="14" fill="rgba(51,153,204,.08)"/>
+  <text x="18" y="194" font-size="7" fill="#3399CC" font-family="sans-serif">20/20</text>
+  <text x="150" y="194" text-anchor="middle" font-size="6" font-weight="700" fill="#444" font-family="'Courier New',monospace">F E L O P Z D</text>
+  <text x="18" y="210" font-size="7" fill="#3399CC" font-family="sans-serif">20/15</text>
+  <text x="150" y="210" text-anchor="middle" font-size="5" font-weight="700" fill="#555" font-family="'Courier New',monospace">D E F P O T E C</text>
+</svg></div>
+            <figcaption>Snellen Chart</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="230" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">ETDRS / LogMAR FORMAT</text>
+  <text x="18" y="55" font-size="7" fill="#3399CC" font-family="sans-serif">1.0</text>
+  <text x="150" y="60" text-anchor="middle" font-size="22" font-weight="700" fill="#111" font-family="'Courier New',monospace">N C K R H</text>
+  <text x="18" y="82" font-size="7" fill="#3399CC" font-family="sans-serif">0.8</text>
+  <text x="150" y="86" text-anchor="middle" font-size="17" font-weight="700" fill="#111" font-family="'Courier New',monospace">S Z V D O</text>
+  <text x="18" y="107" font-size="7" fill="#3399CC" font-family="sans-serif">0.6</text>
+  <text x="150" y="109" text-anchor="middle" font-size="13" font-weight="700" fill="#111" font-family="'Courier New',monospace">R H S N C</text>
+  <text x="18" y="128" font-size="7" fill="#3399CC" font-family="sans-serif">0.4</text>
+  <text x="150" y="130" text-anchor="middle" font-size="10.5" font-weight="700" fill="#222" font-family="'Courier New',monospace">K D Z O V</text>
+  <text x="18" y="147" font-size="7" fill="#3399CC" font-family="sans-serif">0.2</text>
+  <text x="150" y="149" text-anchor="middle" font-size="8.5" font-weight="700" fill="#333" font-family="'Courier New',monospace">C V K N D</text>
+  <rect x="0" y="156" width="300" height="13" fill="rgba(51,153,204,.08)"/>
+  <text x="18" y="166" font-size="7" fill="#3399CC" font-family="sans-serif">0.0</text>
+  <text x="150" y="167" text-anchor="middle" font-size="7" font-weight="700" fill="#444" font-family="'Courier New',monospace">H Z S D R</text>
+  <text x="150" y="210" text-anchor="middle" font-size="8" fill="#3399CC" font-family="sans-serif" font-weight="500">5 letters per row · equal spacing · LogMAR scoring</text>
+</svg></div>
+            <figcaption>ETDRS / LogMAR</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <img src="/assets/img/features/worth-dot-four.jpg" alt="Worth Dot Four test" loading="lazy">
+            <figcaption>Worth-Dot-Four</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+  <rect width="280" height="280" fill="#fff"/>
+  <circle cx="140" cy="140" r="120" fill="none" stroke="#e8eaed" stroke-width="1.5"/>
+  <circle cx="140" cy="140" r="80" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+  <circle cx="140" cy="140" r="8" fill="#3399CC" opacity=".4"/>
+  <line x1="140" y1="20" x2="140" y2="260" stroke="#2c3440" stroke-width="1.5"/>
+  <line x1="171" y1="24" x2="109" y2="256" stroke="#2c3440" stroke-width="1.5"/>
+  <line x1="200" y1="36" x2="80"  y2="244" stroke="#2c3440" stroke-width="1.5"/>
+  <line x1="224" y1="56" x2="56"  y2="224" stroke="#2c3440" stroke-width="1.5"/>
+  <line x1="244" y1="80" x2="36"  y2="200" stroke="#2c3440" stroke-width="1.5"/>
+  <line x1="256" y1="109" x2="24" y2="171" stroke="#2c3440" stroke-width="1.5"/>
+  <line x1="260" y1="140" x2="20" y2="140" stroke="#2c3440" stroke-width="1.5"/>
+  <line x1="256" y1="171" x2="24" y2="109" stroke="#2c3440" stroke-width="1.5"/>
+  <line x1="244" y1="200" x2="36" y2="80"  stroke="#2c3440" stroke-width="1.5"/>
+  <line x1="224" y1="224" x2="56" y2="56"  stroke="#2c3440" stroke-width="1.5"/>
+  <line x1="200" y1="244" x2="80" y2="36"  stroke="#2c3440" stroke-width="1.5"/>
+  <line x1="171" y1="256" x2="109" y2="24" stroke="#2c3440" stroke-width="1.5"/>
+  <text x="140" y="12" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif" font-weight="600">90°</text>
+  <text x="265" y="144" font-size="9" fill="#3399CC" font-family="sans-serif" font-weight="600">180°</text>
+  <text x="6"   y="144" font-size="9" fill="#3399CC" font-family="sans-serif" font-weight="600">0°</text>
+  <text x="140" y="275" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif" font-weight="600">90°</text>
+  <text x="140" y="148" text-anchor="middle" font-size="8" fill="#3399CC" font-family="sans-serif">ASTIGMATIC DIAL</text>
+</svg></div>
+            <figcaption>Astigmatic Dial</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
             <img src="/assets/img/features/fixation-disparity.jpg" alt="Fixation Disparity chart" loading="lazy">
             <figcaption>Fixation Disparity</figcaption>
           </figure>
-          <figure class="feat-carousel-slide">
-            <img src="/assets/img/features/worth-dot-four.jpg" alt="Worth Dot Four test" loading="lazy">
-            <figcaption>Worth-Dot-Four</figcaption>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="230" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">CONTRAST SENSITIVITY</text>
+  <text x="30" y="60" font-size="7" fill="#aaa" font-family="sans-serif">High contrast</text>
+  <text x="150" y="75" text-anchor="middle" font-size="30" font-weight="700" fill="#111" font-family="'Courier New',monospace">C S R</text>
+  <text x="150" y="115" text-anchor="middle" font-size="25" font-weight="700" fill="#555" font-family="'Courier New',monospace">K D Z</text>
+  <text x="150" y="150" text-anchor="middle" font-size="22" font-weight="700" fill="#888" font-family="'Courier New',monospace">N H O</text>
+  <text x="150" y="182" text-anchor="middle" font-size="20" font-weight="700" fill="#bbb" font-family="'Courier New',monospace">V R C</text>
+  <text x="30" y="200" font-size="7" fill="#ccc" font-family="sans-serif">Low contrast</text>
+  <text x="150" y="218" text-anchor="middle" font-size="7.5" fill="#3399CC" font-family="sans-serif">Pelli-Robson · Mars · CSV-1000 compatible</text>
+</svg></div>
+            <figcaption>Contrast Sensitivity</figcaption>
           </figure>
           <div class="feat-c-bar">
             <button class="feat-c-btn feat-c-prev" aria-label="Previous">&#8249;</button>
@@ -258,40 +316,102 @@
       </div>
     </div>
 
-    <!-- ④ Optotypes ─── images: opto-letters opto-pictures opto-tumbling-e opto-landolt-c opto-numbers -->
+    <!-- ④ Optotypes — all SVG illustrations (confirmed accurate) -->
     <div class="feat-tab-panel" id="tab-opto" role="tabpanel">
       <div class="feat-panel-grid">
         <div>
           <h2>Optotypes</h2>
-          <p>Alternative optotypes assess visual acuity across all patients &mdash; including pre-literate children and non-English speakers.</p>
+          <p>Standardised visual symbols used to measure visual acuity, including letters, numbers, geometric shapes, and directional figures. AcuityMaster offers:</p>
           <ul>
-            <li><strong>Letters</strong> &mdash; standard Sloan / Snellen alphabet</li>
-            <li><strong>Pictures</strong> &mdash; updated images children recognise today</li>
-            <li><strong>Tumbling E</strong> &mdash; for patients who cannot name letters</li>
-            <li><strong>Landolt C</strong> &mdash; ISO standard broken ring</li>
-            <li><strong>Numbers</strong> &mdash; Arabic numerals</li>
+            <li><strong>Sloan Letters</strong> &mdash; standard 10-letter set for equal threshold legibility</li>
+            <li><strong>Tumbling E</strong> &mdash; patient indicates direction of prongs; no letter knowledge required</li>
+            <li><strong>Landolt C</strong> &mdash; ISO 8596 standard broken-ring optotype</li>
+            <li><strong>HOTV</strong> &mdash; four-letter matching chart for pre-literate children (ages 2.5+)</li>
+            <li><strong>Lea Symbols</strong> &mdash; house, apple, square, circle; designed for young children</li>
           </ul>
         </div>
         <div class="feat-carousel" id="car-opto">
-          <figure class="feat-carousel-slide active">
-            <img src="/assets/img/features/opto-letters.png" alt="Letter optotypes" loading="lazy">
-            <figcaption>Letters</figcaption>
+<figure class="feat-carousel-slide active">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">SLOAN LETTERS — STANDARD SET</text>
+  <text x="150" y="80" text-anchor="middle" font-size="28" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">C D H K N</text>
+  <text x="150" y="130" text-anchor="middle" font-size="28" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">O R S V Z</text>
+  <text x="150" y="175" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">10 letters designed for equal legibility at threshold</text>
+</svg></div>
+            <figcaption>Sloan Letters</figcaption>
           </figure>
-          <figure class="feat-carousel-slide">
-            <img src="/assets/img/features/opto-pictures.png" alt="Picture optotypes" loading="lazy">
-            <figcaption>Pictures</figcaption>
-          </figure>
-          <figure class="feat-carousel-slide">
-            <img src="/assets/img/features/opto-tumbling-e.png" alt="Tumbling E optotype" loading="lazy">
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#fff"/>
+  <text x="80"  y="120" text-anchor="middle" font-size="64" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">E</text>
+  <text x="220" y="120" text-anchor="middle" font-size="64" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace" transform="rotate(180,220,90)">E</text>
+  <text x="80"  y="260" text-anchor="middle" font-size="64" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace" transform="rotate(90,80,230)">E</text>
+  <text x="220" y="260" text-anchor="middle" font-size="64" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace" transform="rotate(270,220,230)">E</text>
+  <text x="150" y="292" text-anchor="middle" font-size="10" fill="#3399CC" font-family="sans-serif" font-weight="600">Patient indicates direction of prongs: Up · Down · Left · Right</text>
+</svg></div>
             <figcaption>Tumbling E</figcaption>
           </figure>
-          <figure class="feat-carousel-slide">
-            <img src="/assets/img/features/opto-landolt-c.png" alt="Landolt C optotype" loading="lazy">
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#fff"/>
+  <!-- C with gap at right -->
+  <path d="M 75,75 m 40,0 a 40,40 0 1,0 0,80 a 40,40 0 0,0 28,-12" fill="none" stroke="#2c3440" stroke-width="12" stroke-linecap="round"/>
+  <!-- C with gap at top -->
+  <path d="M 195,75 m 0,40 a 40,40 0 1,1 80,0 a 40,40 0 0,1 -12,-28" fill="none" stroke="#2c3440" stroke-width="12" stroke-linecap="round" transform="rotate(90,235,115)"/>
+  <!-- C with gap at bottom -->
+  <path d="M 75,175 m 40,0 a 40,40 0 1,0 0,80 a 40,40 0 0,0 28,-12" fill="none" stroke="#2c3440" stroke-width="12" stroke-linecap="round" transform="rotate(180,115,215)"/>
+  <!-- C with gap at left -->
+  <path d="M 195,175 m 40,0 a 40,40 0 1,1 -80,0 a 40,40 0 0,1 12,28" fill="none" stroke="#2c3440" stroke-width="12" stroke-linecap="round"/>
+  <text x="150" y="288" text-anchor="middle" font-size="10" fill="#3399CC" font-family="sans-serif" font-weight="600">ISO 8596 standard — gap orientation indicates acuity</text>
+</svg></div>
             <figcaption>Landolt C</figcaption>
           </figure>
-          <figure class="feat-carousel-slide">
-            <img src="/assets/img/features/opto-numbers.png" alt="Number optotypes" loading="lazy">
-            <figcaption>Numbers</figcaption>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="250" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">HOTV OPTOTYPES</text>
+  <text x="75"  y="145" text-anchor="middle" font-size="72" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">H</text>
+  <text x="150" y="145" text-anchor="middle" font-size="72" font-weight="700" fill="#3399CC" font-family="'Courier New',monospace">O</text>
+  <text x="75"  y="220" text-anchor="middle" font-size="72" font-weight="700" fill="#3399CC" font-family="'Courier New',monospace">T</text>
+  <text x="210" y="145" text-anchor="middle" font-size="72" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">V</text>
+  <text x="215" y="235" text-anchor="middle" font-size="9" fill="#555e6d" font-family="sans-serif">Matching board for pre-literate children</text>
+</svg></div>
+            <figcaption>HOTV</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="260" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">LEA SYMBOLS</text>
+  <!-- House -->
+  <g transform="translate(30,40)">
+    <polygon points="50,5 5,40 95,40" fill="none" stroke="#2c3440" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="15" y="40" width="70" height="50" fill="none" stroke="#2c3440" stroke-width="4"/>
+    <rect x="35" y="60" width="30" height="30" fill="none" stroke="#2c3440" stroke-width="3"/>
+    <text x="50" y="112" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">House</text>
+  </g>
+  <!-- Apple -->
+  <g transform="translate(160,40)">
+    <ellipse cx="50" cy="70" rx="38" ry="42" fill="none" stroke="#2c3440" stroke-width="4"/>
+    <line x1="50" y1="28" x2="50" y2="14" stroke="#2c3440" stroke-width="4" stroke-linecap="round"/>
+    <path d="M50,14 Q65,8 72,18" fill="none" stroke="#2c3440" stroke-width="3" stroke-linecap="round"/>
+    <text x="50" y="130" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Apple</text>
+  </g>
+  <!-- Square -->
+  <g transform="translate(30,170)">
+    <rect x="10" y="5" width="80" height="80" fill="none" stroke="#2c3440" stroke-width="4"/>
+    <text x="50" y="102" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Square</text>
+  </g>
+  <!-- Circle -->
+  <g transform="translate(160,170)">
+    <circle cx="50" cy="45" r="40" fill="none" stroke="#2c3440" stroke-width="4"/>
+    <text x="50" y="102" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Circle</text>
+  </g>
+</svg></div>
+            <figcaption>Lea Symbols</figcaption>
           </figure>
           <div class="feat-c-bar">
             <button class="feat-c-btn feat-c-prev" aria-label="Previous">&#8249;</button>
@@ -303,49 +423,192 @@
       </div>
     </div>
 
-    <!-- ⑤ Display Mode ─── text only (uploaded screenshots unverified) -->
+    <!-- ⑤ Display Mode — SVG illustrations (3 modes) -->
     <div class="feat-tab-panel" id="tab-display" role="tabpanel">
-      <div class="feat-panel-grid full">
+      <div class="feat-panel-grid">
         <div>
           <h2>Display Mode</h2>
-          <p>Change display mode instantly without leaving the chart &mdash; no reconfiguration needed between patients.</p>
+          <p>Switch display mode instantly without leaving the chart &mdash; no reconfiguration needed between patients.</p>
           <ul>
-            <li><strong>Single Letter</strong> &mdash; isolate one optotype to eliminate crowding. Particularly useful for amblyopia testing.</li>
-            <li><strong>Single Line</strong> &mdash; display one complete acuity line at a time.</li>
-            <li><strong>Multiline</strong> &mdash; full chart view in traditional Snellen format.</li>
+            <li><strong>Single Letter</strong> &mdash; isolates one optotype to eliminate the crowding effect; particularly useful for amblyopia testing</li>
+            <li><strong>Single Line</strong> &mdash; displays one complete acuity line at a time</li>
+            <li><strong>Multiline</strong> &mdash; full chart view in traditional Snellen format</li>
           </ul>
-          <p style="margin-top:1.25rem;"><a href="/trial.html">Try a free 15-day trial &rarr;</a></p>
+        </div>
+        <div class="feat-carousel" id="car-display">
+<figure class="feat-carousel-slide active">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="230" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">SINGLE LETTER MODE</text>
+  <text x="150" y="155" text-anchor="middle" font-size="100" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">C</text>
+  <text x="150" y="210" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Isolates one optotype · eliminates crowding effect</text>
+</svg></div>
+            <figcaption>Single Letter Mode</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="230" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">SINGLE LINE MODE</text>
+  <rect x="10" y="95" width="280" height="65" rx="4" fill="rgba(51,153,204,.07)" stroke="#3399CC" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="150" y="143" text-anchor="middle" font-size="38" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">D E F C</text>
+  <text x="150" y="210" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">One acuity line at a time · clear without distraction</text>
+</svg></div>
+            <figcaption>Single Line Mode</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="230" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">MULTILINE MODE</text>
+  <text x="150" y="65"  text-anchor="middle" font-size="28" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">E</text>
+  <text x="150" y="96"  text-anchor="middle" font-size="18" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">F P</text>
+  <text x="150" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">T O Z</text>
+  <text x="150" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#444" font-family="'Courier New',monospace">L P E D</text>
+  <rect x="0" y="147" width="300" height="12" fill="rgba(51,153,204,.09)"/>
+  <text x="150" y="157" text-anchor="middle" font-size="8.5" font-weight="700" fill="#333" font-family="'Courier New',monospace">P E C F D</text>
+  <text x="150" y="172" text-anchor="middle" font-size="7" font-weight="700" fill="#444" font-family="'Courier New',monospace">E D F C Z P</text>
+  <text x="150" y="210" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Traditional Snellen full-chart view</text>
+</svg></div>
+            <figcaption>Multiline Mode</figcaption>
+          </figure>
+          <div class="feat-c-bar">
+            <button class="feat-c-btn feat-c-prev" aria-label="Previous">&#8249;</button>
+            <span class="feat-c-counter"></span>
+            <button class="feat-c-btn feat-c-next" aria-label="Next">&#8250;</button>
+          </div>
+          <div class="feat-c-dots"></div>
         </div>
       </div>
     </div>
 
-    <!-- ⑥ Pediatric Friendly ─── text only (uploaded screenshots unverified) -->
+    <!-- ⑥ Pediatric — SVG illustrations (4 items) -->
     <div class="feat-tab-panel" id="tab-peds" role="tabpanel">
-      <div class="feat-panel-grid full">
+      <div class="feat-panel-grid">
         <div>
           <h2>Pediatric Friendly</h2>
-          <p>AcuityMaster is designed with pediatric patients in mind. Updated picture optotypes include objects children actually recognise today &mdash; including a cell phone, because today&rsquo;s kids no longer recognise the rotary telephone.</p>
+          <p>AcuityMaster is designed with pediatric patients in mind. Picture optotypes feature objects children actually recognise today &mdash; including a cell phone, because today&rsquo;s kids no longer know the rotary telephone.</p>
           <ul>
-            <li>Updated recognisable picture optotypes</li>
+            <li>Updated picture optotypes (phone, house, star, bird)</li>
+            <li>HOTV matching cards for children aged 2.5 and up</li>
+            <li>Hands-free video fixation via keyboard or USB foot pedal</li>
             <li>Tumbling E and Landolt C for pre-literate patients</li>
-            <li>Hands-free video fixation via keyboard shortcut or USB foot pedal</li>
-            <li>Multiline pediatric chart view</li>
           </ul>
-          <p style="margin-top:1.25rem;">See the <a href="/accessories.html">Accessories</a> page for the compatible USB foot pedal.</p>
+          <p>See the <a href="/accessories.html">Accessories</a> page for the compatible USB foot pedal.</p>
+        </div>
+        <div class="feat-carousel" id="car-peds">
+<figure class="feat-carousel-slide active">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="240" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">PICTURE OPTOTYPES</text>
+  <!-- Cell phone (modern, recognisable) -->
+  <g transform="translate(30,35)">
+    <rect x="20" y="5" width="60" height="105" rx="8" fill="none" stroke="#2c3440" stroke-width="4"/>
+    <rect x="28" y="18" width="44" height="70" fill="#f0f2f4" stroke="#d8dde4" stroke-width="1.5"/>
+    <circle cx="50" cy="100" r="5" fill="none" stroke="#2c3440" stroke-width="3"/>
+    <text x="50" y="130" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Phone</text>
+  </g>
+  <!-- House -->
+  <g transform="translate(160,35)">
+    <polygon points="60,8 15,50 105,50" fill="none" stroke="#2c3440" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="25" y="50" width="70" height="55" fill="none" stroke="#2c3440" stroke-width="4"/>
+    <rect x="45" y="70" width="30" height="35" fill="none" stroke="#2c3440" stroke-width="3"/>
+    <text x="60" y="130" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">House</text>
+  </g>
+  <!-- Star -->
+  <g transform="translate(30,155)">
+    <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="none" stroke="#2c3440" stroke-width="4" stroke-linejoin="round"/>
+    <text x="50" y="115" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Star</text>
+  </g>
+  <!-- Bird -->
+  <g transform="translate(160,165)">
+    <ellipse cx="60" cy="55" rx="35" ry="22" fill="none" stroke="#2c3440" stroke-width="3.5"/>
+    <ellipse cx="90" cy="42" rx="15" ry="10" fill="none" stroke="#2c3440" stroke-width="3"/>
+    <path d="M90,38 L106,34 L98,42Z" fill="#2c3440"/>
+    <path d="M42,55 Q30,35 20,28 Q35,32 42,55Z" fill="none" stroke="#2c3440" stroke-width="3"/>
+    <text x="55" y="95" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Bird</text>
+  </g>
+</svg></div>
+            <figcaption>Picture Optotypes</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="250" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">HOTV OPTOTYPES</text>
+  <text x="75"  y="145" text-anchor="middle" font-size="72" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">H</text>
+  <text x="150" y="145" text-anchor="middle" font-size="72" font-weight="700" fill="#3399CC" font-family="'Courier New',monospace">O</text>
+  <text x="75"  y="220" text-anchor="middle" font-size="72" font-weight="700" fill="#3399CC" font-family="'Courier New',monospace">T</text>
+  <text x="210" y="145" text-anchor="middle" font-size="72" font-weight="700" fill="#2c3440" font-family="'Courier New',monospace">V</text>
+  <text x="215" y="235" text-anchor="middle" font-size="9" fill="#555e6d" font-family="sans-serif">Matching board for pre-literate children</text>
+</svg></div>
+            <figcaption>HOTV Matching</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="230" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">VIDEO FIXATION TARGET</text>
+  <!-- TV/monitor -->
+  <rect x="50" y="35" width="200" height="130" rx="8" fill="#1a1a2e" stroke="#2c3440" stroke-width="3"/>
+  <!-- Screen -->
+  <rect x="60" y="44" width="180" height="112" rx="4" fill="#0f3460"/>
+  <!-- Animated character suggestion -->
+  <circle cx="150" cy="100" r="30" fill="#FFD700" opacity=".9"/>
+  <circle cx="140" cy="92" r="5" fill="#1a1a2e"/>
+  <circle cx="162" cy="92" r="5" fill="#1a1a2e"/>
+  <path d="M135,110 Q150,125 165,110" fill="none" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+  <!-- Play indicator -->
+  <polygon points="186,85 186,115 210,100" fill="#3399CC" opacity=".7"/>
+  <!-- Stand -->
+  <rect x="135" y="165" width="30" height="12" fill="#888"/>
+  <rect x="110" y="177" width="80" height="8" rx="3" fill="#666"/>
+  <text x="150" y="210" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Keeps young patients fixated during refraction</text>
+</svg></div>
+            <figcaption>Video Fixation Target</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="230" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">USB FOOT PEDAL CONTROL</text>
+  <!-- Pedal body -->
+  <rect x="70" y="60" width="160" height="95" rx="16" fill="#3d3d3d" stroke="#222" stroke-width="2"/>
+  <!-- Button surface -->
+  <rect x="88" y="76" width="124" height="62" rx="10" fill="#3399CC" stroke="#2277aa" stroke-width="1.5"/>
+  <!-- Label -->
+  <text x="150" y="114" text-anchor="middle" font-size="11" fill="#fff" font-family="sans-serif" font-weight="700">FIXATION VIDEO</text>
+  <!-- Cable -->
+  <path d="M150,155 Q150,180 150,195" fill="none" stroke="#555" stroke-width="6" stroke-linecap="round"/>
+  <!-- USB plug -->
+  <rect x="137" y="192" width="26" height="12" rx="3" fill="#333" stroke="#222" stroke-width="1.5"/>
+  <rect x="141" y="195" width="18" height="6" rx="1" fill="#555"/>
+  <text x="150" y="218" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Hands-free · toggle fixation video during refraction</text>
+</svg></div>
+            <figcaption>USB Foot Pedal Control</figcaption>
+          </figure>
+          <div class="feat-c-bar">
+            <button class="feat-c-btn feat-c-prev" aria-label="Previous">&#8249;</button>
+            <span class="feat-c-counter"></span>
+            <button class="feat-c-btn feat-c-next" aria-label="Next">&#8250;</button>
+          </div>
+          <div class="feat-c-dots"></div>
         </div>
       </div>
     </div>
 
-    <!-- ⑦ Options ─── text only (uploaded screenshots unverified) -->
+    <!-- ⑦ Options — text only -->
     <div class="feat-tab-panel" id="tab-options" role="tabpanel">
       <div class="feat-panel-grid full">
         <div>
           <h2>Options</h2>
           <p>Tailor each exam without switching applications or reconfiguring your setup.</p>
           <ul>
-            <li><strong>Mirror mode</strong> &mdash; display behind the patient via a mirror for compact exam lanes; also supports standard front-facing display.</li>
+            <li><strong>Mirror mode</strong> &mdash; display behind the patient via a mirror for compact exam lanes; software flips the chart automatically. Also supports standard front-facing display.</li>
             <li><strong>Toggle 20/XX label</strong> &mdash; show or hide the acuity notation on the patient-facing display.</li>
-            <li><strong>Crowding bars</strong> &mdash; add surrounding optotypes to isolate the crowding effect.</li>
+            <li><strong>Crowding bars</strong> &mdash; add surrounding optotypes to isolate the crowding effect; essential for amblyopia assessment.</li>
             <li><strong>Reduced contrast</strong> &mdash; multiple contrast levels for contrast sensitivity testing.</li>
             <li><strong>Red/Green overlay</strong> &mdash; for binocular balance and duochrome refraction.</li>
           </ul>
@@ -353,36 +616,254 @@
       </div>
     </div>
 
-    <!-- ⑧ Color Vision ─── text only (no dedicated screenshot files) -->
+    <!-- ⑧ Color Vision — SVG carousel (3 illustrations) -->
     <div class="feat-tab-panel" id="tab-color" role="tabpanel">
-      <div class="feat-panel-grid full">
+      <div class="feat-panel-grid">
         <div>
           <h2>Color Vision</h2>
-          <p>Color vision screening is integrated directly into your digital chart workflow &mdash; no separate application or hardware required.</p>
+          <p>Color vision screening is integrated directly into your exam workflow &mdash; no separate application or hardware required.</p>
           <ul>
             <li>Color vision screening plates on a calibrated display</li>
-            <li>Seamlessly integrated &mdash; no mode-switching required</li>
-            <li>Monitor calibration ensures accurate color reproduction</li>
-            <li>Screen for the most common color vision deficiencies</li>
+            <li>Screen for red-green and blue-yellow deficiencies</li>
+            <li>One click from acuity testing to color vision &mdash; no workflow interruption</li>
+            <li>Monitor calibration ensures accurate color reproduction per ANSI standards</li>
+            <li>8% of males have some color vision deficiency &mdash; efficient screening matters</li>
           </ul>
-          <p style="margin-top:1.25rem;"><a href="/trial.html">Try a free 15-day trial &rarr;</a></p>
+          <p><a href="/trial.html">Try a free 15-day trial &rarr;</a></p>
+        </div>
+        <div class="feat-carousel" id="car-color">
+<figure class="feat-carousel-slide active">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="260" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">COLOR VISION SCREENING PLATE</text>
+  <!-- Ishihara-style circle background -->
+  <circle cx="150" cy="145" r="108" fill="#e8e8d0"/>
+  <!-- Background dots (grey/tan) -->
+  <circle cx="110" cy="100" r="9" fill="#c8c8a8"/><circle cx="130" cy="85" r="7" fill="#d4d4b4"/>
+  <circle cx="150" cy="80" r="10" fill="#c0c0a0"/><circle cx="170" cy="87" r="8" fill="#cccca8"/>
+  <circle cx="190" cy="100" r="9" fill="#c8c8a8"/><circle cx="200" cy="120" r="7" fill="#d0d0b0"/>
+  <circle cx="195" cy="145" r="10" fill="#c4c4a4"/><circle cx="192" cy="168" r="8" fill="#ccccac"/>
+  <circle cx="180" cy="188" r="9" fill="#c8c8a8"/><circle cx="160" cy="200" r="7" fill="#d4d4b4"/>
+  <circle cx="140" cy="204" r="10" fill="#c0c0a0"/><circle cx="120" cy="198" r="8" fill="#cccca8"/>
+  <circle cx="104" cy="182" r="9" fill="#c8c8a0"/><circle cx="96"  cy="162" r="7" fill="#d0d0b0"/>
+  <circle cx="97"  cy="138" r="10" fill="#c4c4a4"/><circle cx="104" cy="115" r="8" fill="#ccccac"/>
+  <!-- Number "12" in orange/red dots -->
+  <circle cx="128" cy="118" r="9" fill="#e8703a"/><circle cx="120" cy="132" r="8" fill="#e07030"/>
+  <circle cx="118" cy="147" r="9" fill="#e87838"/><circle cx="126" cy="160" r="8" fill="#e07030"/>
+  <circle cx="138" cy="166" r="7" fill="#e87838"/>
+  <circle cx="148" cy="110" r="8" fill="#e07030"/><circle cx="152" cy="126" r="9" fill="#e87838"/>
+  <circle cx="150" cy="142" r="8" fill="#e07030"/><circle cx="152" cy="158" r="9" fill="#e87838"/>
+  <circle cx="150" cy="172" r="7" fill="#e07030"/>
+  <text x="150" y="250" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Calibrated display ensures accurate color reproduction</text>
+</svg></div>
+            <figcaption>Screening Plate</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="260" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">NORMAL vs COLOUR DEFICIENT</text>
+  <!-- Normal panel -->
+  <rect x="15" y="32" width="125" height="155" rx="6" fill="#f8f9fa" stroke="#d8dde4" stroke-width="1.5"/>
+  <text x="77" y="52" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif" font-weight="600">NORMAL VISION</text>
+  <circle cx="77" cy="88" r="18" fill="#ef4444" opacity=".85"/>
+  <circle cx="57" cy="115" r="18" fill="#22c55e" opacity=".85"/>
+  <circle cx="97" cy="115" r="18" fill="#3b82f6" opacity=".85"/>
+  <circle cx="77" cy="145" r="18" fill="#f59e0b" opacity=".85"/>
+  <text x="77" y="180" text-anchor="middle" font-size="8" fill="#3399CC" font-family="sans-serif">All colours distinct</text>
+  <!-- Deficient panel -->
+  <rect x="160" y="32" width="125" height="155" rx="6" fill="#f8f9fa" stroke="#d8dde4" stroke-width="1.5"/>
+  <text x="222" y="52" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif" font-weight="600">RED-GREEN DEFICIENCY</text>
+  <circle cx="222" cy="88" r="18" fill="#c9a227" opacity=".85"/>
+  <circle cx="202" cy="115" r="18" fill="#9c9c3a" opacity=".85"/>
+  <circle cx="242" cy="115" r="18" fill="#3b82f6" opacity=".85"/>
+  <circle cx="222" cy="145" r="18" fill="#b8961c" opacity=".85"/>
+  <text x="222" y="180" text-anchor="middle" font-size="8" fill="#3399CC" font-family="sans-serif">Red/green appear similar</text>
+  <text x="150" y="210" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">8% of males have some degree of colour vision deficiency</text>
+  <text x="150" y="248" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Screen efficiently during routine visual acuity exams</text>
+</svg></div>
+            <figcaption>Normal vs Deficient</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="240" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">INTEGRATED EXAM WORKFLOW</text>
+  <!-- Step 1 -->
+  <circle cx="40" cy="70" r="18" fill="#3399CC"/>
+  <text x="40" y="75" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="sans-serif">1</text>
+  <text x="75" y="65" font-size="9.5" fill="#2c3440" font-family="sans-serif" font-weight="600">Acuity testing</text>
+  <text x="75" y="80" font-size="8.5" fill="#555e6d" font-family="sans-serif">Snellen / ETDRS / LogMAR</text>
+  <!-- Arrow -->
+  <line x1="40" y1="90" x2="40" y2="108" stroke="#3399CC" stroke-width="2"/>
+  <polygon points="35,108 45,108 40,116" fill="#3399CC"/>
+  <!-- Step 2 -->
+  <circle cx="40" cy="130" r="18" fill="#3399CC"/>
+  <text x="40" y="135" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="sans-serif">2</text>
+  <text x="75" y="125" font-size="9.5" fill="#2c3440" font-family="sans-serif" font-weight="600">One click — Color Vision</text>
+  <text x="75" y="140" font-size="8.5" fill="#555e6d" font-family="sans-serif">Plates appear on patient display</text>
+  <!-- Arrow -->
+  <line x1="40" y1="150" x2="40" y2="168" stroke="#3399CC" stroke-width="2"/>
+  <polygon points="35,168 45,168 40,176" fill="#3399CC"/>
+  <!-- Step 3 -->
+  <circle cx="40" cy="190" r="18" fill="#3399CC"/>
+  <text x="40" y="195" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="sans-serif">3</text>
+  <text x="75" y="185" font-size="9.5" fill="#2c3440" font-family="sans-serif" font-weight="600">Result documented</text>
+  <text x="75" y="200" font-size="8.5" fill="#555e6d" font-family="sans-serif">No separate device or software</text>
+  <text x="150" y="230" text-anchor="middle" font-size="8.5" fill="#3399CC" font-family="sans-serif">Seamlessly integrated · no workflow interruption</text>
+</svg></div>
+            <figcaption>Exam Workflow</figcaption>
+          </figure>
+          <div class="feat-c-bar">
+            <button class="feat-c-btn feat-c-prev" aria-label="Previous">&#8249;</button>
+            <span class="feat-c-counter"></span>
+            <button class="feat-c-btn feat-c-next" aria-label="Next">&#8250;</button>
+          </div>
+          <div class="feat-c-dots"></div>
         </div>
       </div>
     </div>
 
-    <!-- ⑨ Special ─── text only -->
+    <!-- ⑨ Special — SVG carousel (4 items) -->
     <div class="feat-tab-panel" id="tab-special" role="tabpanel">
-      <div class="feat-panel-grid full">
+      <div class="feat-panel-grid">
         <div>
           <h2>Special Features</h2>
-          <p>Practical features built around real exam-lane workflows.</p>
+          <p>Practical features built around real exam-lane workflows &mdash; especially useful for dual-monitor setups and pediatric patients.</p>
           <ul>
-            <li><strong>Undockable / Moveable Menu</strong> &mdash; in dual-monitor setups, drag the AcuityMaster control bar to the monitor closest to you. Full menu access without looking at a display 15&ndash;20 feet away.</li>
-            <li><strong>USB Foot Pedal</strong> &mdash; hands-free control of the pediatric fixation video. Keep your patient fixating while you complete refraction. See the <a href="/accessories.html">Accessories</a> page.</li>
-            <li><strong>Pinhole Acuity</strong> &mdash; simulate pinhole testing with an on-screen overlay.</li>
-            <li><strong>Mirror Mode</strong> &mdash; display the chart behind the patient via a mirror for compact exam lanes.</li>
-            <li><strong>Existing hardware</strong> &mdash; compatible with Windows XP through Windows 11, including the computer already in your exam lane.</li>
+            <li><strong>Undockable Control Menu</strong> &mdash; drag the AcuityMaster control bar to the monitor nearest you. Full menu access without squinting at a display 15&ndash;20 feet away.</li>
+            <li><strong>Mirror Mode</strong> &mdash; chart displayed behind the patient via a mirror; software flips automatically for correct reading.</li>
+            <li><strong>Pinhole Acuity</strong> &mdash; on-screen pinhole overlay; no physical occluder needed.</li>
+            <li><strong>Runs on existing hardware</strong> &mdash; Windows XP&ndash;11, Mac, any modern browser. Use the computer already in your exam lane.</li>
           </ul>
+        </div>
+        <div class="feat-carousel" id="car-special">
+<figure class="feat-carousel-slide active">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="230" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">UNDOCKABLE CONTROL MENU</text>
+  <!-- Clinician monitor (near) -->
+  <rect x="15" y="35" width="110" height="75" rx="5" fill="#1a1a2e" stroke="#444" stroke-width="2"/>
+  <rect x="22" y="42" width="96" height="62" rx="3" fill="#0f3460"/>
+  <!-- Floating control bar on clinician monitor -->
+  <rect x="28" y="80" width="82" height="18" rx="4" fill="#3399CC" stroke="#2277aa" stroke-width="1.5"/>
+  <text x="69" y="92" text-anchor="middle" font-size="7" fill="#fff" font-family="sans-serif" font-weight="600">▲ ACUITYMASTER CONTROLS ▼</text>
+  <!-- Monitor stand -->
+  <rect x="62" y="110" width="18" height="8" fill="#666"/>
+  <rect x="50" y="118" width="42" height="5" rx="2" fill="#555"/>
+  <text x="70" y="135" text-anchor="middle" font-size="7.5" fill="#555e6d" font-family="sans-serif">Clinician display</text>
+  <text x="70" y="147" text-anchor="middle" font-size="7" fill="#3399CC" font-family="sans-serif">(near, ~3 ft)</text>
+  <!-- Patient monitor (far) -->
+  <rect x="175" y="35" width="110" height="75" rx="5" fill="#1a1a2e" stroke="#444" stroke-width="2"/>
+  <rect x="182" y="42" width="96" height="62" rx="3" fill="#0f3460"/>
+  <!-- Large chart on patient monitor -->
+  <text x="230" y="90" text-anchor="middle" font-size="36" font-weight="700" fill="#fff" font-family="'Courier New',monospace">E</text>
+  <!-- Monitor stand -->
+  <rect x="222" y="110" width="18" height="8" fill="#666"/>
+  <rect x="210" y="118" width="42" height="5" rx="2" fill="#555"/>
+  <text x="230" y="135" text-anchor="middle" font-size="7.5" fill="#555e6d" font-family="sans-serif">Patient display</text>
+  <text x="230" y="147" text-anchor="middle" font-size="7" fill="#3399CC" font-family="sans-serif">(far, 15–20 ft)</text>
+  <!-- Connection indicator -->
+  <line x1="125" y1="74" x2="175" y2="74" stroke="#3399CC" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="150" y="170" text-anchor="middle" font-size="8.5" fill="#555e6d" font-family="sans-serif">Drag controls to the monitor closest to you</text>
+  <text x="150" y="185" text-anchor="middle" font-size="8.5" fill="#555e6d" font-family="sans-serif">Full access without looking at a distant display</text>
+  <text x="150" y="215" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Dual-monitor setup · drag-and-drop control bar</text>
+</svg></div>
+            <figcaption>Undockable Control Menu</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="240" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">MIRROR MODE</text>
+  <!-- Room diagram -->
+  <!-- Monitor (behind patient, at wall) -->
+  <rect x="200" y="40" width="80" height="55" rx="4" fill="#1a1a2e" stroke="#444" stroke-width="2"/>
+  <rect x="207" y="47" width="66" height="42" rx="2" fill="#0f3460"/>
+  <text x="240" y="75" text-anchor="middle" font-size="22" font-weight="700" fill="#fff" font-family="'Courier New',monospace" transform="scale(-1,1) translate(-480,0)">E</text>
+  <text x="240" y="110" text-anchor="middle" font-size="7" fill="#555e6d" font-family="sans-serif">Monitor (mirrored)</text>
+  <!-- Mirror (between patient and monitor) -->
+  <rect x="145" y="50" width="8" height="70" rx="2" fill="#a8d8ea" stroke="#7ab8d0" stroke-width="1.5" opacity=".8"/>
+  <text x="149" y="135" text-anchor="middle" font-size="7" fill="#3399CC" font-family="sans-serif">Mirror</text>
+  <!-- Patient (circle/head shape) -->
+  <circle cx="70" cy="85" r="22" fill="#f5e6d0" stroke="#c4956a" stroke-width="2"/>
+  <circle cx="65" cy="80" r="4" fill="#555"/>
+  <circle cx="77" cy="80" r="4" fill="#555"/>
+  <path d="M64,92 Q71,100 79,92" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+  <text x="70" y="120" text-anchor="middle" font-size="7" fill="#555e6d" font-family="sans-serif">Patient</text>
+  <!-- Light path arrows -->
+  <line x1="92" y1="82" x2="143" y2="82" stroke="#3399CC" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="143,79 143,85 150,82" fill="#3399CC"/>
+  <text x="117" y="75" text-anchor="middle" font-size="7" fill="#3399CC" font-family="sans-serif">sees</text>
+  <line x1="153" y1="75" x2="200" y2="62" stroke="#3399CC" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="178" y="65" text-anchor="middle" font-size="7" fill="#3399CC" font-family="sans-serif">reflects</text>
+  <text x="150" y="165" text-anchor="middle" font-size="9" fill="#555e6d" font-family="sans-serif">Monitor placed behind patient — mirror in between</text>
+  <text x="150" y="182" text-anchor="middle" font-size="8.5" fill="#555e6d" font-family="sans-serif">Software flips display automatically for correct reading</text>
+  <text x="150" y="220" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Ideal for compact exam lanes · no extra hardware</text>
+</svg></div>
+            <figcaption>Mirror Mode</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="230" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">PINHOLE ACUITY MODE</text>
+  <!-- Screen with pinhole overlay -->
+  <rect x="50" y="35" width="200" height="140" rx="6" fill="#0f3460"/>
+  <!-- Dark vignette overlay suggesting pinhole -->
+  <defs>
+    <radialGradient id="ph" cx="50%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="80%" stop-color="rgba(0,0,0,0.6)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.95)"/>
+    </radialGradient>
+  </defs>
+  <rect x="50" y="35" width="200" height="140" rx="6" fill="url(#ph)"/>
+  <!-- Central letter visible through pinhole -->
+  <text x="150" y="120" text-anchor="middle" font-size="44" font-weight="700" fill="#fff" font-family="'Courier New',monospace">E</text>
+  <!-- Pinhole label -->
+  <text x="150" y="195" text-anchor="middle" font-size="8.5" fill="#555e6d" font-family="sans-serif">On-screen pinhole overlay — no physical occluder needed</text>
+  <text x="150" y="218" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Quickly assess refractive vs pathological visual loss</text>
+</svg></div>
+            <figcaption>Pinhole Acuity</figcaption>
+          </figure>
+<figure class="feat-carousel-slide">
+            <div class="feat-c-svg-wrap"><svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="230" fill="#fff"/>
+  <rect width="300" height="22" fill="#3399CC"/>
+  <text x="150" y="15" text-anchor="middle" fill="#fff" font-size="8.5" font-family="sans-serif" font-weight="600">RUNS ON EXISTING HARDWARE</text>
+  <!-- Windows logo area -->
+  <rect x="60" y="38" width="75" height="75" rx="6" fill="#f0f2f4" stroke="#d8dde4" stroke-width="1.5"/>
+  <rect x="72" y="50" width="23" height="23" rx="2" fill="#0078D4"/>
+  <rect x="99" y="50" width="23" height="23" rx="2" fill="#0078D4"/>
+  <rect x="72" y="77" width="23" height="23" rx="2" fill="#0078D4"/>
+  <rect x="99" y="77" width="23" height="23" rx="2" fill="#0078D4"/>
+  <text x="98" y="126" text-anchor="middle" font-size="8" fill="#555e6d" font-family="sans-serif">Windows XP–11</text>
+  <!-- Browser logos area -->
+  <rect x="165" y="38" width="75" height="75" rx="6" fill="#f0f2f4" stroke="#d8dde4" stroke-width="1.5"/>
+  <!-- Browser circle icons -->
+  <circle cx="185" cy="63" r="11" fill="#4285F4"/><text x="185" y="67" text-anchor="middle" font-size="9" fill="#fff" font-family="sans-serif" font-weight="700">G</text>
+  <circle cx="222" cy="63" r="11" fill="#0078D7"/><text x="222" y="67" text-anchor="middle" font-size="9" fill="#fff" font-family="sans-serif" font-weight="700">E</text>
+  <circle cx="185" cy="90" r="11" fill="#FF9500"/><text x="185" y="94" text-anchor="middle" font-size="9" fill="#fff" font-family="sans-serif" font-weight="700">S</text>
+  <circle cx="222" cy="90" r="11" fill="#FF6611"/><text x="222" y="94" text-anchor="middle" font-size="9" fill="#fff" font-family="sans-serif" font-weight="700">F</text>
+  <text x="202" y="126" text-anchor="middle" font-size="8" fill="#555e6d" font-family="sans-serif">All major browsers</text>
+  <!-- Checkmarks -->
+  <text x="98"  y="148" text-anchor="middle" font-size="10" fill="#22c55e" font-family="sans-serif">✓ No new PC required</text>
+  <text x="202" y="148" text-anchor="middle" font-size="10" fill="#22c55e" font-family="sans-serif">✓ Mac compatible</text>
+  <text x="150" y="170" text-anchor="middle" font-size="9.5" fill="#22c55e" font-family="sans-serif" font-weight="600">✓ Works on EMR computer</text>
+  <text x="150" y="188" text-anchor="middle" font-size="9.5" fill="#22c55e" font-family="sans-serif" font-weight="600">✓ No installation (Cloud)</text>
+  <text x="150" y="218" text-anchor="middle" font-size="9" fill="#3399CC" font-family="sans-serif">Use what you already own · minimal IT overhead</text>
+</svg></div>
+            <figcaption>Existing Hardware</figcaption>
+          </figure>
+          <div class="feat-c-bar">
+            <button class="feat-c-btn feat-c-prev" aria-label="Previous">&#8249;</button>
+            <span class="feat-c-counter"></span>
+            <button class="feat-c-btn feat-c-next" aria-label="Next">&#8250;</button>
+          </div>
+          <div class="feat-c-dots"></div>
         </div>
       </div>
     </div>
@@ -400,7 +881,6 @@
     </div>
   </div>
 </section>
-
 </main>
 
 <footer>
@@ -439,47 +919,40 @@
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 <script src="/assets/js/main.js"></script>
 <script>
-/* ── Feature tab switching ─────────────────────────────────── */
+/* Tab switching */
 (function () {
-  var nav    = document.getElementById('feat-tab-nav');
+  var nav = document.getElementById('feat-tab-nav');
   if (!nav) return;
   var tabs   = nav.querySelectorAll('li');
   var panels = document.querySelectorAll('.feat-tab-panel');
 
   function activate(tab) {
-    tabs.forEach(function (t) {
-      t.classList.remove('active');
-      t.setAttribute('aria-selected', 'false');
-      t.tabIndex = -1;
-    });
-    panels.forEach(function (p) { p.classList.remove('active'); });
-    tab.classList.add('active');
-    tab.setAttribute('aria-selected', 'true');
-    tab.tabIndex = 0;
+    tabs.forEach(function(t){ t.classList.remove('active'); t.setAttribute('aria-selected','false'); t.tabIndex=-1; });
+    panels.forEach(function(p){ p.classList.remove('active'); });
+    tab.classList.add('active'); tab.setAttribute('aria-selected','true'); tab.tabIndex=0;
     var panel = document.getElementById(tab.dataset.tab);
     if (panel) panel.classList.add('active');
   }
 
-  tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () { activate(tab); });
-    tab.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(tab); }
-      if (e.key === 'ArrowRight') { var n = tab.nextElementSibling; if (n) { activate(n); n.focus(); } }
-      if (e.key === 'ArrowLeft')  { var p = tab.previousElementSibling; if (p) { activate(p); p.focus(); } }
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){ activate(tab); });
+    tab.addEventListener('keydown', function(e){
+      if (e.key==='Enter'||e.key===' '){ e.preventDefault(); activate(tab); }
+      if (e.key==='ArrowRight'){ var n=tab.nextElementSibling; if(n){ activate(n); n.focus(); } }
+      if (e.key==='ArrowLeft') { var p=tab.previousElementSibling; if(p){ activate(p); p.focus(); } }
     });
   });
 
-  /* Deep link: ?tab=cal → open Calibration */
   var param = new URLSearchParams(location.search).get('tab');
   if (param) {
-    var target = Array.from(tabs).find(function (t) { return t.dataset.tab === 'tab-' + param; });
+    var target = Array.from(tabs).find(function(t){ return t.dataset.tab==='tab-'+param; });
     if (target) activate(target);
   }
 })();
 
-/* ── Per-tab image carousels ───────────────────────────────── */
+/* Per-tab carousels */
 (function () {
-  document.querySelectorAll('.feat-carousel').forEach(function (car) {
+  document.querySelectorAll('.feat-carousel').forEach(function(car){
     var slides  = car.querySelectorAll('.feat-carousel-slide');
     var dotsEl  = car.querySelector('.feat-c-dots');
     var counter = car.querySelector('.feat-c-counter');
@@ -487,42 +960,34 @@
 
     if (slides.length <= 1) { car.classList.add('single'); return; }
 
-    /* Build dot indicators */
-    slides.forEach(function (_, i) {
+    slides.forEach(function(_, i){
       var d = document.createElement('button');
-      d.className = 'feat-c-dot' + (i === 0 ? ' active' : '');
-      d.setAttribute('aria-label', 'Image ' + (i + 1));
-      d.addEventListener('click', function () { go(i); });
+      d.className = 'feat-c-dot' + (i===0?' active':'');
+      d.setAttribute('aria-label','Image '+(i+1));
+      d.addEventListener('click', function(){ go(i); });
       dotsEl.appendChild(d);
     });
     var dots = dotsEl.querySelectorAll('.feat-c-dot');
 
-    function updateMeta() {
-      if (counter) counter.textContent = (cur + 1) + ' / ' + slides.length;
+    function updateMeta(){
+      if (counter) counter.textContent = (cur+1)+' / '+slides.length;
     }
-
-    function go(n) {
-      slides[cur].classList.remove('active');
-      dots[cur].classList.remove('active');
-      cur = (n + slides.length) % slides.length;
-      slides[cur].classList.add('active');
-      dots[cur].classList.add('active');
+    function go(n){
+      slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+      cur = (n+slides.length) % slides.length;
+      slides[cur].classList.add('active'); dots[cur].classList.add('active');
       updateMeta();
     }
 
-    var prevBtn = car.querySelector('.feat-c-prev');
-    var nextBtn = car.querySelector('.feat-c-next');
-    if (prevBtn) prevBtn.addEventListener('click', function () { go(cur - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { go(cur + 1); });
+    var prev = car.querySelector('.feat-c-prev');
+    var next = car.querySelector('.feat-c-next');
+    if (prev) prev.addEventListener('click', function(){ go(cur-1); });
+    if (next) next.addEventListener('click', function(){ go(cur+1); });
 
-    /* Touch swipe within carousel */
-    var tx = 0;
-    car.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
-    car.addEventListener('touchend',   function (e) {
-      var dx = e.changedTouches[0].clientX - tx;
-      if (dx < -40) go(cur + 1);
-      else if (dx > 40) go(cur - 1);
-    }, { passive: true });
+    /* Touch swipe */
+    var tx=0;
+    car.addEventListener('touchstart',function(e){ tx=e.touches[0].clientX; },{passive:true});
+    car.addEventListener('touchend',  function(e){ var dx=e.changedTouches[0].clientX-tx; if(dx<-40)go(cur+1); else if(dx>40)go(cur-1); },{passive:true});
 
     updateMeta();
   });
