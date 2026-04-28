@@ -576,3 +576,67 @@ table.plain th, table.plain td {
 @media (max-width: 768px) {
   .faq-cols, .req-cols { grid-template-columns: 1fr; }
 }
+
+
+/* ════════════════════════════════════════════════════════
+   MOBILE OPTIMISATION — v4.1
+   ════════════════════════════════════════════════════════ */
+
+/* Section vertical rhythm */
+section { padding: 4rem 0; }
+
+/* Fluid headings */
+h1 { font-size: clamp(1.55rem, 5vw, 2.8rem); }
+h2 { font-size: clamp(1.2rem, 3.5vw, 2rem); }
+h3 { font-size: clamp(1rem, 2.5vw, 1.35rem); }
+
+/* Touch targets — minimum 44 × 44 px */
+.btn, .nav-links a, summary, .feat-tab-nav li { min-height: 44px; display: inline-flex; align-items: center; }
+.menu-toggle { min-height: 44px; min-width: 44px; }
+
+@media (max-width: 768px) {
+  section { padding: 2.5rem 0; }
+  .cta-section, .cta-strip, .bg-navy.cta-strip { padding: 2.5rem 0 !important; }
+  .page-hero { padding: 2rem 0 1.75rem; }
+
+  /* Prevent iOS zoom: inputs must be ≥16 px */
+  input, select, textarea { font-size: 16px !important; }
+
+  /* Tables — horizontal scroll */
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Feature tab bar — horizontally scrollable on mobile */
+  .feat-tab-nav {
+    flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity; padding-bottom: 2px; gap: .2rem;
+  }
+  .feat-tab-nav li { flex-shrink: 0; scroll-snap-align: start; }
+
+  /* Feature panel — always single column */
+  .feat-panel-grid { grid-template-columns: 1fr !important; gap: 1.5rem; }
+  .feat-gallery { grid-template-columns: repeat(2, 1fr); }
+
+  /* Two-column inner pages */
+  .req-cols, .faq-cols, .help-cols { grid-template-columns: 1fr !important; }
+
+  /* Button groups stack vertically */
+  .btn-group { flex-direction: column; align-items: stretch; }
+  .btn-group .btn { text-align: center; justify-content: center; }
+
+  /* Download cards — stack icon above text */
+  .download-card { flex-direction: column; gap: .75rem; }
+
+  /* Pricing table scroll */
+  .pricing-table-wrap, .comparison-wrap, .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .container { padding-inline: 1rem; }
+  .feat-gallery { grid-template-columns: 1fr; }
+  .hover-cards { grid-template-columns: 1fr !important; }
+  .slide-text h2 { font-size: 1.45rem; }
+  .nav { padding-inline: 1rem; }
+}
