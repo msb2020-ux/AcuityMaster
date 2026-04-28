@@ -61,6 +61,13 @@
     }
   }
 ]</script>
+
+  <style>
+    @media(max-width:600px){
+      .acc-item { grid-template-columns:1fr !important; }
+      .acc-item img { max-width:180px; margin:0 auto; }
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -92,24 +99,47 @@
 </section>
 
 <section>
-  <div class="container content">
+  <div class="container">
+    <div style="display:grid; gap:3rem;">
 
-    <h2>Anaglyphic red/green glasses</h2>
-    <p>Required for the Worth-Dot-Four test. We recommend Richmond Products 955R adult red/green glasses. <a href="https://www.richmondproducts.com/files/6713/2156/7348/Worth_4_Dot_Tech_Bulletin_No_Price_072011.pdf" target="_blank" rel="noopener">View product info &rarr;</a></p>
+      <div class="acc-item" style="display:grid; grid-template-columns:200px 1fr; gap:2rem; align-items:start;">
+        <img src="/assets/img/accessories/anaglyph-glasses.jpg" alt="Richmond Products 955R anaglyphic red/green glasses" style="width:100%; border-radius:8px; border:1px solid var(--border);" loading="lazy" />
+        <div>
+          <h2>Anaglyphic red/green glasses</h2>
+          <p>Required for the Worth-Dot-Four test. We recommend Richmond Products 955R adult red/green glasses &mdash; durable, lightweight, and clinically validated.</p>
+          <a href="https://www.richmondproducts.com/files/6713/2156/7348/Worth_4_Dot_Tech_Bulletin_No_Price_072011.pdf" target="_blank" rel="noopener" class="btn btn-outline" style="display:inline-block; margin-top:.5rem;">View product info &rarr;</a>
+        </div>
+      </div>
 
-    <h2>USB foot pedal</h2>
-    <p>Foot pedals complement keyboarding &mdash; greater comfort, higher productivity, and less wrist strain. Up to three pedals can replace frequently used keystrokes (Shift, Ctrl, Alt, or any custom key/mouse function). Our preferred pedal is pre-programmed and ships ready to use.</p>
-    <p>
-      <a href="https://www.fentek-ind.com/FootPedal.htm#afs1usb" target="_blank" rel="noopener">Fentek foot pedal info &rarr;</a><br>
-      <a href="https://www.delcomproducts.com/productdetails.asp?PartNumber=703600-5M-Q-EKM71" target="_blank" rel="noopener">Order direct from Delcom &rarr;</a>
-    </p>
+      <div class="acc-item" style="display:grid; grid-template-columns:200px 1fr; gap:2rem; align-items:start;">
+        <img src="/assets/img/accessories/foot-switch.jpg" alt="USB foot pedal switch for AcuityMaster" style="width:100%; border-radius:8px; border:1px solid var(--border);" loading="lazy" />
+        <div>
+          <h2>USB foot pedal</h2>
+          <p>Foot pedals complement keyboarding &mdash; greater comfort, higher productivity, and less wrist strain associated with carpal tunnel syndrome. Up to three pedals can replace frequently used keystrokes. Our preferred pedal is pre-programmed and ships ready to use.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.75rem;">
+            <a href="https://www.fentek-ind.com/FootPedal.htm#afs1usb" target="_blank" rel="noopener" class="btn btn-outline" style="display:inline-block;">Fentek pedal info &rarr;</a>
+            <a href="https://www.delcomproducts.com/productdetails.asp?PartNumber=703600-5M-Q-EKM71" target="_blank" rel="noopener" class="btn btn-outline" style="display:inline-block;">Order from Delcom &rarr;</a>
+          </div>
+        </div>
+      </div>
 
-    <h2>Wireless keyboards</h2>
-    <p>A standard wireless keyboard from Logitech (or similar) makes navigation effortless &mdash; particularly for pediatric, pre-verbal, and retinoscopy exams.</p>
+      <div class="acc-item" style="display:grid; grid-template-columns:200px 1fr; gap:2rem; align-items:start;">
+        <img src="/assets/img/accessories/hardware.jpg" alt="Wireless keyboard setup for AcuityMaster exam lane" style="width:100%; border-radius:8px; border:1px solid var(--border);" loading="lazy" />
+        <div>
+          <h2>Wireless keyboards</h2>
+          <p>A standard wireless keyboard from Logitech (or similar) makes navigation effortless &mdash; particularly for pediatric, pre-verbal, and retinoscopy exams where the technician needs to step away from the computer.</p>
+        </div>
+      </div>
 
-    <h2>Backlit remote keyboard</h2>
-    <p>Our preferred full keyboard remote is the Lenovo backlit model. It permits 100% control of AcuityMaster from anywhere in the exam lane.</p>
+      <div class="acc-item" style="display:grid; grid-template-columns:200px 1fr; gap:2rem; align-items:start;">
+        <img src="/assets/img/accessories/tablet.jpg" alt="Lenovo backlit remote keyboard tablet" style="width:100%; border-radius:8px; border:1px solid var(--border);" loading="lazy" />
+        <div>
+          <h2>Backlit remote keyboard</h2>
+          <p>Our preferred full keyboard remote is the Lenovo backlit model. It permits 100% control of AcuityMaster from anywhere in the exam lane &mdash; ideal for low-light exam rooms and hands-free operation.</p>
+        </div>
+      </div>
 
+    </div>
   </div>
 </section>
 
