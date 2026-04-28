@@ -640,3 +640,23 @@ h3 { font-size: clamp(1rem, 2.5vw, 1.35rem); }
   .slide-text h2 { font-size: 1.45rem; }
   .nav { padding-inline: 1rem; }
 }
+
+/* ── SLIDER MOBILE — hide overlapping arrows, add swipe padding ── */
+@media (max-width: 768px) {
+  /* Arrows sit at top:50% and overlap the text on mobile — hide them.
+     Users swipe horizontally instead (touch event added in slider JS). */
+  .slider-btn { display: none !important; }
+
+  /* Give the slider a bottom gutter so the dot indicators don't clip */
+  .slider { padding-bottom: 2.75rem; }
+
+  /* Tighten the slide content vertically and add horizontal padding
+     so text is never flush with the screen edge */
+  .slide-container { padding: 1.75rem 1rem 1rem !important; }
+
+  /* Dots remain absolutely positioned in the new bottom gutter */
+  .slider-dots { bottom: .65rem; }
+
+  /* Enlarge dots for easier tapping */
+  .slider-dot { width: 11px; height: 11px; }
+}
