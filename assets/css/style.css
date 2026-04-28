@@ -859,16 +859,16 @@ footer {
    HOVER CARDS — three-column section below slider
    ========================================================= */
 .hover-cards-section {
-  background: var(--white);
-  padding: 0;
+  background: var(--white) !important;
+  padding: 3rem 0 4rem;
   position: relative;
   z-index: 5;
 }
 .hover-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  margin-top: -3rem;
+  gap: 1.5rem;
+  margin-top: 0;
 }
 .hover-card {
   background: var(--white);
@@ -879,8 +879,8 @@ footer {
   transition: all .28s ease;
   cursor: default;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0,0,0,.08);
-  margin: 0 .75rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,.07);
+  margin: 0;
 }
 .hover-card:hover {
   border-color: var(--blue);
@@ -1042,8 +1042,8 @@ footer {
 .badge-cloud  { background: var(--blue-bg); color: var(--blue-deeper); }
 
 @media (max-width: 768px) {
-  .hover-cards { grid-template-columns: 1fr; margin-top: 0; }
-  .hover-card { margin: 0 0 1rem; }
+  .hover-cards { grid-template-columns: 1fr; gap: 1rem; }
+  .hover-card { margin: 0; }
   .slider-btn { display: none; }
 }
 @media (max-width: 600px) {
