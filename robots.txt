@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /.github/
 
 Sitemap: https://acuitymasters.com/sitemap.xml
