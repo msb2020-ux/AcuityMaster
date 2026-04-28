@@ -76,7 +76,7 @@ li { margin-bottom: .35em; }
 .btn-primary:hover {
   background: var(--blue-dark);
   border-color: var(--blue-dark);
-  color: var(--white);
+  color: #2c3440;
   text-decoration: none;
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(51,153,204,.35);
@@ -107,11 +107,12 @@ li { margin-bottom: .35em; }
 
 /* ---------- Site Header / Nav ---------- */
 .site-header {
-  background: var(--blue);
+  background: #ffffff;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  box-shadow: 0 1px 4px rgba(0,0,0,.10);
+  border-bottom: 1px solid #dde1e6;
 }
 .nav {
   display: flex;
@@ -148,7 +149,7 @@ li { margin-bottom: .35em; }
 .nav-links a {
   display: block;
   padding: .35rem .75rem;
-  color: rgba(255,255,255,.88);
+  color: #444;
   font-size: .92rem;
   font-weight: 500;
   border-radius: 4px;
@@ -173,7 +174,7 @@ li { margin-bottom: .35em; }
   display: none;
   background: none;
   border: none;
-  color: var(--white);
+  color: #444;
   font-size: 1.5rem;
   cursor: pointer;
   margin-left: auto;
@@ -276,7 +277,7 @@ section:nth-child(even) { background: var(--off-white); }
 .feature-icon {
   width: 48px;
   height: 48px;
-  background: var(--blue-bg);
+  background: #dce3eb;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -768,13 +769,14 @@ footer {
 .slider {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--blue-deeper) 0%, var(--blue) 60%, #5ab5e0 100%);
-  color: var(--white);
+  background: #e8eaed;
+  border-bottom: 1px solid #d0d3d8;
+  color: #2c3440;
 }
 .slide {
   display: none;
-  padding: 6rem 0 7rem;
-  text-align: center;
+  padding: 0;
+  text-align: left;
   animation: slideFadeIn .55s ease;
 }
 .slide.active { display: block; }
@@ -786,23 +788,23 @@ footer {
   font-family: 'Roboto Slab', serif;
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 700;
-  color: var(--white);
+  color: #2c3440;
   margin-bottom: 1.1rem;
-  max-width: 760px;
-  margin-inline: auto;
+  max-width: none;
+  margin-inline: 0;
 }
 .slide p {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,.9);
-  max-width: 600px;
-  margin-inline: auto;
+  font-size: 1.05rem;
+  color: #555;
+  max-width: none;
+  margin-inline: 0;
   margin-bottom: 2rem;
   line-height: 1.7;
 }
 .slide-eyebrow {
   display: inline-block;
-  background: rgba(255,255,255,.2);
-  color: var(--white);
+  background: rgba(51,153,204,.15);
+  color: var(--blue);
   font-size: .78rem;
   font-weight: 600;
   letter-spacing: .12em;
@@ -815,9 +817,9 @@ footer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,.18);
-  border: 1.5px solid rgba(255,255,255,.35);
-  color: var(--white);
+  background: var(--blue);
+  border: none;
+  color: #ffffff;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -829,7 +831,7 @@ footer {
   justify-content: center;
   z-index: 10;
 }
-.slider-btn:hover { background: rgba(255,255,255,.32); }
+.slider-btn:hover { background: var(--blue-dark); }
 .slider-prev { left: 1.25rem; }
 .slider-next { right: 1.25rem; }
 .slider-dots {
@@ -844,14 +846,14 @@ footer {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(255,255,255,.35);
+  background: rgba(51,153,204,.3);
   border: none;
   cursor: pointer;
   transition: background var(--transition), transform var(--transition);
   padding: 0;
 }
 .slider-dot.active {
-  background: var(--white);
+  background: var(--blue);
   transform: scale(1.2);
 }
 
@@ -1055,20 +1057,7 @@ footer {
    SLIDER — decorative optotype background letter
    ========================================================= */
 .slider { min-height: 480px; display: flex; flex-direction: column; justify-content: center; }
-.slider-deco {
-  position: absolute;
-  right: 6%;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: 'Roboto Slab', serif;
-  font-size: clamp(200px, 28vw, 380px);
-  font-weight: 700;
-  color: rgba(255,255,255,.06);
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
-  z-index: 0;
-}
+.slider-deco { display: none; }
 .slider .container { position: relative; z-index: 1; }
 
 /* =========================================================
@@ -1177,4 +1166,73 @@ footer {
   .hover-cards-4 { grid-template-columns: 1fr; }
   .demo-request-box { flex-direction: column; gap: 1.5rem; }
   .slider-deco { display: none; }
+}
+
+
+/* =========================================================
+   MATCH ORIGINAL — applied over base styles
+   ========================================================= */
+
+/* Light grey page background */
+body { background: #f0f2f4; }
+main > section { background: #f0f2f4; }
+.about-intro-section,
+.demo-request-section,
+.hover-cards-section { background: #ffffff; }
+.testimonials-section { background: #f0f2f4; }
+
+/* Slide two-column layout */
+.slide-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 3.5rem 0 4rem;
+}
+.slide-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.eyechart-svg {
+  width: 100%;
+  max-width: 400px;
+  filter: drop-shadow(0 6px 24px rgba(0,0,0,.18));
+  border-radius: 5px;
+}
+.slider { min-height: 380px; }
+
+/* Card icon — filled style (not stroke) */
+.hover-card-icon svg {
+  width: 36px;
+  height: 36px;
+  stroke: none;
+  fill: var(--blue);
+}
+
+/* Card buttons */
+.btn-card {
+  margin-top: 1.1rem;
+  font-size: .875rem;
+  padding: .5rem 1.3rem;
+}
+
+/* About intro white bg */
+.about-intro-section { border-bottom: 1px solid #d8dde3; }
+
+/* Demo section white bg */
+.demo-request-section { border-top: 1px solid #d8dde3; border-bottom: 1px solid #d8dde3; }
+
+/* CTA section keeps blue */
+.cta-section { background: var(--blue) !important; }
+
+/* Footer stays dark */
+footer { background: var(--text); color: #ccc; }
+
+/* Responsive — stack slide on mobile */
+@media (max-width: 768px) {
+  .slide-container { grid-template-columns: 1fr; padding: 2.5rem 0; }
+  .slide-image { display: none; }
+  .slide { text-align: center; }
+  .slide-container .slide-text { text-align: center; }
 }
