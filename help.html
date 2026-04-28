@@ -12,6 +12,57 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <style>
+    .help-cols {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; align-items: start; margin-top: 1rem;
+    }
+    .help-col {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 10px; padding: 2rem;
+    }
+    .help-col-head {
+      display: flex; align-items: center; gap: .7rem;
+      margin-bottom: 1.25rem; padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+    .help-col-head h2 { margin: 0; font-size: 1.2rem; }
+    .help-col p.intro { font-size: .93rem; color: var(--text-light); line-height: 1.65; margin-bottom: 1.5rem; }
+    .help-col h3 { font-size: 1rem; margin: 0 0 1rem; color: var(--text); }
+
+    .download-card {
+      display: flex; align-items: flex-start; gap: 1rem;
+      background: #f7f9fb; border: 1px solid var(--border);
+      border-radius: 7px; padding: 1rem 1.25rem; margin-bottom: .75rem;
+    }
+    .download-icon { font-size: 1.75rem; flex-shrink: 0; line-height: 1; }
+    .download-card h4 { font-size: .95rem; margin: 0 0 .25rem; }
+    .download-card p { font-size: .88rem; color: var(--text-light); margin: 0 0 .5rem; }
+    .download-card a { font-size: .88rem; font-weight: 600; color: var(--blue); text-decoration: none; }
+    .download-card a:hover { text-decoration: underline; }
+
+    .steps { list-style: none; counter-reset: steps; padding: 0; margin: 0; }
+    .steps li {
+      counter-increment: steps; display: flex; gap: 1rem;
+      margin-bottom: 1.25rem; align-items: flex-start;
+    }
+    .steps li::before {
+      content: counter(steps); min-width: 28px; height: 28px;
+      background: var(--blue); color: #fff; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .85rem; flex-shrink: 0; margin-top: .1rem;
+    }
+    .steps li h4 { font-size: .95rem; margin: 0 0 .2rem; }
+    .steps li p { font-size: .88rem; color: var(--text-light); margin: 0; line-height: 1.6; }
+
+    .info-box {
+      background: #edf6fb; border-left: 4px solid var(--blue);
+      border-radius: 0 6px 6px 0; padding: .9rem 1.1rem; margin-top: 1.25rem;
+      font-size: .88rem; line-height: 1.6;
+    }
+
+    @media (max-width: 768px) { .help-cols { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -37,92 +88,98 @@
   <div class="container">
     <span class="section-eyebrow">Help &amp; manuals</span>
     <h1>Documentation and support.</h1>
-    <p class="lead">Select your product version below.</p>
+    <p class="lead">Resources for both AcuityMaster Legacy (Windows) and AcuityMaster Cloud (browser-based).</p>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="version-tabs" role="tablist" aria-label="Select product version">
-      <button class="version-tab active" role="tab" aria-selected="true" id="tab-legacy" aria-controls="panel-legacy">
-        AcuityMaster Legacy <span class="version-badge badge-legacy" style="margin-left:.4rem">Windows Desktop</span>
-      </button>
-      <button class="version-tab" role="tab" aria-selected="false" id="tab-cloud" aria-controls="panel-cloud">
-        AcuityMaster Cloud <span class="version-badge badge-cloud" style="margin-left:.4rem">Browser-Based</span>
-      </button>
-    </div>
+    <div class="help-cols">
 
-    <!-- LEGACY PANEL -->
-    <div id="panel-legacy" class="version-panel active" role="tabpanel" aria-labelledby="tab-legacy">
-      <p style="color:var(--text-light);margin-bottom:1.75rem;">The original Windows desktop application. Documentation for existing license holders. Legacy licenses remain active through December 31, 2026.</p>
+      <!-- LEGACY -->
+      <div class="help-col">
+        <div class="help-col-head">
+          <h2>AcuityMaster Legacy</h2>
+          <span class="version-badge badge-legacy">Windows Desktop</span>
+        </div>
+        <p class="intro">The original Windows desktop application. Documentation for existing license holders. Legacy licenses remain active through December 31, 2026.</p>
 
-      <h3 style="margin-bottom:1rem;">Downloads</h3>
-      <div class="download-card">
-        <div class="download-icon">&#128196;</div>
-        <div>
-          <h3>AcuityMaster User Manual</h3>
-          <p>Complete manual &mdash; installation, setup, all features, and calibration.</p>
-          <a href="/assets/docs/AM-Manual.pdf" target="_blank" rel="noopener" class="btn-secondary" style="margin-top:.6rem;display:inline-block;">Download PDF</a>
+        <h3>Downloads</h3>
+
+        <div class="download-card">
+          <div class="download-icon">&#128196;</div>
+          <div>
+            <h4>AcuityMaster User Manual</h4>
+            <p>Complete manual &mdash; installation, setup, all features, and calibration.</p>
+            <a href="/assets/docs/AM-Manual.pdf" target="_blank" rel="noopener">Download PDF</a>
+          </div>
+        </div>
+
+        <div class="download-card">
+          <div class="download-icon">&#128203;</div>
+          <div>
+            <h4>Detailed Help Guide</h4>
+            <p>Step-by-step coverage of every menu, option, and workflow.</p>
+            <a href="/assets/docs/help-guide.pdf" target="_blank" rel="noopener">Download PDF</a>
+          </div>
+        </div>
+
+        <div class="download-card">
+          <div class="download-icon">&#9109;</div>
+          <div>
+            <h4>Keyboard Shortcuts Reference</h4>
+            <p>Quick-reference card for all keyboard shortcuts and hotkeys.</p>
+            <a href="/assets/docs/keyboard-shortcuts.pdf" target="_blank" rel="noopener">Download PDF</a>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <p><strong>Migrating to AcuityMaster Cloud?</strong> Existing legacy customers receive priority access. Email <a href="mailto:Mark@AcuityMaster.com">Mark@AcuityMaster.com</a> for migration assistance.</p>
         </div>
       </div>
-      <div class="download-card">
-        <div class="download-icon">&#128203;</div>
-        <div>
-          <h3>Detailed Help Guide</h3>
-          <p>Step-by-step coverage of every menu, option, and workflow.</p>
-          <a href="/assets/docs/help-guide.pdf" target="_blank" rel="noopener" class="btn-secondary" style="margin-top:.6rem;display:inline-block;">Download PDF</a>
+
+      <!-- CLOUD -->
+      <div class="help-col">
+        <div class="help-col-head">
+          <h2>AcuityMaster Cloud</h2>
+          <span class="version-badge badge-cloud">Browser-Based</span>
+        </div>
+        <p class="intro">Browser-based &mdash; no installation, no hardware lock-in. Works on Mac and Windows in any modern browser. Launching July 1, 2026.</p>
+
+        <h3>How to get started</h3>
+        <ol class="steps">
+          <li>
+            <div>
+              <h4>Subscribe</h4>
+              <p>Choose your seat count and subscribe at the annual rate. Pricing from $249/seat/year &mdash; see the <a href="/buy.html">pricing page</a>.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Open in your browser</h4>
+              <p>Navigate to AcuityMaster Cloud in Safari, Chrome, Firefox, or Edge on any Mac or Windows device. No download required.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Connect your patient display</h4>
+              <p>Mirror or extend to a second monitor for the patient chart. Or run single-display mode from the exam-room computer.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Start testing</h4>
+              <p>All chart types, optotypes, and modes are available immediately. Software updates automatically.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="info-box">
+          <p>Full Cloud documentation will be published at launch. <a href="/buy.html#interest">Register your interest</a> to be notified on July 1, 2026.</p>
         </div>
       </div>
-      <div class="download-card">
-        <div class="download-icon">&#9109;</div>
-        <div>
-          <h3>Keyboard Shortcuts Reference</h3>
-          <p>Quick-reference card for all keyboard shortcuts and hotkeys.</p>
-          <a href="/assets/docs/keyboard-shortcuts.pdf" target="_blank" rel="noopener" class="btn-secondary" style="margin-top:.6rem;display:inline-block;">Download PDF</a>
-        </div>
-      </div>
 
-      <div class="info-box" style="margin-top:2rem;">
-        <p><strong>Migrating to AcuityMaster Cloud?</strong> Existing legacy customers receive priority access. Email <a href="mailto:Mark@AcuityMaster.com">Mark@AcuityMaster.com</a> for migration assistance.</p>
-      </div>
-    </div>
-
-    <!-- CLOUD PANEL -->
-    <div id="panel-cloud" class="version-panel" role="tabpanel" aria-labelledby="tab-cloud">
-      <p style="color:var(--text-light);margin-bottom:1.75rem;">AcuityMaster Cloud is browser-based &mdash; no installation, no hardware lock-in. Works on Mac and Windows in any modern browser. Launching July 1, 2026.</p>
-
-      <h3 style="margin-bottom:1rem;">How to get started</h3>
-      <ol class="steps">
-        <li>
-          <div>
-            <h3>Subscribe</h3>
-            <p>Choose your seat count and subscribe at the annual rate. Pricing from $249/seat/year &mdash; see the <a href="/buy.html">pricing page</a>.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h3>Open in your browser</h3>
-            <p>Navigate to AcuityMaster Cloud in Safari, Chrome, Firefox, or Edge on any Mac or Windows device. No download required.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h3>Connect your patient display</h3>
-            <p>Mirror or extend to a second monitor for the patient chart. Or run single-display mode from the exam-room computer.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h3>Start testing</h3>
-            <p>All chart types, optotypes, and modes are available immediately. Software updates automatically.</p>
-          </div>
-        </li>
-      </ol>
-
-      <div class="info-box" style="margin-top:1.5rem;">
-        <p>Full Cloud documentation will be published at launch. <a href="/buy.html#interest">Register your interest</a> to be notified on July 1, 2026.</p>
-      </div>
-    </div>
+    </div><!-- /help-cols -->
   </div>
 </section>
 
@@ -172,18 +229,5 @@
 </footer>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 <script src="/assets/js/main.js"></script>
-<script>
-(function(){
-  var tabs=document.querySelectorAll('.version-tab'),panels=document.querySelectorAll('.version-panel');
-  tabs.forEach(function(tab){
-    tab.addEventListener('click',function(){
-      tabs.forEach(function(t){t.classList.remove('active');t.setAttribute('aria-selected','false');});
-      panels.forEach(function(p){p.classList.remove('active');});
-      tab.classList.add('active');tab.setAttribute('aria-selected','true');
-      document.getElementById(tab.getAttribute('aria-controls')).classList.add('active');
-    });
-  });
-})();
-</script>
 </body>
 </html>
