@@ -52,3 +52,23 @@ document.querySelectorAll('form[data-formspree]').forEach(form => {
     }
   });
 });
+
+
+/* ── Cookie consent banner ── */
+(function(){
+  if (localStorage.getItem('cookie-ok')) return;
+  var banner = document.createElement('div');
+  banner.id = 'cookie-banner';
+  banner.innerHTML = '<p style="margin:0;flex:1;">This site uses cookies to improve your experience. <a href="/privacy.html" style="color:#fff;text-decoration:underline;">Privacy policy</a></p><button id="cookie-accept" style="background:#fff;color:#1a6a9a;border:none;border-radius:6px;padding:.5rem 1.25rem;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;">Got it</button>';
+  Object.assign(banner.style, {
+    position:'fixed', bottom:'0', left:'0', right:'0', zIndex:'9999',
+    background:'rgba(26,106,154,.97)', color:'#fff', padding:'.875rem 1.5rem',
+    display:'flex', alignItems:'center', gap:'1.25rem', flexWrap:'wrap',
+    fontSize:'.88rem', boxShadow:'0 -2px 12px rgba(0,0,0,.18)'
+  });
+  document.body.appendChild(banner);
+  document.getElementById('cookie-accept').addEventListener('click', function(){
+    localStorage.setItem('cookie-ok','1');
+    banner.remove();
+  });
+})();
