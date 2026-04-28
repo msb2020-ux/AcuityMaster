@@ -434,6 +434,17 @@
   if (prev) prev.addEventListener('click', function(){ show(cur - 1); reset(); });
   if (next) next.addEventListener('click', function(){ show(cur + 1); reset(); });
   dots.forEach(function(d, i){ d.addEventListener('click', function(){ show(i); reset(); }); });
+  /* Touch swipe — replaces arrows on mobile */
+  var sliderEl = document.getElementById('home-slider');
+  if (sliderEl) {
+    var touchX = 0;
+    sliderEl.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; }, {passive:true});
+    sliderEl.addEventListener('touchend', function(e){
+      var dx = e.changedTouches[0].clientX - touchX;
+      if (dx < -40) { show(cur + 1); reset(); }
+      else if (dx > 40) { show(cur - 1); reset(); }
+    }, {passive:true});
+  }
 })();
 </script>
 </body>
