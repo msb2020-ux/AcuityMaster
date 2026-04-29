@@ -90,10 +90,10 @@
       color: rgba(200, 30, 30, 0.09);
       white-space: nowrap;
       pointer-events: none;
-      z-index: 0;
+      z-index: 10;
       font-family: 'Roboto Slab', serif;
     }
-    .prelim-wrap > * { position: relative; z-index: 1; }
+    .prelim-wrap > * { position: relative; z-index: auto; }
 
     /* Upgrade section responsive */
     @media(max-width: 768px) {
@@ -162,58 +162,7 @@
   </div>
 </section>
 
-<section id="interest">
-  <div class="container">
-    <div class="split">
-      <div class="split-info">
-        <h2>Register Your Interest</h2>
-        <p>Submit your information and we&rsquo;ll notify you when AcuityMaster Cloud launches, including priority access to any early-bird pricing.</p>
-        <p>Questions now? Email <a href="mailto:Mark@AcuityMaster.com">Mark@AcuityMaster.com</a> directly.</p>
-        <div class="stats-row">
-          <div class="stat-item"><span class="stat-number">9</span><span class="stat-label">Chart categories</span></div>
-          <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Optotypes</span></div>
-          <div class="stat-item"><span class="stat-number">15</span><span class="stat-label">Day free trial</span></div>
-        </div>
-      </div>
-      <form data-formspree action="https://formspree.io/f/xjgjqglw" method="POST">
-        <div class="form-group">
-          <label for="fname">Your name</label>
-          <input type="text" id="fname" name="name" placeholder="Dr. Jane Smith" required />
-        </div>
-        <div class="form-group">
-          <label for="practice">Practice / Institution</label>
-          <input type="text" id="practice" name="practice" placeholder="Eye Care Associates" />
-        </div>
-        <div class="form-group">
-          <label for="femail">Email address</label>
-          <input type="email" id="femail" name="email" placeholder="you@practice.com" required />
-        </div>
-        <div class="form-group">
-          <label for="seats">Number of workstations</label>
-          <select id="seats" name="seats">
-            <option value="">Select&hellip;</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5-9">5&ndash;9</option>
-            <option value="10-24">10&ndash;24</option>
-            <option value="25-49">25&ndash;49</option>
-            <option value="50+">50+</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="fmsg">Questions or comments</label>
-          <textarea id="fmsg" name="message" rows="3" placeholder="Questions about pricing or the transition..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%">Notify me at launch</button>
-      </form>
-    </div>
-  </div>
-</section>
 
-
-<!-- UPGRADE FROM LEGACY -->
 <section id="upgrade" style="background:var(--page-bg,#f0f2f4); padding:4rem 0;">
   <div class="container">
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
@@ -281,6 +230,60 @@
     </div>
   </div>
 </section>
+<section id="interest">
+  <div class="container">
+    <div class="split">
+      <div class="split-info">
+        <h2>Register Your Interest</h2>
+        <p>Submit your information and we&rsquo;ll notify you when AcuityMaster Cloud launches, including priority access to any early-bird pricing.</p>
+        <p>Questions now? Email <a href="mailto:Mark@AcuityMaster.com">Mark@AcuityMaster.com</a> directly.</p>
+        <div class="stats-row">
+          <div class="stat-item"><span class="stat-number">9</span><span class="stat-label">Chart categories</span></div>
+          <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Optotypes</span></div>
+          <div class="stat-item"><span class="stat-number">15</span><span class="stat-label">Day free trial</span></div>
+        </div>
+      </div>
+      <form data-formspree action="https://formspree.io/f/xjgjqglw" method="POST">
+        <div class="form-group">
+          <label for="fname">Your name</label>
+          <input type="text" id="fname" name="name" placeholder="Dr. Jane Smith" required />
+        </div>
+        <div class="form-group">
+          <label for="practice">Practice / Institution</label>
+          <input type="text" id="practice" name="practice" placeholder="Eye Care Associates" />
+        </div>
+        <div class="form-group">
+          <label for="femail">Email address</label>
+          <input type="email" id="femail" name="email" placeholder="you@practice.com" required />
+        </div>
+        <div class="form-group">
+          <label for="seats">Number of workstations</label>
+          <select id="seats" name="seats">
+            <option value="">Select&hellip;</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5-9">5&ndash;9</option>
+            <option value="10-24">10&ndash;24</option>
+            <option value="25-49">25&ndash;49</option>
+            <option value="50+">50+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fmsg">Questions or comments</label>
+          <textarea id="fmsg" name="message" rows="3" placeholder="Questions about pricing or the transition..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%">Notify me at launch</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- UPGRADE FROM LEGACY -->
+
 
 <section>
   <div class="container">
@@ -300,24 +303,144 @@
   </div>
 </section>
 
+
 <section>
   <div class="container">
-    <h2 style="margin-bottom:1.5rem;">AcuityMaster Cloud vs. the competition</h2>
-    <table class="compare-table">
-      <thead><tr><th>Feature</th><th>AcuityMaster Cloud</th><th>AcuityPro</th><th>Projector chart</th></tr></thead>
-      <tbody>
-        <tr><td>Browser-based (no install)</td><td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="no">&#10007;</td></tr>
-        <tr><td>Mac-compatible</td><td class="yes">&#10003;</td><td>Limited</td><td class="no">&#10007;</td></tr>
-        <tr><td>Calibrated letter sizes</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="no">&#10007;</td></tr>
-        <tr><td>Color vision testing</td><td class="yes">&#10003;</td><td>Add-on</td><td class="no">&#10007;</td></tr>
-        <tr><td>Pediatric optotypes</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td>Limited</td></tr>
-        <tr><td>Fixation disparity / Worth 4-dot</td><td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="no">&#10007;</td></tr>
-        <tr><td>Starting price</td><td><strong>$249/seat/year</strong></td><td>$600&ndash;$2,500+</td><td>$500&ndash;$2,000</td></tr>
-        <tr><td>Free trial</td><td class="yes">&#10003; 15 days</td><td>Limited</td><td class="no">&#10007;</td></tr>
-      </tbody>
-    </table>
+    <span class="section-eyebrow">How We Compare</span>
+    <h2 style="margin-bottom:.5rem;">AcuityMaster Cloud vs. the competition</h2>
+    <p style="color:var(--text-light);max-width:60ch;margin-bottom:1.75rem;">
+      Prices are market estimates based on publicly available information and representative quotes (2024–2025).
+      Typical 5-lane cost reflects a mid-size ophthalmology or optometry practice.
+    </p>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid var(--border);">
+      <table style="width:100%;border-collapse:collapse;min-width:860px;font-size:.88rem;">
+        <thead>
+          <tr>
+            <th style="background:var(--blue);color:#fff;padding:.85rem 1rem;text-align:left;font-weight:600;min-width:200px;">Feature</th>
+            <th style="background:#1a6a9a;color:#fff;padding:.85rem 1rem;text-align:center;font-weight:700;">AcuityMaster Cloud</th>
+            <th style="background:#4a5568;color:#fff;padding:.85rem 1rem;text-align:center;font-weight:600;">M&amp;S Smart System&nbsp;20/20</th>
+            <th style="background:#4a5568;color:#fff;padding:.85rem 1rem;text-align:center;font-weight:600;">Marco OPTOPlus</th>
+            <th style="background:#4a5568;color:#fff;padding:.85rem 1rem;text-align:center;font-weight:600;">AcuityPro / Canela</th>
+            <th style="background:#4a5568;color:#fff;padding:.85rem 1rem;text-align:center;font-weight:600;">Traditional Projector</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#edf6fb;font-weight:700;">
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);">Starting price (1 seat)</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#1a6a9a;"><strong>$249/yr</strong></td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">~$1,500–$2,500</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">~$2,000–$3,500</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">~$600–$2,500</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">~$500–$2,000</td>
+          </tr>
+          <tr style="background:#dbeeff;font-weight:700;">
+            <td style="padding:.9rem 1rem;border-bottom:2px solid #3399CC;">
+              <span style="display:inline-block;background:var(--blue);color:#fff;font-size:.72rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;margin-right:.4rem;">KEY</span>
+              Typical 5-lane office cost
+            </td>
+            <td style="padding:.9rem 1rem;border-bottom:2px solid #3399CC;text-align:center;color:#1a6a9a;"><strong>~$745/yr</strong><br><span style="font-weight:400;font-size:.8rem;">(5 seats × $149)</span></td>
+            <td style="padding:.9rem 1rem;border-bottom:2px solid #3399CC;text-align:center;">~$7,500–$12,000<br><span style="font-weight:400;font-size:.8rem;">perpetual + annual fee</span></td>
+            <td style="padding:.9rem 1rem;border-bottom:2px solid #3399CC;text-align:center;">~$10,000–$17,500<br><span style="font-weight:400;font-size:.8rem;">often hardware-bundled</span></td>
+            <td style="padding:.9rem 1rem;border-bottom:2px solid #3399CC;text-align:center;">~$3,000–$12,500<br><span style="font-weight:400;font-size:.8rem;">perpetual</span></td>
+            <td style="padding:.9rem 1rem;border-bottom:2px solid #3399CC;text-align:center;">~$2,500–$10,000<br><span style="font-weight:400;font-size:.8rem;">hardware cost</span></td>
+          </tr>
+          <tr>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);">Platform</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;font-weight:600;">Mac + Windows + iPad</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Windows only</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Windows only</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Windows only</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">N/A</td>
+          </tr>
+          <tr style="background:#f8fafb;">
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);">Installation required</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;font-weight:700;">&#10003; None (browser)</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">&#10007; Yes</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">&#10007; Yes</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">&#10007; Yes</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Hardware</td>
+          </tr>
+          <tr>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);">Automatic updates</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;font-weight:700;">&#10003; Always current</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Annual fee</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Annual fee</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Manual reinstall</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">N/A</td>
+          </tr>
+          <tr style="background:#f8fafb;">
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);">Free trial</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;font-weight:700;">&#10003; 15 days, full featured</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Demo only</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">&#10007;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Limited</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">&#10007;</td>
+          </tr>
+          <tr>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);">ETDRS / LogMAR charts</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;font-weight:700;">&#10003;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;">&#10003;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;">&#10003;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;">&#10003;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">&#10007; Snellen only</td>
+          </tr>
+          <tr style="background:#f8fafb;">
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);">Color vision testing</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;font-weight:700;">&#10003; Built-in</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Add-on</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;">&#10003;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Varies</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">&#10007;</td>
+          </tr>
+          <tr>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);">Pediatric optotypes (pictures, video)</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;font-weight:700;">&#10003; Pictures, HOTV, video</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;">&#10003;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;">&#10003;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Varies</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Limited</td>
+          </tr>
+          <tr style="background:#f8fafb;">
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);">Worth 4-dot / Fixation disparity</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;font-weight:700;">&#10003; Both included</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;">&#10003;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Varies</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">&#10007;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">&#10007;</td>
+          </tr>
+          <tr>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);">Contrast sensitivity</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;font-weight:700;">&#10003;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;">&#10003;</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Add-on</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;">Varies</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">&#10007;</td>
+          </tr>
+          <tr style="background:#f8fafb;">
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);">Device lock-in</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#2a7a2a;font-weight:700;">&#10003; None</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">Yes — PC-bound</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">Yes — hardware bundle</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">Yes — PC-bound</td>
+            <td style="padding:.8rem 1rem;border-bottom:1px solid var(--border);text-align:center;color:#cc3300;">Yes — projector unit</td>
+          </tr>
+          <tr>
+            <td style="padding:.8rem 1rem;">Clinician-developed</td>
+            <td style="padding:.8rem 1rem;text-align:center;color:#2a7a2a;font-weight:700;">&#10003; MD-founded</td>
+            <td style="padding:.8rem 1rem;text-align:center;color:#cc3300;">&#10007;</td>
+            <td style="padding:.8rem 1rem;text-align:center;color:#cc3300;">&#10007;</td>
+            <td style="padding:.8rem 1rem;text-align:center;color:#cc3300;">&#10007;</td>
+            <td style="padding:.8rem 1rem;text-align:center;color:#cc3300;">&#10007;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-light);margin-top:1rem;">
+      * Competitor prices are market estimates based on publicly available information and representative quotes (2024–2025). Actual pricing may vary. AcuityMaster pricing is confirmed; competitor pricing should be verified directly with each vendor.
+    </p>
   </div>
 </section>
+
 
 <section class="cta-section">
   <div class="container">
