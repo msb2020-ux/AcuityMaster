@@ -9,4 +9,10 @@
   <url><loc>https://acuitymasters.com/accessories.html</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://acuitymasters.com/help.html</loc>     <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://acuitymasters.com/contact.html</loc>  <lastmod>2026-04-28</lastmod><changefreq>yearly</changefreq> <priority>0.6</priority></url>
+
+  <url>
+    <loc>https://acuitymasters.com/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
