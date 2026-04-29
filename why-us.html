@@ -154,71 +154,18 @@
 
 <!-- COMPETITIVE LANDSCAPE -->
 <section style="background:var(--page-bg,#f0f2f4);">
-  <div class="container">
-    <h2>Competitive landscape</h2>
-    <p style="color:var(--text-light); max-width:60ch;">Typical costs for 1–5 seats across the leading digital acuity platforms. Prices are market estimates and subject to change.</p>
-    <div class="compare-wrap">
-      <table class="compare-table" aria-label="Competitive comparison">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>License model</th>
-            <th>Typical cost (1–5 seats)</th>
-            <th>Platform</th>
-            <th>Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>AcuityPro</td>
-            <td>Perpetual</td>
-            <td>~$1,000–$5,000</td>
-            <td>Windows only</td>
-            <td>No Mac support</td>
-          </tr>
-          <tr>
-            <td>Opti Chart</td>
-            <td>Perpetual</td>
-            <td>~$600–$3,000</td>
-            <td>Windows only</td>
-            <td>Limited admin tools</td>
-          </tr>
-          <tr>
-            <td>EyeCharts</td>
-            <td>Perpetual</td>
-            <td>~$500–$2,500</td>
-            <td>Windows only</td>
-            <td>Device bound</td>
-          </tr>
-          <tr>
-            <td><a href="https://canelasoftware.com/" target="_blank" rel="noopener">Canela Software</a></td>
-            <td>Perpetual</td>
-            <td>Contact for pricing</td>
-            <td>Windows only</td>
-            <td>Requires local installation</td>
-          </tr>
-          <tr>
-            <td><a href="https://visionquest2020.org/2025/eyespy.html" target="_blank" rel="noopener">EyeSpy 20/20</a></td>
-            <td>Free (non-commercial)</td>
-            <td>No cost</td>
-            <td>Browser (any device)</td>
-            <td>School screening only; Arizona-specific; not a clinical practice tool</td>
-          </tr>
-          <tr class="am-row">
-            <td>AcuityMaster</td>
-            <td>Perpetual or Cloud</td>
-            <td><a href="/buy.html">See pricing</a></td>
-            <td>Mac + Windows + iPad</td>
-            <td>Clinician-developed, flexible</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="conclusion-box">
-      <strong>Bottom line:</strong> AcuityMaster Cloud is cost competitive over 5 years while offering broader platform support — including Mac and iPad — and operational flexibility that Windows-only perpetual competitors cannot match.
-    </div>
+  <div class="container" id="cmp-table-host" style="min-height:200px;">
+    <noscript><p>Please enable JavaScript to view the comparison table, or visit <a href="/buy.html">our pricing page</a>.</p></noscript>
   </div>
 </section>
+<script>
+(function(){
+  fetch('/assets/partials/compare-table.html')
+    .then(function(r){ return r.text(); })
+    .then(function(h){ var el=document.getElementById('cmp-table-host'); if(el) el.innerHTML=h; })
+    .catch(function(){ /* silently fail */ });
+})();
+</script>
 
 <!-- FEATURES vs COMPETITORS TABLE -->
 <section>
