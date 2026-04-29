@@ -75,6 +75,31 @@
     }
   }
 ]</script>
+
+  <style>
+    /* PRELIMINARY watermark on pricing table */
+    .prelim-wrap { position: relative; overflow: hidden; }
+    .prelim-wrap::before {
+      content: 'PRELIMINARY';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) rotate(-28deg);
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 900;
+      letter-spacing: .18em;
+      color: rgba(200, 30, 30, 0.09);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 0;
+      font-family: 'Roboto Slab', serif;
+    }
+    .prelim-wrap > * { position: relative; z-index: 1; }
+
+    /* Upgrade section responsive */
+    @media(max-width: 768px) {
+      #upgrade .container > div { grid-template-columns: 1fr !important; }
+    }
+  </style>
 </head>
 <body>
 
@@ -112,6 +137,7 @@
 
 <section>
   <div class="container">
+    <div class="prelim-wrap">
     <h2>Pricing &mdash; Per Seat / Year</h2>
     <p style="color:var(--text-light);margin-bottom:1.5rem;">All plans billed annually. Volume pricing applied automatically.</p>
     <table class="pricing-table">
@@ -132,6 +158,7 @@
     <div class="info-box">
       <p>&#10003;&nbsp; Browser-based (Windows &amp; macOS, including Safari) &nbsp;&nbsp; &#10003;&nbsp; Centralized admin control &nbsp;&nbsp; &#10003;&nbsp; Automatic updates &nbsp;&nbsp; &#10003;&nbsp; No device lock-in</p>
     </div>
+    </div><!-- /prelim-wrap -->
   </div>
 </section>
 
@@ -181,6 +208,76 @@
         </div>
         <button type="submit" class="btn btn-primary" style="width:100%">Notify me at launch</button>
       </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- UPGRADE FROM LEGACY -->
+<section id="upgrade" style="background:var(--page-bg,#f0f2f4); padding:4rem 0;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
+
+      <div>
+        <span class="section-eyebrow">Existing Customers</span>
+        <h2>Upgrading from AcuityMaster Legacy?</h2>
+        <p style="color:var(--text-light); margin-bottom:1.25rem;">If you're currently running AcuityMaster Legacy (Windows perpetual edition), we offer a tailored upgrade path to AcuityMaster Cloud. <strong>Upgrade pricing depends on your number of existing seats</strong> — contact us for a personalised quote.</p>
+
+        <h3 style="font-size:1rem; margin-bottom:.75rem; color:var(--blue);">Why upgrade now?</h3>
+        <ul style="color:var(--text-light); line-height:1.9; padding-left:1.3rem; margin-bottom:1.5rem;">
+          <li><strong>Mac &amp; iPad compatible</strong> — no more Windows-only constraint</li>
+          <li><strong>Browser-based</strong> — no installation, no IT involvement</li>
+          <li><strong>Automatic updates</strong> — always on the latest version, zero manual installs</li>
+          <li><strong>No device lock-in</strong> — replace hardware without re-purchasing a license</li>
+          <li><strong>Centralized admin</strong> — manage all exam lanes from one dashboard</li>
+          <li><strong>Same familiar workflow</strong> — all the chart types, optotypes, and settings you rely on daily</li>
+          <li><strong>Sustained development</strong> — Cloud revenue funds continued clinical enhancements</li>
+        </ul>
+
+        <div style="background:#edf6fb; border:1px solid #b6d9ed; border-radius:8px; padding:1.1rem 1.4rem; font-size:.92rem; color:#1a6a9a;">
+          <strong>Loyalty pricing available.</strong> Long-term Legacy customers receive preferential upgrade rates. Seat count and tenure both factor into your quote.
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:2rem;">
+        <h3 style="margin-top:0; margin-bottom:1.25rem;">Get your upgrade quote</h3>
+        <form data-formspree action="https://formspree.io/f/xjgjqglw" method="POST">
+          <input type="hidden" name="_subject" value="AcuityMaster Legacy Upgrade Inquiry" />
+          <input type="hidden" name="form_type" value="legacy-upgrade" />
+          <div class="form-group">
+            <label for="upname">Your name</label>
+            <input type="text" id="upname" name="name" placeholder="Dr. Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="uppractice">Practice / Institution</label>
+            <input type="text" id="uppractice" name="practice" placeholder="Eye Care Associates" required />
+          </div>
+          <div class="form-group">
+            <label for="upemail">Email address</label>
+            <input type="email" id="upemail" name="email" placeholder="you@practice.com" required />
+          </div>
+          <div class="form-group">
+            <label for="upseats">Number of existing Legacy seats</label>
+            <select id="upseats" name="legacy_seats" required>
+              <option value="">Select&hellip;</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5-9">5&ndash;9</option>
+              <option value="10-24">10&ndash;24</option>
+              <option value="25+">25+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="upmsg">Questions or comments</label>
+            <textarea id="upmsg" name="message" rows="3" placeholder="e.g. timing, multi-location questions, transition help…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Request upgrade quote</button>
+          <p id="upgrade-msg" style="margin-top:.75rem; font-size:.88rem; text-align:center; min-height:1.2em;"></p>
+        </form>
+      </div>
+
     </div>
   </div>
 </section>
@@ -269,6 +366,32 @@
   </div>
 </footer>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script>
+(function(){
+  document.querySelectorAll('form[data-formspree]').forEach(function(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = form.querySelector('[type=submit]');
+      var msgEl = form.querySelector('[id$="-msg"]') || form.querySelector('p[id]');
+      btn.disabled = true; btn.textContent = 'Sending…';
+      fetch(form.action, { method:'POST', body: new FormData(form), headers:{'Accept':'application/json'} })
+        .then(function(r){ return r.json(); })
+        .then(function(j){
+          if (j.ok) {
+            form.innerHTML = '<p style="color:#2a7a2a;font-weight:600;text-align:center;padding:2rem 0;">&#10003; Thank you! We'll be in touch shortly.</p>';
+          } else {
+            btn.disabled = false; btn.textContent = btn.dataset.label || 'Submit';
+            if (msgEl) { msgEl.style.color='#cc0000'; msgEl.textContent = 'Something went wrong — please email Mark@AcuityMaster.com directly.'; }
+          }
+        })
+        .catch(function(){
+          btn.disabled = false; btn.textContent = btn.dataset.label || 'Submit';
+          if (msgEl) { msgEl.style.color='#cc0000'; msgEl.textContent = 'Network error — please email Mark@AcuityMaster.com directly.'; }
+        });
+    });
+  });
+})();
+</script>
 <script src="/assets/js/main.js"></script>
 </body>
 </html>
