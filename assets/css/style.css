@@ -728,12 +728,17 @@ html { overflow-x: hidden; }
    ════════════════════════════════════════════════════════════════ */
 
 /* ── Skip navigation link ─────────────────────────────────────── */
-.skip-link {
-  position: absolute;
-  left: -9999px; top: auto;
-  width: 1px; height: 1px;
+/* clip-path approach: no off-screen positioning, no layout impact */
+.skip-link:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
   overflow: hidden;
-  z-index: -1;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.skip-link {
   background: #fff;
   color: #1a5f8a;
   font-weight: 700;
@@ -743,12 +748,8 @@ html { overflow-x: hidden; }
   border: 3px solid #1a5f8a;
   border-radius: 0 0 8px 0;
   white-space: nowrap;
-}
-.skip-link:focus {
   position: fixed;
-  left: 0; top: 0;
-  width: auto; height: auto;
-  overflow: visible;
+  top: 0; left: 0;
   z-index: 100000;
   outline: none;
 }
