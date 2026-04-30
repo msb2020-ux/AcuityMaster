@@ -302,6 +302,7 @@ section:first-child { padding-top: 0; }
   color: #fff; padding: 3.5rem 0 3rem; text-align: center;
 }
 .page-hero h1 { color: #fff; font-size: clamp(1.6rem,4vw,2.5rem); margin-bottom: .6rem; }
+.page-hero .section-eyebrow { color: rgba(255,255,255,.85); letter-spacing: .12em; }
 .page-hero p { color: rgba(255,255,255,.88); font-size: 1.05rem; max-width: 640px; margin-inline: auto; }
 
 /* ── FORMS ───────────────────────────────────────────────── */
@@ -438,7 +439,8 @@ main > section:nth-child(even) { background: #fff; }
 /* Page hero */
 .page-hero { background: var(--blue); color: #fff; padding: 3.5rem 0 3rem; text-align: center; }
 .page-hero h1 { color: #fff; font-size: clamp(1.6rem,4vw,2.5rem); margin-bottom: .6rem; }
-.page-hero .lead, .page-hero p { color: rgba(255,255,255,.88); font-size: 1.05rem; max-width: 640px; margin-inline: auto; }
+.page-hero .lead { font-size: 1.05rem; max-width: 640px; margin-inline: auto; color: var(--text-light); }
+.page-hero p { color: rgba(255,255,255,.88); font-size: 1.05rem; max-width: 640px; margin-inline: auto; }
 
 /* Buttons */
 .btn-secondary {
