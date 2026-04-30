@@ -727,31 +727,39 @@ html { overflow-x: hidden; }
    ACCESSIBILITY — WCAG 2.2 AA
    ════════════════════════════════════════════════════════════════ */
 
-/* ── Skip navigation link ─────────────────────────────────────── */
-/* clip-path approach: no off-screen positioning, no layout impact */
-.skip-link:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
+/* ── Skip navigation link (WCAG 2.4.1) ───────────────────────── */
+/* Single-rule approach: clipped when not focused, visible on focus  */
 .skip-link {
+  position: absolute;
+  top: 0; left: 0;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  pointer-events: none;
+  /* visual styles applied always; shown only when clip is removed */
   background: #fff;
   color: #1a5f8a;
   font-weight: 700;
   font-size: 1rem;
-  padding: .875rem 1.5rem;
   text-decoration: none;
   border: 3px solid #1a5f8a;
   border-radius: 0 0 8px 0;
-  white-space: nowrap;
+  padding: .875rem 1.5rem;
+  z-index: 100000;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  width: auto; height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
   position: fixed;
   top: 0; left: 0;
-  z-index: 100000;
-  outline: none;
+  pointer-events: auto;
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
 }
 
 /* ── Focus indicators (WCAG 2.4.7 / 2.4.11) ──────────────────── */
