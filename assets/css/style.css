@@ -721,3 +721,128 @@ html { overflow-x: hidden; }
     min-width: 0;
   }
 }
+
+
+/* ════════════════════════════════════════════════════════════════
+   ACCESSIBILITY — WCAG 2.2 AA
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Skip navigation link ─────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  left: -9999px; top: auto;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  z-index: -1;
+  background: #fff;
+  color: #1a5f8a;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: .875rem 1.5rem;
+  text-decoration: none;
+  border: 3px solid #1a5f8a;
+  border-radius: 0 0 8px 0;
+  white-space: nowrap;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 0; top: 0;
+  width: auto; height: auto;
+  overflow: visible;
+  z-index: 100000;
+  outline: none;
+}
+
+/* ── Focus indicators (WCAG 2.4.7 / 2.4.11) ──────────────────── */
+:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Override any element that hides focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
+}
+
+/* ── Color contrast fixes (WCAG 1.4.3) ───────────────────────── */
+/* --blue (#3399CC) is only 3.2:1 on white — fails for body text  */
+/* --blue-dark (#2277aa) is 4.6:1 — passes AA                     */
+a { color: #2277aa; }
+a:hover { color: #1a5f8a; }
+
+/* Section eyebrow — small text needs full 4.5:1 ratio */
+.section-eyebrow { color: #1a5f8a; }
+
+/* Ensure card links and blue-on-white text meet contrast */
+.hover-card h3, .adv-card h3, .why-card h3 { color: #2277aa; }
+
+/* ── Minimum touch target size (WCAG 2.5.8) ──────────────────── */
+.feat-c-btn {
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
+}
+.menu-toggle {
+  min-width: 44px;
+  min-height: 44px;
+}
+.feat-c-dot {
+  width: 12px;
+  height: 12px;
+  min-width: 24px;   /* tap area via padding-inline */
+  min-height: 24px;
+  padding: 6px;
+  box-sizing: content-box;
+}
+
+/* ── Inline form error messages (WCAG 3.3.1) ─────────────────── */
+.form-error-msg {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  padding: .6rem .9rem;
+  font-size: .9rem;
+  margin-top: .75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+}
+.form-error-msg::before {
+  content: "⚠";
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+/* ── Reduced motion (WCAG 2.3.3) ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Ensure sufficient contrast for placeholder text ─────────── */
+::placeholder { color: #767e8d; opacity: 1; }
+
+/* ── Landmark region focus target offset (sticky header) ──────── */
+#main-content { scroll-margin-top: 4rem; }
+
+/* ── High-contrast mode support ──────────────────────────────── */
+@media (forced-colors: active) {
+  .btn, .feat-c-btn, .menu-toggle { border: 2px solid ButtonText; }
+  .feat-c-dot { border: 2px solid ButtonText; }
+}
