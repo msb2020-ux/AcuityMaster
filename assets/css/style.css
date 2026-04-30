@@ -305,6 +305,33 @@ section:first-child { padding-top: 0; }
 .page-hero .section-eyebrow { color: rgba(255,255,255,.85); letter-spacing: .12em; }
 .page-hero p { color: rgba(255,255,255,.88); font-size: 1.05rem; max-width: 640px; margin-inline: auto; }
 
+
+/* Testimonial author row with photo */
+.testimonial-author-row {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  margin-top: 1.1rem;
+}
+.testimonial-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+  flex-shrink: 0;
+}
+.testimonial-name {
+  display: block;
+  font-size: .95rem;
+  color: var(--heading, #1e2d3d);
+}
+.testimonial-title {
+  display: block;
+  font-size: .8rem;
+  color: var(--text-light, #6b7a8d);
+  margin-top: .1rem;
+}
+
 /* ── FORMS ───────────────────────────────────────────────── */
 .form-group { margin-bottom: 1.1rem; }
 .form-group label { display: block; font-size: .9rem; font-weight: 600; margin-bottom: .35rem; color: var(--text); }
