@@ -231,8 +231,10 @@
 
       <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:2rem;">
         <h3 style="margin-top:0; margin-bottom:1.25rem;">Get your upgrade quote</h3>
-        <form data-formspree action="https://formspree.io/f/xjgjqglw" method="POST">
-          <input type="hidden" name="_subject" value="AcuityMaster Legacy Upgrade Inquiry" />
+        <form data-web3forms action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="49bf838e-c7ce-4c6a-b79f-36c074165650">
+        <input type="checkbox" name="botcheck" style="display:none">
+          <input type="hidden" name="subject" value="AcuityMaster Legacy Upgrade Inquiry" />
           <input type="hidden" name="form_type" value="legacy-upgrade" />
           <div class="form-group">
             <label for="upname">Your name</label>
@@ -285,7 +287,9 @@
           <div class="stat-item"><span class="stat-number">15</span><span class="stat-label">Day free trial</span></div>
         </div>
       </div>
-      <form data-formspree action="https://formspree.io/f/xjgjqglw" method="POST">
+      <form data-web3forms action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="49bf838e-c7ce-4c6a-b79f-36c074165650">
+        <input type="checkbox" name="botcheck" style="display:none">
         <div class="form-group">
           <label for="fname">Your name</label>
           <input type="text" id="fname" name="name" placeholder="Dr. Jane Smith" required />
@@ -371,7 +375,7 @@
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 <script>
 (function(){
-  document.querySelectorAll('form[data-formspree]').forEach(function(form){
+  document.querySelectorAll('form[data-web3forms]').forEach(function(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var btn = form.querySelector('[type=submit]');
