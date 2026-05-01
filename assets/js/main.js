@@ -52,7 +52,7 @@ function showFormError(form, message) {
 }
 
 // ── Formspree AJAX — uses each form's own action URL ─────────────
-document.querySelectorAll('form[data-formspree]').forEach(form => {
+document.querySelectorAll('form[data-web3forms]').forEach(form => {
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('[type=submit]');
@@ -63,7 +63,7 @@ document.querySelectorAll('form[data-formspree]').forEach(form => {
     const prev = form.querySelector('.form-error-msg');
     if (prev) prev.remove();
 
-    const endpoint = form.getAttribute('action') || 'https://formspree.io/f/xpzgndvk';
+    const endpoint = form.getAttribute('action') || 'https://api.web3forms.com/submit';
     try {
       const res = await fetch(endpoint, {
         method: 'POST',
@@ -73,7 +73,7 @@ document.querySelectorAll('form[data-formspree]').forEach(form => {
       let data = {};
       try { data = await res.json(); } catch(_) {}
 
-      if (res.ok && data.ok !== false) {
+      if (data.success) {
         form.innerHTML = '<p class="form-success" role="status" aria-live="polite">\u2713 Message sent \u2014 we\u2019ll be in touch at <strong>Mark@AcuityMaster.com</strong> shortly.</p>';
       } else {
         if (btn) { btn.textContent = orig; btn.disabled = false; }
