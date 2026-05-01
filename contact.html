@@ -124,7 +124,9 @@
       </div>
 
       <div>
-        <form class="form" id="contact-form" action="https://formspree.io/f/xpzgndvk" method="POST">
+        <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="49bf838e-c7ce-4c6a-b79f-36c074165650">
+        <input type="checkbox" name="botcheck" style="display:none">
           <div class="form-row">
             <label for="cname">Your name</label>
             <input type="text" id="cname" name="name" required autocomplete="name" />
@@ -142,7 +144,7 @@
             <textarea id="cmessage" name="message" required></textarea>
           </div>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-          <input type="hidden" name="_subject" value="AcuityMaster — contact form" />
+          <input type="hidden" name="subject" value="AcuityMaster — contact form" />
           <div id="contact-msg" style="display:none; padding:.75rem 1rem; border-radius:6px; margin-bottom:1rem; font-weight:500;"></div>
           <button type="submit" class="btn btn-primary" id="contact-btn">Send message</button>
         </form>
