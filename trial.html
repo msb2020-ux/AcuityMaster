@@ -113,7 +113,9 @@
       </div>
 
       <div>
-        <form data-formspree action="https://formspree.io/f/xpzgndvk" method="POST">
+        <form data-web3forms action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="49bf838e-c7ce-4c6a-b79f-36c074165650">
+        <input type="checkbox" name="botcheck" style="display:none">
           <div class="form-group">
             <label for="name">Your name</label>
             <input type="text" id="name" name="name" required autocomplete="name" placeholder="Dr. Jane Smith" />
@@ -138,7 +140,7 @@
             </select>
           </div>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-          <input type="hidden" name="_subject" value="AcuityMaster &mdash; trial request" />
+          <input type="hidden" name="subject" value="AcuityMaster &mdash; trial request" />
           <button type="submit" class="btn btn-primary" style="width:100%;margin-top:.5rem;">Send me trial access</button>
           <p class="form-note">We&rsquo;ll email your trial access details. We never share your information.</p>
         </form>
