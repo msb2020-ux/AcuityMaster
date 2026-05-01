@@ -128,8 +128,10 @@
 
     <div class="legacy-form" style="margin-top:1.5rem;">
       <h3 style="margin-top:0;">Request a purchase invoice</h3>
-      <form id="legacy-purchase-form" action="https://formspree.io/f/xjgjqglw" method="POST">
-        <input type="hidden" name="_subject" value="AcuityMaster Legacy Windows Purchase Request" />
+      <form id="legacy-purchase-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="49bf838e-c7ce-4c6a-b79f-36c074165650">
+        <input type="checkbox" name="botcheck" style="display:none">
+        <input type="hidden" name="subject" value="AcuityMaster Legacy Windows Purchase Request" />
         <input type="hidden" name="form_type" value="legacy-purchase" />
 
         <div class="form-row">
